@@ -20,6 +20,9 @@ Es una página estática: HTML, CSS y un poco de JavaScript, sin frameworks y si
 ## Qué tiene
 
 - **Portada** con el lenguaje visual de las piezas: grilla de puntos, nodos de n8n conectados con líneas rosas y puertos blancos, halos y chispas. El movimiento se apaga cuando el sistema pide menos animación (`prefers-reduced-motion`).
+- **Hoy en Nodo Cero:** la guía del día, pensada para el celular (no hay proyector). Dice qué pasa **ahora** y **lo que sigue** con la hora de Bolivia, con cuenta regresiva, la línea del día, atajos (Cómo es el día, Registrá tu proyecto, Modo presentación, Workflows, Pedí ayuda), el aviso del Wi-Fi (la red y la clave se dan en la acreditación, nunca en la web) y un QR para pasar la página de celular a celular. Antes del 21 de noviembre dice «Falta poco»; después de las 16:00, «Gracias por venir». En celular, mientras dura el día, va primero, antes de la portada, y el botón «Hoy» de la cabecera lleva ahí en un toque.
+- **Cómo es el día:** diez pasos, de la acreditación a la foto grupal, con las comidas, la foto profesional para LinkedIn y el recordatorio de registrar el proyecto antes de presentar.
+- **Modo presentación** (`presentar.html`): cada equipo escribe el nombre del proyecto, del equipo, la línea y (si quiere) las tecnologías, y toca «Pantalla completa» para mostrarle la portada al jurado al empezar su demo. Tiene un cronómetro opcional de 1, 2, 3 o 5 minutos (el tiempo lo indica la organización). Los datos quedan en el navegador (`localStorage`).
 - **Empezá en 3 pasos:** cuentas, importar un workflow y conectar credenciales, con enlaces a las guías.
 - **Aprendé sin miedo:** el tutorial «De cero a tu demo», el glosario y las preguntas frecuentes, y un pequeño flujo que muestra cómo se aprende con n8n (probá, mirá qué salió, leé el error, pedí ayuda).
 - **Las 4 líneas:** IA para tu comunidad, Web3 con Avalanche Fuji, Apps con login y datos, e Impacto social y ambiental. Cada tarjeta dice para quién es, trae tres workflows para arrancar (llevan a su tarjeta en el catálogo), un botón que filtra el catálogo por la línea y el enlace a su guía.
@@ -33,7 +36,8 @@ Es una página estática: HTML, CSS y un poco de JavaScript, sin frameworks y si
 - **Supabase y Clerk:** para qué sirven hoy, cómo crear la cuenta y la documentación clave.
 - **Ganadores y menciones:** los tres lugares y las dos menciones especiales, «Mejor uso de Avalanche Fuji» y «Mejor uso de Google Cloud».
 - **Agenda** del día, que marca «AHORA» con la hora de Bolivia mientras dura el evento.
-- **Mentoría**, **Registrá tu proyecto** (lleva al formulario del repo [proyectos](https://github.com/nodo-cero-bo/proyectos)), **Aliados** (n8n primero; Women Techmakers Santa Cruz; Supabase, Clerk, Team1 y Aspire Institute; la sede) y **Seguí construyendo**.
+- **Mentoría**, **Registrá tu proyecto** (lleva al formulario del repo [proyectos](https://github.com/nodo-cero-bo/proyectos)), **Seguí construyendo** y, de cierre, **Gracias a nuestros aliados** (presenta n8n, n8n Community Events; en colaboración con Women Techmakers Santa Cruz; con el apoyo de Supabase, Clerk, Team1 y Aspire Institute; la sede).
+- **Sin conexión:** `sw.js` guarda una copia de la página, del modo presentación, de los estilos, las tipografías, los logos y el catálogo. Primero pide todo a la red (así siempre se ve lo más nuevo) y, si no hay conexión o tarda más de 4 segundos, muestra la copia guardada.
 
 ## Verla en tu compu
 
@@ -47,7 +51,7 @@ npx serve .
 
 y abrí <http://localhost:8000>. También podés abrir `index.html` con doble clic: se ve casi igual (algunos navegadores no cargan las tipografías desde un archivo), pero el navegador no deja que «Copiar workflow» lea los archivos sin servidor (usá «Descargar» o levantá el servidor).
 
-La agenda marca «AHORA» con la hora de Bolivia durante el 21 de noviembre. Para ver cómo queda en otro momento del día, agregá `?ahora=` a la dirección, por ejemplo <http://localhost:8000/?ahora=2026-11-21T13:00>.
+«Hoy en Nodo Cero» y la agenda usan la hora de Bolivia (UTC-4) con el reloj del dispositivo. Para ver cómo queda en otro momento del día, agregá `?hora=` a la dirección, por ejemplo <http://localhost:8000/?hora=12:10> (toma el 21 de noviembre), o `?ahora=` con fecha y hora, por ejemplo <http://localhost:8000/?ahora=2026-11-20T18:00>. El reloj simulado sigue andando, así se puede ver la cuenta regresiva y el cambio de tramo.
 
 ## Regenerar el catálogo
 
@@ -94,9 +98,13 @@ Los enlaces a Core Wallet, Avalanche Academy y Team1 llevan parámetros UTM (`ut
 
 ```
 index.html            la página
+presentar.html        el modo presentación de cada equipo
+sw.js                 copia sin conexión (service worker)
 404.html              página para direcciones que no existen
-assets/css/           estilos
-assets/js/app.js      catálogo, copiar, filtros, agenda en vivo, menú y chispas
+assets/css/           estilos (presentar.css: el modo presentación)
+assets/js/app.js      catálogo, copiar, filtros, «Hoy en Nodo Cero», agenda en vivo, QR, menú y chispas
+assets/js/presentar.js  la portada de cada equipo, el cronómetro y los datos guardados
+assets/qr-nodo-cero.* el QR de la página (PNG y SVG, negro sobre blanco)
 assets/fuentes/       Inter Tight y Geist Mono (SIL OFL 1.1)
 assets/logos/         logos oficiales de cada marca, sin cambios
 assets/mentoria/      fotos de la mentoría

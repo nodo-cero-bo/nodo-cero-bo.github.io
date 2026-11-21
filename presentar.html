@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Modo presentación · Nodo Cero, Hackathon n8n Bolivia</title>
+<meta name="description" content="No hay proyector: cada equipo presenta desde su compu. Escribí el nombre de tu equipo y de tu proyecto, tocá «Pantalla completa» y mostrale la portada al jurado al empezar tu demo.">
+<link rel="canonical" href="https://nodo-cero-bo.github.io/presentar.html">
+<meta name="theme-color" content="#191919">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nodo Cero">
+<meta property="og:locale" content="es_BO">
+<meta property="og:url" content="https://nodo-cero-bo.github.io/presentar.html">
+<meta property="og:title" content="Modo presentación · Nodo Cero">
+<meta property="og:description" content="Cada equipo presenta desde su compu: la portada de tu proyecto en pantalla completa, con un cronómetro opcional.">
+<meta property="og:image" content="https://nodo-cero-bo.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nodo Cero, Hackathon n8n Bolivia: un flujo de nodos de n8n conectados con líneas rosas sobre una grilla de puntos.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fuentes/InterTight-500.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="assets/fuentes/InterTight-400.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="assets/fuentes/GeistMono-500.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="assets/fuentes/GeistMono-400.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="assets/css/estilos.css">
+<link rel="stylesheet" href="assets/css/presentar.css">
+</head>
+<body class="pres">
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera">
+  <div class="contenedor cabecera__fila">
+    <a class="cabecera__marca" href="./" aria-label="Nodo Cero, volver a la página">
+      <img src="assets/logos/nodo-cero_horizontal_fondo-oscuro.svg" alt="Nodo Cero, Hackathon n8n Bolivia" width="2039" height="744">
+    </a>
+    <a class="boton boton--borde boton--chico pres__volver" href="./#dia">Volver a la guía del día</a>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="pres-intro" aria-labelledby="titulo-pres">
+    <div class="pres-intro__fondo" aria-hidden="true"></div>
+    <div class="contenedor">
+      <p class="capsula capsula--sola capsula--acento">MODO PRESENTACIÓN</p>
+      <h1 id="titulo-pres">Presentá desde tu compu</h1>
+      <p class="pres-intro__bajada">No hay proyector. Cada equipo presenta desde su propia compu. Esta página arma la portada de tu proyecto para mostrársela al jurado antes de tu demo.</p>
+      <ol class="pres-pasos" aria-label="Cómo se usa">
+        <li><span class="pres-pasos__num" aria-hidden="true">1</span><span><b>Escribí</b> el nombre del proyecto y del equipo.</span></li>
+        <li><span class="pres-pasos__num" aria-hidden="true">2</span><span><b>Tocá</b> «Pantalla completa».</span></li>
+        <li><span class="pres-pasos__num" aria-hidden="true">3</span><span><b>Mostrá</b> la portada y arrancá tu demo.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="contenedor pres-grilla">
+    <form class="pres-form tarjeta" id="pres-form" novalidate aria-labelledby="titulo-form">
+      <h2 class="pres-form__titulo" id="titulo-form">Tus datos</h2>
+
+      <div class="campo">
+        <label class="campo__rotulo" for="f-proyecto">Nombre del proyecto</label>
+        <input class="campo__entrada" id="f-proyecto" name="proyecto" type="text" maxlength="80" autocomplete="off" spellcheck="false" placeholder="Por ejemplo: Reportes del barrio" aria-describedby="error">
+      </div>
+
+      <div class="campo">
+        <label class="campo__rotulo" for="f-equipo">Nombre del equipo</label>
+        <input class="campo__entrada" id="f-equipo" name="equipo" type="text" maxlength="60" autocomplete="off" spellcheck="false" placeholder="Por ejemplo: Las del nodo rosa" aria-describedby="error">
+      </div>
+
+      <fieldset class="campo">
+        <legend class="campo__rotulo">Línea</legend>
+        <div class="opciones-linea">
+          <label class="opcion-linea">
+            <input type="radio" name="linea" value="ia">
+            <span class="opcion-linea__icono" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M22 12.5Q22 26 35.5 26Q22 26 22 39.5Q22 26 8.5 26Q22 26 22 12.5Z" fill="none" stroke="#FAFAFA" stroke-width="2.6" stroke-linejoin="round"/><path d="M35.5 7Q35.5 12.5 41 12.5Q35.5 12.5 35.5 18Q35.5 12.5 30 12.5Q35.5 12.5 35.5 7Z" fill="#FAFAFA"/></svg></span>
+            <span class="opcion-linea__texto">IA para tu comunidad</span>
+          </label>
+          <label class="opcion-linea">
+            <input type="radio" name="linea" value="web3">
+            <span class="opcion-linea__icono" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 7.5 38.5 15.8V32.2L24 40.5 9.5 32.2V15.8Z" fill="none" stroke="#FAFAFA" stroke-width="2.6" stroke-linejoin="round"/><path d="M9.5 15.8 24 24.1l14.5-8.3M24 24.1v16.4" fill="none" stroke="#FAFAFA" stroke-width="2.6" stroke-linejoin="round"/></svg></span>
+            <span class="opcion-linea__texto">Web3 con Avalanche Fuji</span>
+          </label>
+          <label class="opcion-linea">
+            <input type="radio" name="linea" value="apps">
+            <span class="opcion-linea__icono" aria-hidden="true"><svg viewBox="0 0 48 48"><rect x="7.5" y="9" width="33" height="30" rx="5" fill="none" stroke="#FAFAFA" stroke-width="2.6"/><path d="M7.5 16.5h33" stroke="#FAFAFA" stroke-width="2.6"/><circle cx="24" cy="25" r="4.2" fill="none" stroke="#FAFAFA" stroke-width="2.6"/><path d="M16 39c.9-4.6 4-7 8-7s7.1 2.4 8 7" fill="none" stroke="#FAFAFA" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+            <span class="opcion-linea__texto">Apps con login y datos</span>
+          </label>
+          <label class="opcion-linea">
+            <input type="radio" name="linea" value="impacto">
+            <span class="opcion-linea__icono" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 40.5V24" fill="none" stroke="#FAFAFA" stroke-width="2.6" stroke-linecap="round"/><path d="M24 31.5C15.5 31.5 10 26 10 17.5 18.5 17.5 24 23 24 31.5Z" fill="none" stroke="#FAFAFA" stroke-width="2.6" stroke-linejoin="round"/><path d="M24 25C24 16.5 29.5 10.5 38 10.5 38 19 32.5 25 24 25Z" fill="none" stroke="#FAFAFA" stroke-width="2.6" stroke-linejoin="round"/><path d="M15 40.5h18" stroke="#FAFAFA" stroke-width="2.6" stroke-linecap="round"/></svg></span>
+            <span class="opcion-linea__texto">Impacto social y ambiental</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="campo">
+        <legend class="campo__rotulo">Tecnologías <span class="campo__opcional">(opcional)</span></legend>
+        <div class="chips-elegir">
+          <label><input type="checkbox" name="tec" value="n8n"><span>n8n</span></label>
+          <label><input type="checkbox" name="tec" value="ia"><span>IA</span></label>
+          <label><input type="checkbox" name="tec" value="avalanche"><span>Avalanche Fuji</span></label>
+          <label><input type="checkbox" name="tec" value="google-cloud"><span>Google Cloud</span></label>
+          <label><input type="checkbox" name="tec" value="supabase"><span>Supabase</span></label>
+          <label><input type="checkbox" name="tec" value="clerk"><span>Clerk</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="campo" aria-describedby="ayuda-crono">
+        <legend class="campo__rotulo">Cronómetro <span class="campo__opcional">(opcional)</span></legend>
+        <p class="campo__ayuda" id="ayuda-crono">Elegí el tiempo que te indique la organización. Aparece abajo a la derecha de la portada.</p>
+        <div class="chips-elegir chips-elegir--crono">
+          <label><input type="radio" name="minutos" value="0" checked><span>Sin cronómetro</span></label>
+          <label><input type="radio" name="minutos" value="1"><span>1 min</span></label>
+          <label><input type="radio" name="minutos" value="2"><span>2 min</span></label>
+          <label><input type="radio" name="minutos" value="3"><span>3 min</span></label>
+          <label><input type="radio" name="minutos" value="5"><span>5 min</span></label>
+        </div>
+      </fieldset>
+
+      <div class="pres-form__pie">
+        <p class="pres-form__guardado"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8.4 6.4 11.6 13 4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Se guarda nada más en este navegador, aunque no haya internet.</p>
+        <button class="boton boton--borde boton--chico" type="button" id="borrar">Borrar datos</button>
+      </div>
+    </form>
+
+    <aside class="pres-vista" aria-labelledby="vista-titulo">
+      <p class="pres-vista__rotulo" id="vista-titulo">ASÍ SE VA A VER</p>
+      <div class="pres-vista__marco" id="vista" aria-hidden="true"></div>
+      <button class="boton boton--rosa boton--grande boton--ancho pres-vista__abrir" type="button" id="abrir">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Pantalla completa
+      </button>
+      <p class="pres-vista__error" id="error" role="alert"></p>
+      <ul class="pres-vista__teclas" aria-label="Teclas">
+        <li><kbd>Esc</kbd> salir de la portada</li>
+        <li><kbd>Espacio</kbd> iniciar o pausar el cronómetro</li>
+        <li><kbd>R</kbd> volver a empezar el cronómetro</li>
+      </ul>
+      <p class="pres-vista__nota">¿Ya registraste tu proyecto? Hacelo antes de presentar. <a class="enlace-flecha" href="https://github.com/nodo-cero-bo/proyectos/issues/new?template=proyecto.yml" target="_blank" rel="noopener">Registrar mi proyecto</a></p>
+    </aside>
+  </div>
+</main>
+
+<!-- La portada en pantalla completa. Se arma con la misma lámina que la vista previa. -->
+<div class="portada" id="portada" hidden role="dialog" aria-modal="true" aria-labelledby="portada-titulo" tabindex="-1">
+  <div class="portada__lamina" id="portada-lamina"></div>
+  <div class="portada__barra" id="barra">
+    <button class="boton boton--rosa" type="button" id="crono-alternar">Iniciar cronómetro</button>
+    <button class="boton boton--borde" type="button" id="crono-reiniciar">Volver a empezar</button>
+    <button class="boton boton--claro" type="button" id="cerrar">Salir</button>
+  </div>
+  <p class="oculto" id="portada-aviso" aria-live="polite"></p>
+</div>
+
+<template id="tpl-lamina">
+  <div class="lamina">
+    <div class="lamina__fondo" aria-hidden="true">
+      <div class="lamina__puntos"></div>
+      <div class="lamina__halo lamina__halo--a"></div>
+      <div class="lamina__halo lamina__halo--b"></div>
+      <div class="lamina__rayos"></div>
+      <div class="lamina__piso"></div>
+    </div>
+    <div class="lamina__arriba">
+      <p class="lamina__presenta"><span>Presenta</span><img src="assets/logos/n8n-logo-white-accent.svg" alt="n8n" width="480" height="96"></p>
+      <img class="lamina__nc" src="assets/logos/nodo-cero_horizontal_fondo-oscuro.svg" alt="Nodo Cero, Hackathon n8n Bolivia" width="2039" height="744">
+    </div>
+    <div class="lamina__centro">
+      <div class="lamina__texto">
+        <p class="lamina__linea" data-campo="linea" hidden></p>
+        <h2 class="lamina__proyecto" data-campo="proyecto">Tu proyecto</h2>
+        <p class="lamina__equipo" data-campo="equipo-caja"><span>EQUIPO</span><b data-campo="equipo">Tu equipo</b></p>
+        <ul class="lamina__tec" data-campo="tec" aria-label="Tecnologías"></ul>
+      </div>
+      <div class="lamina__flujo" data-campo="flujo" aria-hidden="true"></div>
+    </div>
+    <div class="lamina__abajo">
+      <p class="lamina__evento">Hackathon n8n Bolivia · Sábado 21 de noviembre de 2026 · Santa Cruz</p>
+      <div class="lamina__crono" data-campo="crono" role="timer" aria-label="Cronómetro" hidden>
+        <span class="lamina__crono-rotulo" data-campo="crono-rotulo">TIEMPO</span>
+        <span class="lamina__crono-dig" data-campo="crono-dig">00:00</span>
+      </div>
+    </div>
+    <div class="lamina__barra-tiempo" data-campo="crono-barra" hidden><span></span></div>
+  </div>
+</template>
+
+<div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+<script src="assets/js/presentar.js" defer></script>
+</body>
+</html>

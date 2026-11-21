@@ -13,7 +13,7 @@
 //      «Descargar» funcionan desde el mismo dominio de la página.
 //   4. Si encuentra el repo de guías, arma data/guias.json con sus títulos y pinta las
 //      tarjetas de la sección «Guías» en index.html. También apunta cada enlace con
-//      data-guia (Empezá en 3 pasos, Aprendé sin miedo, las 4 líneas, Google Cloud) a la
+//      data-guia (Empezá en 3 pasos, Cómo es el día, Aprendé sin miedo, las 4 líneas, Google Cloud) a la
 //      guía que encuentre: si una guía cambia de nombre, el enlace se corrige sin tocar el HTML.
 //   5. Si cambió la organización en config.json, actualiza los enlaces de las páginas.
 //
@@ -321,6 +321,7 @@ ${tarjetas}
   const tutorial = guias.filter((g) => /^\d*[-_ ]*tutorial$/i.test(g.grupo));
   const destino = {
     cuentas: (() => { const g = buscarGuia(/cuenta/i); return g ? (guias.filter((x) => x.grupo === g.grupo && /cuenta/i.test(x.ruta)).length > 1 ? carpeta(g.grupo) : g.url) : null; })(),
+    'cuenta-n8n': buscarRuta(/(^|\/)[^/]*cuenta-n8n[^/]*\.md$/i)?.url,
     importar: buscarGuia(/import/i)?.url,
     credenciales: buscarGuia(/credencial/i)?.url,
     tutorial: tutorial.length ? carpeta(tutorial[0].grupo) : null,

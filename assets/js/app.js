@@ -1,6 +1,7 @@
 // Nodo Cero · Hackathon n8n Bolivia. JavaScript mínimo, sin dependencias.
 // Catálogo de workflows (filtros por línea, tecnología y nivel; copiar, descargar), las 4 líneas,
-// guías, agenda en vivo, chispas de la portada y respeto por prefers-reduced-motion.
+// guías, «Hoy en Nodo Cero» (ahora, lo que sigue y cuenta regresiva con la hora de Bolivia), agenda en vivo,
+// el QR para compartir, chispas de la portada y respeto por prefers-reduced-motion.
 (() => {
   'use strict';
 
@@ -347,34 +348,200 @@
     completarLineas(cat.workflows);
   })();
 
-  // ================================================================ agenda en vivo
+  // ================================================================ reloj del día (hora de Bolivia)
+  // Bolivia está en UTC-4 todo el año (America/La_Paz, sin horario de verano): la cuenta se hace con el
+  // reloj del dispositivo y anda sin internet. Para probar otra hora del día: ?hora=12:10
+  // (se toma el 21 de noviembre) u ?ahora=2026-11-20T18:00 (fecha y hora). El reloj simulado sigue andando.
   const DIA = '2026-11-21';
-  function horaBolivia() {
-    const forzada = new URLSearchParams(location.search).get('ahora'); // para probar: ?ahora=2026-11-21T10:15
-    if (forzada && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(forzada)) return { fecha: forzada.slice(0, 10), hm: forzada.slice(11) };
-    const partes = Object.fromEntries(new Intl.DateTimeFormat('en-CA', {
-      timeZone: 'America/La_Paz', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
-    }).formatToParts(new Date()).map((p) => [p.type, p.value]));
-    return { fecha: `${partes.year}-${partes.month}-${partes.day}`, hm: `${partes.hour}:${partes.minute}` };
+  const BOLIVIA = -4 * 3600e3;
+  const enBolivia = (fecha, hm) => Date.parse(`${fecha}T${hm}:00-04:00`);
+  const relojSimulado = (() => {
+    const q = new URLSearchParams(location.search);
+    const ahora = q.get('ahora');
+    const hora = q.get('hora');
+    let base = NaN;
+    if (ahora && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(ahora)) base = enBolivia(ahora.slice(0, 10), ahora.slice(11));
+    else if (hora && /^\d{1,2}:\d{2}$/.test(hora)) base = enBolivia(DIA, hora.padStart(5, '0'));
+    return Number.isNaN(base) ? null : { base, desde: Date.now() };
+  })();
+  const ahoraMs = () => (relojSimulado ? relojSimulado.base + (Date.now() - relojSimulado.desde) : Date.now());
+  function partesBolivia(ms) {
+    const iso = new Date(ms + BOLIVIA).toISOString();
+    return { fecha: iso.slice(0, 10), hm: iso.slice(11, 16) };
   }
-  function marcarAgenda() {
-    const { fecha, hm } = horaBolivia();
-    for (const li of $$('#agenda-lista .agenda__item')) {
+
+  // La agenda del día: el título es el de la agenda; el consejo dice qué hacer en ese momento.
+  const FORMULARIO = 'https://github.com/nodo-cero-bo/proyectos/issues/new?template=proyecto.yml';
+  const AGENDA = [
+    { hm: '08:00', hasta: '12:00', titulo: 'Acreditación y café', previa: 'Abre la acreditación: ahí empieza todo.',
+      consejo: 'Acreditate y servite un café. Después, armá tu equipo, elegí tu línea e importá tu primer workflow.',
+      acciones: [['Paso a paso del día', '#dia', 'claro'], ['Workflows', '#workflows', 'borde']] },
+    { hm: '12:00', hasta: '14:30', titulo: 'Almuerzo', previa: 'Una pausa para comer y recargar energía.',
+      consejo: 'Comé tranqui y descansá un rato. Después, seguí construyendo. Antes de las 15:00, registrá tu proyecto.',
+      acciones: [['Registrar mi proyecto', FORMULARIO, 'claro'], ['Pedí ayuda', '#mentoria', 'borde']] },
+    { hm: '14:30', hasta: '15:00', titulo: 'Refrigerio', previa: 'Un respiro antes de presentar.',
+      consejo: 'Último empujón. Registrá tu proyecto antes de presentar y prepará la portada en el modo presentación.',
+      acciones: [['Registrar mi proyecto', FORMULARIO, 'claro'], ['Modo presentación', 'presentar.html', 'borde']] },
+    { hm: '15:00', hasta: '15:45', titulo: 'Presentaciones', previa: 'Cada equipo muestra su proyecto desde su compu.',
+      consejo: 'Cada equipo presenta desde su compu. Abrí el modo presentación, escribí tus datos y tocá «Pantalla completa».',
+      acciones: [['Abrir el modo presentación', 'presentar.html', 'claro']] },
+    { hm: '15:45', hasta: '16:00', titulo: 'Cierre, menciones y foto grupal', previa: 'Los 3 lugares, las 2 menciones y la foto de todo el grupo.',
+      consejo: 'Se anuncian los 3 lugares y las 2 menciones especiales. Después, foto grupal: quedate.',
+      acciones: [['Lugares y menciones', '#menciones', 'claro']] },
+    { hm: '16:00', titulo: 'Fin', previa: 'Cerramos el día. Lo que armaste sigue siendo tuyo.' },
+  ];
+
+  function enlaceBoton(texto, href, estilo) {
+    const externo = /^https?:/.test(href);
+    return el('a', { class: `boton boton--${estilo}`, href, target: externo ? '_blank' : null, rel: externo ? 'noopener' : null }, texto);
+  }
+  function duracion(ms) {
+    const s = Math.max(0, Math.ceil(ms / 1000));
+    const d = Math.floor(s / 86400);
+    if (d >= 2) return { texto: `${d} días`, leer: `Faltan ${d} días` };
+    if (d === 1) return { texto: `1 día y ${Math.floor((s % 86400) / 3600)} h`, leer: 'Falta un día' };
+    const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), seg = s % 60;
+    const dos = (n) => String(n).padStart(2, '0');
+    const leer = h ? `Faltan ${h} h y ${m} min` : m > 1 ? `Faltan ${m} minutos` : m === 1 ? 'Falta 1 minuto' : seg === 1 ? 'Falta 1 segundo' : `Faltan ${seg} segundos`;
+    return { texto: h ? `${dos(h)}:${dos(m)}:${dos(seg)}` : `${dos(m)}:${dos(seg)}`, leer };
+  }
+
+  const hoy = $('#hoy');
+  const H = (id) => $(`#hoy-${id}`);
+  let ultimaClave = '';
+  let objetivo = 0;
+
+  function textoSi(nodo, texto) { if (nodo && nodo.textContent !== texto) nodo.textContent = texto; }
+
+  function pintarHoy() {
+    const ms = ahoraMs();
+    const { fecha, hm } = partesBolivia(ms);
+    const inicio = enBolivia(DIA, '08:00');
+    const fin = enBolivia(DIA, '16:00');
+    const fase = ms < inicio ? 'antes' : ms >= fin ? 'despues' : 'durante';
+    let actual = -1;
+    if (fase === 'durante') { actual = AGENDA.length - 2; while (actual > 0 && ms < enBolivia(DIA, AGENDA[actual].hm)) actual--; }
+    const mismoDia = fecha === DIA;
+    document.documentElement.dataset.fase = fase;
+
+    textoSi(H('reloj'), hm);
+    if (H('reloj-caja')) H('reloj-caja').hidden = false;
+
+    // Lo que depende del momento se rearma cuando cambia el tramo; la cuenta regresiva, cada segundo.
+    const clave = `${fase}|${actual}|${mismoDia}`;
+    if (hoy && clave !== ultimaClave) {
+      ultimaClave = clave;
+      const acciones = H('ahora-acciones');
+      const accionesSigue = H('sigue-acciones');
+      const tutorial = $('[data-guia="tutorial"]')?.getAttribute('href') || '#aprender';
+      let a, s;
+      if (fase === 'antes' && !mismoDia) {
+        a = { rotulo: 'FALTA POCO', titulo: 'Nodo Cero es el sábado', horario: 'Sábado 21 de noviembre · 08:00 a 16:00 · Santa Cruz',
+          consejo: 'Mirá el catálogo de workflows y el tutorial. Así llegás con ventaja.',
+          acciones: [['Empezá el tutorial', tutorial, 'claro'], ['Cómo es el día', '#dia', 'borde']] };
+        s = { rotulo: 'LO QUE SIGUE', titulo: 'Acreditación y café', hora: 'Sábado 21 de noviembre, a las 08:00', previa: AGENDA[0].previa, cuenta: inicio };
+      } else if (fase === 'antes') {
+        a = { rotulo: 'HOY ES EL DÍA', titulo: 'Arrancamos a las 08:00', horario: 'Centro de Educación Ambiental (CEA) · Santa Cruz',
+          consejo: 'Traé tu compu y tu cargador. Al llegar, acreditate: ahí te dan la red y la clave del Wi-Fi.',
+          acciones: [['Mirá cómo es el día', '#dia', 'claro']] };
+        s = { rotulo: 'LO QUE SIGUE', titulo: 'Acreditación y café', hora: 'A las 08:00', previa: AGENDA[0].previa, cuenta: inicio };
+      } else if (fase === 'durante') {
+        const tramo = AGENDA[actual];
+        const sigue = AGENDA[actual + 1];
+        a = { rotulo: 'AHORA', titulo: tramo.titulo, horario: `De ${tramo.hm} a ${tramo.hasta}`, consejo: tramo.consejo, acciones: tramo.acciones };
+        s = { rotulo: 'LO QUE SIGUE', titulo: sigue.titulo, hora: `A las ${sigue.hm}`, previa: sigue.previa, cuenta: enBolivia(DIA, sigue.hm) };
+      } else {
+        a = { rotulo: 'NODO CERO TERMINÓ', titulo: 'Gracias por venir', horario: 'Sábado 21 de noviembre de 2026 · Santa Cruz',
+          consejo: 'Lo que armaste hoy sigue siendo tuyo. Los workflows y las guías quedan abiertos: seguí construyendo a tu ritmo.',
+          acciones: [['Seguí construyendo', '#seguir', 'claro']] };
+        s = { rotulo: 'LA VITRINA', titulo: 'Mirá los proyectos', hora: '', previa: 'Todos los proyectos registrados, en un mismo lugar.', cuenta: 0,
+          acciones: [['Ver los proyectos', 'https://github.com/nodo-cero-bo/proyectos', 'borde']] };
+      }
+      textoSi(H('ahora-rotulo'), a.rotulo);
+      textoSi(H('ahora-titulo'), a.titulo);
+      textoSi(H('ahora-horario'), a.horario);
+      textoSi(H('ahora-consejo'), a.consejo);
+      acciones?.replaceChildren(...a.acciones.map((x) => enlaceBoton(...x)));
+      textoSi(H('sigue-rotulo'), s.rotulo);
+      textoSi(H('sigue-titulo'), s.titulo);
+      textoSi(H('sigue-hora'), s.hora);
+      H('sigue-hora').hidden = !s.hora;
+      textoSi(H('sigue-previa'), s.previa);
+      H('sigue-previa').hidden = !s.previa;
+      objetivo = s.cuenta;
+      H('cuenta-caja').hidden = !objetivo;
+      if (accionesSigue) {
+        accionesSigue.hidden = !s.acciones;
+        accionesSigue.replaceChildren(...(s.acciones || []).map((x) => enlaceBoton(...x)));
+      }
+      hoy.dataset.fase = fase;
+      textoSi(H('capsula'), fase === 'durante' ? 'EN VIVO · SÁB 21 NOV' : fase === 'despues' ? 'SÁB 21 NOV 2026' : 'SÁB 21 NOV · 08:00 A 16:00');
+
+      // La línea del día: nodos pasados, el de ahora y el avance entre uno y otro.
+      const nodos = $$('#hoy-linea li');
+      nodos.forEach((li, i) => {
+        li.classList.toggle('es-pasado', fase === 'despues' || (fase === 'durante' && i < actual));
+        li.classList.toggle('es-ahora', fase === 'durante' && i === actual);
+        if (fase === 'durante' && i === actual) li.setAttribute('aria-current', 'time'); else li.removeAttribute('aria-current');
+      });
+      marcarAgenda(fase, actual);
+    }
+
+    if (objetivo) {
+      const { texto, leer } = duracion(objetivo - ms);
+      textoSi(H('cuenta'), texto);
+      textoSi(H('cuenta-leer'), leer);
+    }
+    const linea = $('#hoy-linea');
+    if (linea) {
+      let avance = fase === 'despues' ? 1 : 0;
+      if (fase === 'durante') {
+        const t0 = enBolivia(DIA, AGENDA[actual].hm), t1 = enBolivia(DIA, AGENDA[actual + 1].hm);
+        avance = (actual + (ms - t0) / (t1 - t0)) / (AGENDA.length - 1);
+      }
+      linea.style.setProperty('--avance', avance.toFixed(4));
+    }
+  }
+
+  // La agenda de más abajo marca «AHORA» con el mismo reloj.
+  function marcarAgenda(fase, actual) {
+    $$('#agenda-lista .agenda__item').forEach((li, i) => {
       li.classList.remove('agenda__item--ahora', 'agenda__item--pasado');
       $('.agenda__ahora', li)?.remove();
       li.removeAttribute('aria-current');
-      if (fecha !== DIA) continue;
-      const { desde, hasta } = li.dataset;
-      if (hm >= hasta) li.classList.add('agenda__item--pasado');
-      else if (hm >= desde) {
+      if (fase === 'despues' || (fase === 'durante' && i < actual)) li.classList.add('agenda__item--pasado');
+      else if (fase === 'durante' && i === actual) {
         li.classList.add('agenda__item--ahora');
         li.setAttribute('aria-current', 'time');
         li.append(el('span', { class: 'agenda__ahora' }, 'AHORA'));
       }
-    }
+    });
   }
-  marcarAgenda();
-  setInterval(marcarAgenda, 60000);
+
+  pintarHoy();
+  setInterval(pintarHoy, 1000);
+  // Al volver a la pestaña (o al despertar el celular) se actualiza enseguida.
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) pintarHoy(); });
+
+  // ================================================================ compartir la página (QR)
+  const dialogoQR = $('#qr-dialogo');
+  $$('#qr-abrir, #qr-abrir-2').forEach((b) => b.addEventListener('click', () => {
+    if (dialogoQR?.showModal) dialogoQR.showModal();
+    else window.open('assets/qr-nodo-cero.png', '_blank', 'noopener');
+  }));
+  dialogoQR?.addEventListener('click', (e) => { if (e.target === dialogoQR) dialogoQR.close(); });
+  const botonCompartir = $('#compartir-nativo');
+  if (botonCompartir && navigator.share) {
+    botonCompartir.hidden = false;
+    botonCompartir.addEventListener('click', () => {
+      navigator.share({ title: 'Nodo Cero · Hackathon n8n Bolivia', text: 'La guía del día de Nodo Cero: agenda, workflows y modo presentación.', url: 'https://nodo-cero-bo.github.io' }).catch(() => {});
+    });
+  }
+
+  // ================================================================ sin conexión
+  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+    window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
+  }
 
   // ================================================================ menú del celular
   const botonMenu = $('.cabecera__menu');

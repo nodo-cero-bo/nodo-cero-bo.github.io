@@ -21,13 +21,17 @@ Es una página estática: HTML, CSS y un poco de JavaScript, sin frameworks y si
 
 - **Portada** con el lenguaje visual de las piezas: grilla de puntos, nodos de n8n conectados con líneas rosas y puertos blancos, halos y chispas. El movimiento se apaga cuando el sistema pide menos animación (`prefers-reduced-motion`).
 - **Empezá en 3 pasos:** cuentas, importar un workflow y conectar credenciales, con enlaces a las guías.
-- **Catálogo de workflows** con filtros por tecnología, nivel y «sin credenciales». Cada tarjeta trae cuatro botones:
+- **Aprendé sin miedo:** el tutorial «De cero a tu demo», el glosario y las preguntas frecuentes, y un pequeño flujo que muestra cómo se aprende con n8n (probá, mirá qué salió, leé el error, pedí ayuda).
+- **Las 4 líneas:** IA para tu comunidad, Web3 con Avalanche Fuji, Apps con login y datos, e Impacto social y ambiental. Cada tarjeta dice para quién es, trae tres workflows para arrancar (llevan a su tarjeta en el catálogo), un botón que filtra el catálogo por la línea y el enlace a su guía.
+- **Catálogo de workflows** con filtros por línea, tecnología, nivel y «sin credenciales». Cada tarjeta muestra sus tecnologías y sus líneas, y trae cuatro botones:
   - **Copiar workflow:** copia el JSON al portapapeles para pegarlo en el canvas de n8n con Ctrl + V (Cmd + V en Mac).
   - **Copiar enlace crudo:** para el menú de tres puntos → Import from URL.
   - **Ver en GitHub** y **Descargar** el archivo.
 - **Guías** agrupadas por carpeta, leídas del repo [guias](https://github.com/nodo-cero-bo/guias).
 - **Avalanche Fuji:** datos de la red (chainId 43113, RPC, símbolo AVAX), Core Wallet, faucet, Avalanche Academy, Team1 LATAM y el explorador.
+- **Google Cloud:** Gemini en Vertex AI, Natural Language, Translation (con quechua, aimara y guaraní) y Cloud Storage; la credencial de n8n (Google Service Account API), qué hacer si tu equipo recibió créditos y el aviso de poner una alerta de presupuesto.
 - **Supabase y Clerk:** para qué sirven hoy, cómo crear la cuenta y la documentación clave.
+- **Ganadores y menciones:** los tres lugares y las dos menciones especiales, «Mejor uso de Avalanche Fuji» y «Mejor uso de Google Cloud».
 - **Agenda** del día, que marca «AHORA» con la hora de Bolivia mientras dura el evento.
 - **Mentoría**, **Registrá tu proyecto** (lleva al formulario del repo [proyectos](https://github.com/nodo-cero-bo/proyectos)), **Aliados** (n8n primero; Women Techmakers Santa Cruz; Supabase, Clerk, Team1 y Aspire Institute; la sede) y **Seguí construyendo**.
 
@@ -55,13 +59,13 @@ node tools/construir.mjs
 
 Necesita Node 22 o más nuevo y no instala nada. Qué hace:
 
-1. Lee cada `<categoria>/<id>/meta.json` y su `workflow.json`, y valida los campos (categoría, nivel, tecnologías, `probado`).
+1. Lee cada `<categoria>/<id>/meta.json` y su `workflow.json`, y valida los campos: categoría (`fundamentos`, `ia`, `avalanche`, `clerk`, `supabase`, `proyectos`, `google-cloud`, `casos`), nivel, tecnologías (`n8n`, `ia`, `avalanche`, `clerk`, `supabase`, `google-cloud`), `probado` y `lineas` (obligatorio: una o más de `ia`, `web3`, `apps`, `impacto`).
 2. Escribe `data/catalogo.json`, que lee la página, y `data/catalogo.js`, la misma copia para cuando se abre sin servidor.
 3. Copia cada `workflow.json` a `workflows/<id>.json`, para que «Copiar workflow» y «Descargar» funcionen desde el mismo dominio.
-4. Lee las guías del repo `guias` y pinta sus tarjetas en `index.html`, agrupadas por carpeta, junto con los enlaces de «Empezá en 3 pasos».
+4. Lee las guías del repo `guias` y pinta sus tarjetas en `index.html`, agrupadas por carpeta (el glosario y las preguntas frecuentes van juntos en «Ayuda»). Además apunta cada enlace con `data-guia` (Empezá en 3 pasos, Aprendé sin miedo, las 4 líneas, Google Cloud) a la guía que encuentra, y avisa si alguno apunta a una guía que no está.
 5. Si cambió la organización en `config.json`, actualiza los enlaces.
 
-Los workflows de la lista oficial que todavía no existen quedan en el catálogo con la etiqueta «pronto» y sus botones apagados. Para dejarlos afuera:
+Los workflows de la lista oficial que todavía no existen quedan en el catálogo con la etiqueta «pronto» y sus botones apagados (los opcionales, como `54-bigquery-respuestas`, entran nada más si existen). Para dejarlos afuera:
 
 ```bash
 node tools/construir.mjs --sin-pendientes

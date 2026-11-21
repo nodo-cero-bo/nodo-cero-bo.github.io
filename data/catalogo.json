@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-21T07:33:50.656Z",
+  "generado": "2026-11-21T09:59:12.669Z",
   "provisional": false,
   "config": {
     "org": "nodo-cero-bo",
@@ -14,8 +14,8 @@
     "rama": "main"
   },
   "repo_workflows": "https://github.com/nodo-cero-bo/workflows",
-  "total": 23,
-  "disponibles": 23,
+  "total": 36,
+  "disponibles": 36,
   "workflows": [
     {
       "id": "01-hola-n8n",
@@ -26,6 +26,12 @@
       "minutos": 10,
       "tecnologias": [
         "n8n"
+      ],
+      "lineas": [
+        "ia",
+        "web3",
+        "apps",
+        "impacto"
       ],
       "credenciales": [],
       "aprendes": [
@@ -55,6 +61,12 @@
       "minutos": 10,
       "tecnologias": [
         "n8n"
+      ],
+      "lineas": [
+        "ia",
+        "web3",
+        "apps",
+        "impacto"
       ],
       "credenciales": [],
       "aprendes": [
@@ -86,6 +98,12 @@
         "n8n",
         "avalanche"
       ],
+      "lineas": [
+        "ia",
+        "web3",
+        "apps",
+        "impacto"
+      ],
       "credenciales": [],
       "aprendes": [
         "Método, URL, query parameters, headers y body JSON",
@@ -114,6 +132,12 @@
       "minutos": 10,
       "tecnologias": [
         "n8n"
+      ],
+      "lineas": [
+        "ia",
+        "web3",
+        "apps",
+        "impacto"
       ],
       "credenciales": [],
       "aprendes": [
@@ -144,6 +168,10 @@
       "tecnologias": [
         "n8n",
         "ia"
+      ],
+      "lineas": [
+        "ia",
+        "impacto"
       ],
       "credenciales": [
         {
@@ -181,6 +209,9 @@
         "n8n",
         "avalanche"
       ],
+      "lineas": [
+        "web3"
+      ],
       "credenciales": [],
       "aprendes": [
         "HTTP Request con JSON-RPC",
@@ -209,6 +240,9 @@
       "tecnologias": [
         "n8n",
         "avalanche"
+      ],
+      "lineas": [
+        "web3"
       ],
       "credenciales": [],
       "aprendes": [
@@ -239,6 +273,9 @@
         "n8n",
         "avalanche"
       ],
+      "lineas": [
+        "web3"
+      ],
       "credenciales": [],
       "aprendes": [
         "HTTP Request con JSON-RPC",
@@ -268,6 +305,10 @@
         "n8n",
         "avalanche",
         "supabase"
+      ],
+      "lineas": [
+        "web3",
+        "apps"
       ],
       "credenciales": [
         {
@@ -304,6 +345,9 @@
         "n8n",
         "avalanche"
       ],
+      "lineas": [
+        "web3"
+      ],
       "credenciales": [],
       "aprendes": [
         "Schedule Trigger",
@@ -332,6 +376,9 @@
       "tecnologias": [
         "n8n",
         "avalanche"
+      ],
+      "lineas": [
+        "web3"
       ],
       "credenciales": [],
       "aprendes": [
@@ -362,6 +409,9 @@
         "n8n",
         "avalanche"
       ],
+      "lineas": [
+        "web3"
+      ],
       "credenciales": [],
       "aprendes": [
         "eth_getLogs con filtro por contrato, topic0 y rango de bloques",
@@ -391,6 +441,9 @@
         "n8n",
         "clerk",
         "supabase"
+      ],
+      "lineas": [
+        "apps"
       ],
       "credenciales": [
         {
@@ -428,6 +481,9 @@
         "n8n",
         "clerk",
         "supabase"
+      ],
+      "lineas": [
+        "apps"
       ],
       "credenciales": [
         {
@@ -470,6 +526,9 @@
         "n8n",
         "clerk"
       ],
+      "lineas": [
+        "apps"
+      ],
       "credenciales": [
         {
           "nombre": "Clerk Backend API",
@@ -506,6 +565,10 @@
         "n8n",
         "supabase"
       ],
+      "lineas": [
+        "apps",
+        "impacto"
+      ],
       "credenciales": [
         {
           "nombre": "Supabase API",
@@ -539,6 +602,9 @@
       "tecnologias": [
         "n8n",
         "supabase"
+      ],
+      "lineas": [
+        "apps"
       ],
       "credenciales": [
         {
@@ -575,6 +641,9 @@
         "n8n",
         "ia",
         "supabase"
+      ],
+      "lineas": [
+        "ia"
       ],
       "credenciales": [
         {
@@ -616,6 +685,10 @@
         "n8n",
         "ia",
         "supabase"
+      ],
+      "lineas": [
+        "ia",
+        "impacto"
       ],
       "credenciales": [
         {
@@ -663,6 +736,11 @@
         "ia",
         "supabase"
       ],
+      "lineas": [
+        "ia",
+        "apps",
+        "impacto"
+      ],
       "credenciales": [
         {
           "nombre": "Supabase API",
@@ -709,6 +787,10 @@
         "ia",
         "avalanche"
       ],
+      "lineas": [
+        "ia",
+        "web3"
+      ],
       "credenciales": [
         {
           "nombre": "Google Gemini(PaLM) Api",
@@ -747,6 +829,10 @@
         "clerk",
         "supabase"
       ],
+      "lineas": [
+        "web3",
+        "apps"
+      ],
       "credenciales": [
         {
           "nombre": "Supabase API",
@@ -775,13 +861,16 @@
     {
       "id": "42-reporte-kpis",
       "titulo": "Reporte de KPIs del evento",
-      "resumen": "Cuenta los proyectos por tecnología, trae el tráfico de los repos y verifica los hashes en Fuji: un informe listo para los aliados.",
+      "resumen": "Cuenta los proyectos por tecnología, línea y mención especial, trae el tráfico de los repos y verifica los hashes en Fuji: un informe listo para los aliados.",
       "categoria": "proyectos",
       "nivel": "intermedio",
       "minutos": 20,
       "tecnologias": [
         "n8n",
         "avalanche"
+      ],
+      "lineas": [
+        "apps"
       ],
       "credenciales": [
         {
@@ -792,7 +881,7 @@
       ],
       "aprendes": [
         "HTTP Request con credencial y paginación",
-        "Leer formularios de issues de GitHub con JavaScript",
+        "Leer formularios de issues de GitHub con JavaScript: casillas y listas desplegables",
         "La API de tráfico de GitHub: visitas y clones",
         "Verificar hashes en Fuji por lotes",
         "IF para saltear un paso y Schedule Trigger semanal"
@@ -805,6 +894,510 @@
       "archivo": "workflows/42-reporte-kpis.json",
       "nodos": 13,
       "notas": 5,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "50-vertex-ai-asistente",
+      "titulo": "Asistente con Gemini en Vertex AI",
+      "resumen": "Un asistente que conversa en el chat de n8n con Gemini en Vertex AI, la IA de Google Cloud, recuerda la conversación y ayuda a tu equipo a armar su proyecto.",
+      "categoria": "google-cloud",
+      "nivel": "intermedio",
+      "minutos": 30,
+      "tecnologias": [
+        "n8n",
+        "ia",
+        "google-cloud"
+      ],
+      "lineas": [
+        "ia",
+        "impacto"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Google Service Account API",
+          "tipo_n8n": "googleApi",
+          "como": "Clave JSON de una cuenta de servicio con el rol Agent Platform User (roles/aiplatform.user): client_email en Service Account Email, private_key en Private Key y Region en Global."
+        }
+      ],
+      "aprendes": [
+        "Google Vertex Chat Model con una cuenta de servicio",
+        "AI Agent con mensaje de sistema y memoria",
+        "Un nodo de configuración que leen los demás con una expresión",
+        "Modelos y regiones de Gemini en Vertex AI",
+        "Cuidar los costos de la IA en Google Cloud"
+      ],
+      "probado": "auditado",
+      "orden": 50,
+      "ruta": "50-google-cloud/50-vertex-ai-asistente",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/50-google-cloud/50-vertex-ai-asistente",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/50-google-cloud/50-vertex-ai-asistente/workflow.json",
+      "archivo": "workflows/50-vertex-ai-asistente.json",
+      "nodos": 5,
+      "notas": 6,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "51-sentimiento-natural-language",
+      "titulo": "Opiniones con Cloud Natural Language",
+      "resumen": "Un formulario de opiniones que Google Cloud Natural Language analiza: el tono (positivo, negativo, neutral o mixto) y de qué o de quién se habla.",
+      "categoria": "google-cloud",
+      "nivel": "inicial",
+      "minutos": 20,
+      "tecnologias": [
+        "n8n",
+        "google-cloud"
+      ],
+      "lineas": [
+        "ia",
+        "impacto"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Google Service Account API",
+          "tipo_n8n": "googleApi",
+          "como": "Clave JSON de una cuenta de servicio con el rol Service Usage Consumer: client_email en Service Account Email y private_key en Private Key. Activá Set up for use in HTTP Request node con el scope https://www.googleapis.com/auth/cloud-platform."
+        }
+      ],
+      "aprendes": [
+        "Llamar una API de Google Cloud con HTTP Request y una cuenta de servicio",
+        "Sentimiento y entidades con Natural Language v2",
+        "Pasar números a palabras simples en un Code node",
+        "Manejar errores con la salida de error de un nodo",
+        "Página final de un formulario con HTML"
+      ],
+      "probado": "auditado",
+      "orden": 51,
+      "ruta": "50-google-cloud/51-sentimiento-natural-language",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/50-google-cloud/51-sentimiento-natural-language",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/50-google-cloud/51-sentimiento-natural-language/workflow.json",
+      "archivo": "workflows/51-sentimiento-natural-language.json",
+      "nodos": 6,
+      "notas": 5,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "52-traducir-y-resumir",
+      "titulo": "Resumir y traducir con Google Cloud",
+      "resumen": "Pegás un aviso en español y te devuelve un resumen simple hecho por Gemini en Vertex AI y su traducción con Cloud Translation al quechua, al aimara, al guaraní, al inglés o al portugués.",
+      "categoria": "google-cloud",
+      "nivel": "intermedio",
+      "minutos": 30,
+      "tecnologias": [
+        "n8n",
+        "ia",
+        "google-cloud"
+      ],
+      "lineas": [
+        "ia",
+        "impacto"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Google Service Account API",
+          "tipo_n8n": "googleApi",
+          "como": "Clave JSON de una cuenta de servicio con los roles Cloud Translation API User y Agent Platform User: client_email en Service Account Email, private_key en Private Key y Region en Global."
+        }
+      ],
+      "aprendes": [
+        "Google Translate con una cuenta de servicio",
+        "Quechua, aimara y guaraní en Cloud Translation",
+        "Basic LLM Chain con Gemini en Vertex AI",
+        "Pasar una opción del formulario a un código con una expresión",
+        "Limpiar el HTML que devuelve la traducción"
+      ],
+      "probado": "auditado",
+      "orden": 52,
+      "ruta": "50-google-cloud/52-traducir-y-resumir",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/50-google-cloud/52-traducir-y-resumir",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/50-google-cloud/52-traducir-y-resumir/workflow.json",
+      "archivo": "workflows/52-traducir-y-resumir.json",
+      "nodos": 7,
+      "notas": 6,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "53-archivos-a-cloud-storage",
+      "titulo": "Archivos a Cloud Storage",
+      "resumen": "Un formulario para subir un archivo que queda guardado en un bucket de Cloud Storage, con un nombre ordenado y un enlace para abrirlo.",
+      "categoria": "google-cloud",
+      "nivel": "inicial",
+      "minutos": 25,
+      "tecnologias": [
+        "n8n",
+        "google-cloud"
+      ],
+      "lineas": [
+        "apps",
+        "impacto"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Google Service Account API",
+          "tipo_n8n": "googleApi",
+          "como": "Clave JSON de una cuenta de servicio con el rol Storage Object User sobre el bucket: client_email en Service Account Email y private_key en Private Key."
+        }
+      ],
+      "aprendes": [
+        "Formulario con archivo y datos binarios en n8n",
+        "Google Cloud Storage con una cuenta de servicio",
+        "Nombres de objeto ordenados por fecha",
+        "URL autenticada y dirección gs://",
+        "Permisos sobre un bucket y no sobre todo el proyecto"
+      ],
+      "probado": "auditado",
+      "orden": 53,
+      "ruta": "50-google-cloud/53-archivos-a-cloud-storage",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/50-google-cloud/53-archivos-a-cloud-storage",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/50-google-cloud/53-archivos-a-cloud-storage/workflow.json",
+      "archivo": "workflows/53-archivos-a-cloud-storage.json",
+      "nodos": 8,
+      "notas": 7,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "54-bigquery-respuestas",
+      "titulo": "Respuestas en BigQuery",
+      "resumen": "Una encuesta que guarda cada respuesta como fila en BigQuery y enseguida consulta con SQL cuántas respuestas hay por línea y su promedio.",
+      "categoria": "google-cloud",
+      "nivel": "intermedio",
+      "minutos": 30,
+      "tecnologias": [
+        "n8n",
+        "google-cloud"
+      ],
+      "lineas": [
+        "apps",
+        "impacto"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Google Service Account API",
+          "tipo_n8n": "googleApi",
+          "como": "Clave JSON de una cuenta de servicio con BigQuery Data Editor sobre el dataset y BigQuery Job User en el proyecto: client_email en Service Account Email y private_key en Private Key."
+        }
+      ],
+      "aprendes": [
+        "Google BigQuery con una cuenta de servicio",
+        "Crear un dataset y una tabla con SQL",
+        "INSERT con parámetros, sin inyección de SQL",
+        "Consultar con SQL y expresiones de n8n",
+        "Frenar costos con Maximum Bytes Billed"
+      ],
+      "probado": "auditado",
+      "orden": 54,
+      "ruta": "50-google-cloud/54-bigquery-respuestas",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/50-google-cloud/54-bigquery-respuestas",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/50-google-cloud/54-bigquery-respuestas/workflow.json",
+      "archivo": "workflows/54-bigquery-respuestas.json",
+      "nodos": 9,
+      "notas": 7,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "60-alerta-del-clima",
+      "titulo": "Alerta del clima en Santa Cruz",
+      "resumen": "Cada mañana lee el pronóstico de Santa Cruz de la Sierra y arma una alerta si viene lluvia fuerte, tormenta o calor extremo.",
+      "categoria": "casos",
+      "nivel": "inicial",
+      "minutos": 15,
+      "tecnologias": [
+        "n8n"
+      ],
+      "lineas": [
+        "impacto"
+      ],
+      "credenciales": [],
+      "aprendes": [
+        "Schedule Trigger y la zona horaria del workflow",
+        "HTTP Request con parámetros en la URL",
+        "Leer listas de una API con un Code node",
+        "Probar caminos con datos simulados"
+      ],
+      "probado": "ejecutado",
+      "orden": 60,
+      "ruta": "60-casos-de-uso/60-alerta-del-clima",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/60-casos-de-uso/60-alerta-del-clima",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/60-casos-de-uso/60-alerta-del-clima/workflow.json",
+      "archivo": "workflows/60-alerta-del-clima.json",
+      "nodos": 8,
+      "notas": 7,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "61-tipo-de-cambio",
+      "titulo": "Tipo de cambio: dólar a bolivianos",
+      "resumen": "La cotización del día del dólar en bolivianos desde una API pública sin clave, con tu propia API para convertir montos.",
+      "categoria": "casos",
+      "nivel": "inicial",
+      "minutos": 15,
+      "tecnologias": [
+        "n8n"
+      ],
+      "lineas": [
+        "apps",
+        "impacto"
+      ],
+      "credenciales": [],
+      "aprendes": [
+        "Varios disparadores para el mismo camino",
+        "Expresiones con ?. y ?? para valores por defecto",
+        "Validar un pedido y responder 200 o 400",
+        "Respetar los límites y la atribución de una API pública"
+      ],
+      "probado": "ejecutado",
+      "orden": 61,
+      "ruta": "60-casos-de-uso/61-tipo-de-cambio",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/60-casos-de-uso/61-tipo-de-cambio",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/60-casos-de-uso/61-tipo-de-cambio/workflow.json",
+      "archivo": "workflows/61-tipo-de-cambio.json",
+      "nodos": 8,
+      "notas": 6,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "62-noticias-rss",
+      "titulo": "Noticias por RSS: tu resumen del día",
+      "resumen": "Lee un RSS de noticias en español, se queda con las que hablan de lo que te importa y arma un resumen con enlaces.",
+      "categoria": "casos",
+      "nivel": "inicial",
+      "minutos": 15,
+      "tecnologias": [
+        "n8n",
+        "ia"
+      ],
+      "lineas": [
+        "ia",
+        "impacto"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Google Gemini(PaLM) Api (opcional)",
+          "tipo_n8n": "googlePalmApi",
+          "como": "Nada más para el resumen con IA, que viene apagado: una clave gratis de Google AI Studio (Get API key)."
+        }
+      ],
+      "aprendes": [
+        "Leer un RSS con RSS Read",
+        "Buscar palabras enteras sin importar tildes ni mayúsculas",
+        "Filter, Sort y Limit sin código",
+        "Always Output Data para cuando no queda nada",
+        "Prender y apagar nodos"
+      ],
+      "probado": "ejecutado",
+      "orden": 62,
+      "ruta": "60-casos-de-uso/62-noticias-rss",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/60-casos-de-uso/62-noticias-rss",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/60-casos-de-uso/62-noticias-rss/workflow.json",
+      "archivo": "workflows/62-noticias-rss.json",
+      "nodos": 11,
+      "notas": 7,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "63-leer-una-pagina-web",
+      "titulo": "Leer una página web",
+      "resumen": "Descarga una página de práctica, encuentra cada producto con selectores CSS y arma una tabla limpia con título, precio y estrellas.",
+      "categoria": "casos",
+      "nivel": "intermedio",
+      "minutos": 20,
+      "tecnologias": [
+        "n8n"
+      ],
+      "lineas": [
+        "apps",
+        "impacto"
+      ],
+      "credenciales": [],
+      "aprendes": [
+        "Descargar el HTML de una página con HTTP Request",
+        "Selectores CSS con el nodo HTML, en dos pasos",
+        "Leer texto o atributos de una etiqueta",
+        "Respetar robots.txt y los términos de un sitio"
+      ],
+      "probado": "ejecutado",
+      "orden": 63,
+      "ruta": "60-casos-de-uso/63-leer-una-pagina-web",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/60-casos-de-uso/63-leer-una-pagina-web",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/60-casos-de-uso/63-leer-una-pagina-web/workflow.json",
+      "archivo": "workflows/63-leer-una-pagina-web.json",
+      "nodos": 8,
+      "notas": 7,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "64-limpiar-una-lista",
+      "titulo": "Limpiar una lista (CSV)",
+      "resumen": "Subí un CSV desordenado y descargalo limpio: nombres prolijos, correos revisados, sin repetidos y ordenado.",
+      "categoria": "casos",
+      "nivel": "inicial",
+      "minutos": 20,
+      "tecnologias": [
+        "n8n"
+      ],
+      "lineas": [
+        "apps",
+        "impacto"
+      ],
+      "credenciales": [],
+      "aprendes": [
+        "Leer y crear archivos CSV con Extract from File y Convert to File",
+        "Limpiar textos y revisar la forma de un correo en un Code node",
+        "Remove Duplicates y Sort sin código",
+        "Un formulario que recibe un archivo y devuelve otro"
+      ],
+      "probado": "ejecutado",
+      "orden": 64,
+      "ruta": "60-casos-de-uso/64-limpiar-una-lista",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/60-casos-de-uso/64-limpiar-una-lista",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/60-casos-de-uso/64-limpiar-una-lista/workflow.json",
+      "archivo": "workflows/64-limpiar-una-lista.json",
+      "nodos": 15,
+      "notas": 7,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "65-clasificar-mensajes-con-ia",
+      "titulo": "Clasificar mensajes con IA",
+      "resumen": "La IA lee cada mensaje y decide si es una consulta, un reclamo o una idea, y cada tipo sigue su propio camino.",
+      "categoria": "casos",
+      "nivel": "inicial",
+      "minutos": 20,
+      "tecnologias": [
+        "n8n",
+        "ia"
+      ],
+      "lineas": [
+        "ia",
+        "impacto"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Google Gemini(PaLM) Api",
+          "tipo_n8n": "googlePalmApi",
+          "como": "Una clave gratis de Google AI Studio (aistudio.google.com, Get API key), en la credencial Google Gemini(PaLM) Api."
+        }
+      ],
+      "aprendes": [
+        "Text Classifier: una salida por categoría",
+        "Escribir buenas descripciones de categorías",
+        "La salida Other para lo que no encaja",
+        "Merge en modo Append para volver a juntar caminos"
+      ],
+      "probado": "auditado",
+      "orden": 65,
+      "ruta": "60-casos-de-uso/65-clasificar-mensajes-con-ia",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/60-casos-de-uso/65-clasificar-mensajes-con-ia",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/60-casos-de-uso/65-clasificar-mensajes-con-ia/workflow.json",
+      "archivo": "workflows/65-clasificar-mensajes-con-ia.json",
+      "nodos": 14,
+      "notas": 6,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "66-bot-de-telegram-con-ia",
+      "titulo": "Bot de Telegram con IA",
+      "resumen": "Tu propio bot de Telegram que responde con un agente de IA y recuerda la conversación de cada chat.",
+      "categoria": "casos",
+      "nivel": "intermedio",
+      "minutos": 25,
+      "tecnologias": [
+        "n8n",
+        "ia"
+      ],
+      "lineas": [
+        "ia",
+        "impacto"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Telegram API",
+          "tipo_n8n": "telegramApi",
+          "como": "En Telegram, @BotFather → /newbot: el token que te da va en Access Token."
+        },
+        {
+          "nombre": "Google Gemini(PaLM) Api",
+          "tipo_n8n": "googlePalmApi",
+          "como": "Una clave gratis de Google AI Studio (aistudio.google.com, Get API key), en la credencial Google Gemini(PaLM) Api."
+        }
+      ],
+      "aprendes": [
+        "Crear un bot con @BotFather y conectarlo a n8n",
+        "Telegram Trigger y Send a text message",
+        "AI Agent con memoria separada por chat",
+        "Probar un bot sin Telegram con un mensaje de prueba"
+      ],
+      "probado": "auditado",
+      "orden": 66,
+      "ruta": "60-casos-de-uso/66-bot-de-telegram-con-ia",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/60-casos-de-uso/66-bot-de-telegram-con-ia",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/60-casos-de-uso/66-bot-de-telegram-con-ia/workflow.json",
+      "archivo": "workflows/66-bot-de-telegram-con-ia.json",
+      "nodos": 12,
+      "notas": 5,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "67-reportes-ambientales",
+      "titulo": "Reportes ambientales ciudadanos",
+      "resumen": "Un formulario ciudadano con foto: la IA clasifica el reporte y le pone urgencia, Supabase lo guarda y, si es urgente, se avisa al equipo.",
+      "categoria": "casos",
+      "nivel": "intermedio",
+      "minutos": 35,
+      "tecnologias": [
+        "n8n",
+        "ia",
+        "supabase"
+      ],
+      "lineas": [
+        "ia",
+        "apps",
+        "impacto"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Supabase API",
+          "tipo_n8n": "supabaseApi",
+          "como": "En Supabase, Project Settings → API Keys: la URL del proyecto va en Host y una clave secreta (sb_secret_...) en Secret Key. Antes, corré supabase/sql/02_reportes.sql."
+        },
+        {
+          "nombre": "Google Gemini(PaLM) Api",
+          "tipo_n8n": "googlePalmApi",
+          "como": "Una clave gratis de Google AI Studio (aistudio.google.com, Get API key), en la credencial Google Gemini(PaLM) Api."
+        },
+        {
+          "nombre": "Telegram API (opcional)",
+          "tipo_n8n": "telegramApi",
+          "como": "Nada más para el aviso, que viene apagado: el token de tu bot de @BotFather en Access Token."
+        }
+      ],
+      "aprendes": [
+        "Un formulario con archivo opcional",
+        "Information Extractor para clasificar y poner urgencia",
+        "Subir una foto a Supabase Storage con HTTP Request y la credencial de Supabase",
+        "Guardar una fila con datos de varios nodos",
+        "Cuidar los datos de quien reporta"
+      ],
+      "probado": "auditado",
+      "orden": 67,
+      "ruta": "60-casos-de-uso/67-reportes-ambientales",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/60-casos-de-uso/67-reportes-ambientales",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/60-casos-de-uso/67-reportes-ambientales/workflow.json",
+      "archivo": "workflows/67-reportes-ambientales.json",
+      "nodos": 15,
+      "notas": 8,
       "disponible": true,
       "provisional": false
     }

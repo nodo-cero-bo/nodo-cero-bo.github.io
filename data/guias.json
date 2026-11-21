@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-21T07:33:50.674Z",
+  "generado": "2026-11-21T09:59:12.685Z",
   "provisional": false,
   "repo": "https://github.com/nodo-cero-bo/guias",
   "guias": [
@@ -53,11 +53,67 @@
       "url": "https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/07-clave-gemini.md"
     },
     {
+      "titulo": "Google Cloud y créditos",
+      "resumen": "Creá un proyecto en Google Cloud, sumá los créditos si tu equipo los recibió, poné una alerta de presupuesto…",
+      "ruta": "00-empezar/08-google-cloud.md",
+      "grupo": "00-empezar",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/08-google-cloud.md"
+    },
+    {
       "titulo": "Recursos de Avalanche y Team1",
       "resumen": "Todo lo de Avalanche Fuji en un lugar: Core Wallet, el faucet, el explorador, Avalanche Academy, Team1, la…",
       "ruta": "avalanche/recursos.md",
       "grupo": "avalanche",
       "url": "https://github.com/nodo-cero-bo/guias/blob/main/avalanche/recursos.md"
+    },
+    {
+      "titulo": "Glosario",
+      "resumen": "Cada palabra nueva de la hackathon explicada en una a tres frases simples, con un ejemplo.",
+      "ruta": "glosario.md",
+      "grupo": "ayuda",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/glosario.md"
+    },
+    {
+      "titulo": "Recursos de Google Cloud",
+      "resumen": "Qué servicios de Google Cloud se conectan hoy con n8n, con qué nodo, credencial y permiso, cuánto cuestan…",
+      "ruta": "google-cloud/recursos.md",
+      "grupo": "google-cloud",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/google-cloud/recursos.md"
+    },
+    {
+      "titulo": "Línea: Apps con login y datos",
+      "resumen": "El circuito de una app real: las personas inician sesión con Clerk, n8n hace de backend y verifica quién pide…",
+      "ruta": "lineas/apps.md",
+      "grupo": "lineas",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/lineas/apps.md"
+    },
+    {
+      "titulo": "Línea: IA para tu comunidad",
+      "resumen": "Agentes y asistentes de IA que responden, resumen, clasifican y traducen para una comunidad real, con Gemini…",
+      "ruta": "lineas/ia.md",
+      "grupo": "lineas",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/lineas/ia.md"
+    },
+    {
+      "titulo": "Línea: Impacto social y ambiental",
+      "resumen": "Problemas reales de Santa Cruz y Bolivia, resueltos con n8n: reportes ciudadanos, alertas del clima, educación…",
+      "ruta": "lineas/impacto.md",
+      "grupo": "lineas",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/lineas/impacto.md"
+    },
+    {
+      "titulo": "Línea: Web3 con Avalanche Fuji",
+      "resumen": "Leer la red Fuji de Avalanche, verificar pagos, desplegar un contrato propio, escuchar sus eventos y armar…",
+      "ruta": "lineas/web3.md",
+      "grupo": "lineas",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/lineas/web3.md"
+    },
+    {
+      "titulo": "Preguntas frecuentes",
+      "resumen": "Las dudas y los miedos de siempre, respondidos sin vueltas: si rompés algo, si te van a cobrar, si hace falta…",
+      "ruta": "preguntas-frecuentes.md",
+      "grupo": "ayuda",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/preguntas-frecuentes.md"
     },
     {
       "titulo": "Asistente con IA para tu comunidad",
@@ -114,6 +170,83 @@
       "ruta": "proyectos/08-automatiza-tu-emprendimiento.md",
       "grupo": "proyectos",
       "url": "https://github.com/nodo-cero-bo/guias/blob/main/proyectos/08-automatiza-tu-emprendimiento.md"
+    },
+    {
+      "titulo": "Traducí y resumí con Google Cloud",
+      "resumen": "Un aviso largo en español se vuelve tres frases simples y llega en quechua, en aimara o en guaraní: Gemini en…",
+      "ruta": "proyectos/09-traducir-y-resumir-con-google-cloud.md",
+      "grupo": "proyectos",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/proyectos/09-traducir-y-resumir-con-google-cloud.md"
+    },
+    {
+      "titulo": "Reportes ambientales con foto",
+      "resumen": "Un formulario público para reportar basura, quemas, agua o árboles con una foto: la IA clasifica cada reporte…",
+      "ruta": "proyectos/10-reportes-ambientales-con-foto.md",
+      "grupo": "proyectos",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/proyectos/10-reportes-ambientales-con-foto.md"
+    },
+    {
+      "titulo": "Parte 1: Tu cuenta de n8n",
+      "resumen": "Creá tu cuenta de prueba en n8n Cloud, esperá a que arranque tu espacio y dá una primera vuelta por el editor.",
+      "ruta": "tutorial/01-tu-cuenta-de-n8n.md",
+      "grupo": "tutorial",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/tutorial/01-tu-cuenta-de-n8n.md"
+    },
+    {
+      "titulo": "Parte 2: Tu primer workflow",
+      "resumen": "Traé a tu n8n el workflow 01-hola-n8n, ejecutalo con un botón y mirá qué hizo cada paso.",
+      "ruta": "tutorial/02-tu-primer-workflow.md",
+      "grupo": "tutorial",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/tutorial/02-tu-primer-workflow.md"
+    },
+    {
+      "titulo": "Parte 3: Items y expresiones",
+      "resumen": "Las dos ideas que más vas a usar en n8n, aprendidas tocando el workflow de la parte 2: qué es un item y cómo…",
+      "ruta": "tutorial/03-items-y-expresiones.md",
+      "grupo": "tutorial",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/tutorial/03-items-y-expresiones.md"
+    },
+    {
+      "titulo": "Parte 4: Hablar con una API",
+      "resumen": "Con el nodo HTTP Request, n8n le pide datos a cualquier servicio de internet.",
+      "ruta": "tutorial/04-hablar-con-una-api.md",
+      "grupo": "tutorial",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/tutorial/04-hablar-con-una-api.md"
+    },
+    {
+      "titulo": "Parte 5: El desafío del día",
+      "resumen": "Dado el hash de una transacción de Avalanche Fuji, n8n te dice quién la envió, a quién, cuánto, cuánto costó…",
+      "ruta": "tutorial/05-el-desafio-del-dia.md",
+      "grupo": "tutorial",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/tutorial/05-el-desafio-del-dia.md"
+    },
+    {
+      "titulo": "Parte 6: Tu agente con Gemini",
+      "resumen": "Sacá una clave gratis de Gemini, conectala a n8n y conversá con tu primer agente de IA: el workflow…",
+      "ruta": "tutorial/06-tu-agente-con-gemini.md",
+      "grupo": "tutorial",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/tutorial/06-tu-agente-con-gemini.md"
+    },
+    {
+      "titulo": "Parte 7: Tu propio flujo",
+      "resumen": "Juntá piezas de los workflows que ya probaste en uno nuevo: un formulario donde cualquiera pega el hash de una…",
+      "ruta": "tutorial/07-tu-propio-flujo.md",
+      "grupo": "tutorial",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/tutorial/07-tu-propio-flujo.md"
+    },
+    {
+      "titulo": "Parte 8: Tu demo",
+      "resumen": "Prepará la demo de las 15:00: qué mostrar y en qué orden, el canvas prolijo, el plan B por si falla la red, el…",
+      "ruta": "tutorial/08-tu-demo.md",
+      "grupo": "tutorial",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/tutorial/08-tu-demo.md"
+    },
+    {
+      "titulo": "Ganadores y menciones",
+      "resumen": "En Nodo Cero hay tres equipos ganadores y dos menciones especiales: «Mejor uso de Avalanche Fuji» y «Mejor uso…",
+      "ruta": "ganadores-y-menciones.md",
+      "grupo": "",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/ganadores-y-menciones.md"
     },
     {
       "titulo": "Banco de ideas",

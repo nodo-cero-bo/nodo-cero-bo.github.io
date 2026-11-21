@@ -1,6 +1,6 @@
 // Nodo Cero · Hackathon n8n Bolivia. JavaScript mínimo, sin dependencias.
-// Catálogo de workflows (filtros, copiar, descargar), guías, agenda en vivo,
-// chispas de la portada y respeto por prefers-reduced-motion.
+// Catálogo de workflows (filtros por línea, tecnología y nivel; copiar, descargar), las 4 líneas,
+// guías, agenda en vivo, chispas de la portada y respeto por prefers-reduced-motion.
 (() => {
   'use strict';
 
@@ -80,14 +80,17 @@
   });
 
   // ================================================================ catálogo
-  const CATEGORIA = { fundamentos: 'Fundamentos', ia: 'IA', avalanche: 'Avalanche Fuji', clerk: 'Clerk', supabase: 'Supabase', proyectos: 'Proyecto completo' };
-  const TECNOLOGIA = { n8n: 'n8n', ia: 'IA', avalanche: 'AVALANCHE', clerk: 'CLERK', supabase: 'SUPABASE' };
+  const CATEGORIA = { fundamentos: 'Fundamentos', ia: 'IA', avalanche: 'Avalanche Fuji', clerk: 'Clerk', supabase: 'Supabase', proyectos: 'Proyecto completo', 'google-cloud': 'Google Cloud', casos: 'Caso de uso' };
+  const TECNOLOGIA = { n8n: 'n8n', ia: 'IA', avalanche: 'AVALANCHE', clerk: 'CLERK', supabase: 'SUPABASE', 'google-cloud': 'GOOGLE CLOUD' };
+  // Las 4 líneas de la hackathon: nombre corto para los chips de cada tarjeta y nombre completo para el título.
+  const LINEA = { ia: 'IA', web3: 'WEB3', apps: 'APPS', impacto: 'IMPACTO' };
+  const LINEA_NOMBRE = { ia: 'IA para tu comunidad', web3: 'Web3 con Avalanche Fuji', apps: 'Apps con login y datos', impacto: 'Impacto social y ambiental' };
   const NIVEL = { inicial: 'Inicial', intermedio: 'Intermedio', avanzado: 'Avanzado' };
   const ICONO_OK = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.4 4.8 9 10 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
   const lista = $('#catalogo');
   const estado = $('#catalogo-estado');
-  const filtros = { tec: '', nivel: '', sinCredenciales: false };
+  const filtros = { linea: '', tec: '', nivel: '', sinCredenciales: false };
   let tarjetas = [];
 
   function el(etiqueta, atributos = {}, ...hijos) {
@@ -142,6 +145,15 @@
 
     const tec = el('ul', { class: 'wf__tec', 'aria-label': 'Tecnologías' }, (w.tecnologias || []).map((t) => el('li', {}, TECNOLOGIA[t] || t)));
 
+    // Si sirve a las cuatro líneas, un chip en lugar de cuatro.
+    const lineasWf = (w.lineas || []).filter((l) => LINEA[l]);
+    const lineas = lineasWf.length
+      ? el('ul', { class: 'wf__lineas', 'aria-label': 'Líneas' },
+        lineasWf.length === Object.keys(LINEA).length
+          ? el('li', { title: 'Sirve para las cuatro líneas' }, 'LAS 4 LÍNEAS')
+          : lineasWf.map((l) => el('li', { title: `Línea ${LINEA_NOMBRE[l]}` }, LINEA[l])))
+      : null;
+
     const creds = (w.credenciales || []).length
       ? el('p', { class: 'wf__creds' }, el('b', {}, 'Credenciales: '), w.credenciales.map((c) => c.nombre).join(' · '))
       : el('p', { class: 'wf__creds' }, el('b', {}, 'Sin credenciales: '), 'lo importás y lo probás');
@@ -162,7 +174,7 @@
       el('div', { class: 'wf__cabeza' }, el('span', { class: 'wf__num' }, num), el('span', { class: 'wf__cat' }, CATEGORIA[w.categoria] || w.categoria), insignia),
       el('h3', { id: `wf-${w.id}` }, w.titulo),
       el('p', { class: 'wf__resumen' }, w.resumen),
-      datos, tec, creds,
+      datos, tec, lineas, creds,
       el('div', { class: 'wf__acciones' }, copiar, crudo, github, descargar));
     t._datos = w;
     return t;
@@ -176,11 +188,12 @@
 
   function aplicarFiltros() {
     let visibles = 0;
-    const sinFiltros = !filtros.tec && !filtros.nivel && !filtros.sinCredenciales;
+    const sinFiltros = !filtros.linea && !filtros.tec && !filtros.nivel && !filtros.sinCredenciales;
     const tope = sinFiltros && !verTodos ? (enCelu.matches ? 6 : 9) : Infinity;
     for (const t of tarjetas) {
       const w = t._datos;
-      const ok = (!filtros.tec || (w.tecnologias || []).includes(filtros.tec))
+      const ok = (!filtros.linea || (w.lineas || []).includes(filtros.linea))
+        && (!filtros.tec || (w.tecnologias || []).includes(filtros.tec))
         && (!filtros.nivel || w.nivel === filtros.nivel)
         && (!filtros.sinCredenciales || !(w.credenciales || []).length);
       t.classList.toggle('oculto-filtro', !ok || visibles >= tope);
@@ -236,11 +249,60 @@
     });
   });
   $('#filtro-sin-credenciales')?.addEventListener('change', (e) => { filtros.sinCredenciales = e.target.checked; aplicarFiltros(); });
-  $$('[data-filtrar]').forEach((a) => a.addEventListener('click', () => {
-    elegir('nivel', '');
+  // Los botones de otras secciones (Avalanche, Google Cloud, Supabase, Clerk, las 4 líneas) filtran el catálogo.
+  function limpiarFiltros() {
+    for (const g of ['linea', 'tec', 'nivel']) {
+      filtros[g] = '';
+      const contenedor = $(`.filtros__chips[data-filtro="${g}"]`);
+      if (contenedor) $$('.chip', contenedor).forEach((c) => c.setAttribute('aria-checked', String(c.dataset.valor === '')));
+    }
     const sc = $('#filtro-sin-credenciales'); if (sc) { sc.checked = false; filtros.sinCredenciales = false; }
-    elegir('tec', a.dataset.filtrar);
-  }));
+    tarjetas.forEach((x) => x.classList.toggle('wf--destacado', false));
+  }
+  $$('[data-filtrar]').forEach((a) => a.addEventListener('click', () => { limpiarFiltros(); elegir('tec', a.dataset.filtrar); }));
+  $$('[data-filtrar-linea]').forEach((a) => a.addEventListener('click', () => { limpiarFiltros(); elegir('linea', a.dataset.filtrarLinea); }));
+
+  // «Para arrancar» de cada línea: filtra por la línea, baja hasta la tarjeta del workflow y la ilumina.
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest?.('a[data-wf]');
+    if (!a || !tarjetas.length) return;
+    const t = tarjetas.find((x) => x._datos.id === a.dataset.wf);
+    if (!t) return; // sin catálogo, el enlace lleva a la sección y listo
+    e.preventDefault();
+    limpiarFiltros();
+    elegir('linea', a.dataset.linea || '');
+    void t.offsetWidth; // reinicia la animación si se toca dos veces seguidas
+    t.classList.add('wf--destacado');
+    t.scrollIntoView({ behavior: movimientoReducido.matches ? 'auto' : 'smooth', block: 'center' });
+    const titulo = $('h3', t);
+    if (titulo) { titulo.setAttribute('tabindex', '-1'); titulo.focus({ preventScroll: true }); }
+    history.replaceState(null, '', '#workflows');
+  });
+
+  // Con el catálogo cargado: los workflows nuevos reemplazan a los de respaldo en «Para arrancar»
+  // y cada botón de línea dice cuántos workflows tiene.
+  function completarLineas(todos) {
+    const porId = new Map(todos.map((w) => [w.id, w]));
+    $$('a[data-wf-preferido]').forEach((a) => {
+      const w = porId.get(a.dataset.wfPreferido);
+      if (!w || !w.disponible) return;
+      const repetido = $$('a[data-wf]', a.closest('ol') || document).some((x) => x !== a && x.dataset.wf === w.id);
+      if (repetido) return;
+      a.dataset.wf = w.id;
+      const num = $('.linea__wf-num', a); if (num) num.textContent = String(w.orden ?? w.id.slice(0, 2)).padStart(2, '0');
+      const tit = $('.linea__wf-titulo', a); if (tit) tit.textContent = w.titulo;
+    });
+    $$('[data-filtrar-linea]').forEach((b) => {
+      const n = todos.filter((w) => (w.lineas || []).includes(b.dataset.filtrarLinea)).length;
+      if (n) b.textContent = `Ver los ${n} workflows de esta línea`;
+    });
+    // Un filtro que hoy no encontraría nada (por ejemplo, una tecnología cuyos workflows todavía
+    // no se publicaron) no se muestra: así nadie llega a un catálogo vacío.
+    const hay = (campo, valor) => todos.some((w) => (w[campo] || []).includes(valor));
+    $$('.filtros__chips[data-filtro="tec"] .chip:not([data-valor=""])').forEach((c) => { c.hidden = !hay('tecnologias', c.dataset.valor); });
+    $$('.filtros__chips[data-filtro="linea"] .chip:not([data-valor=""])').forEach((c) => { c.hidden = !hay('lineas', c.dataset.valor); });
+    $$('[data-filtrar]').forEach((a) => { a.hidden = !hay('tecnologias', a.dataset.filtrar); });
+  }
 
   lista?.addEventListener('click', async (e) => {
     const b = e.target.closest('button[data-accion]');
@@ -282,6 +344,7 @@
     tarjetas = cat.workflows.map(tarjetaWorkflow);
     lista.replaceChildren(...tarjetas);
     aplicarFiltros();
+    completarLineas(cat.workflows);
   })();
 
   // ================================================================ agenda en vivo

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Nodo Cero · vista previa social</title>
+<!-- Fuente de assets/og.png (1200 × 630). Se renderiza con Chrome sin interfaz:
+     chrome-headless-shell --headless --window-size=1200,630 --screenshot=assets/og.png tools/og.html -->
+<style>
+  @font-face { font-family: "Inter Tight"; font-weight: 400; src: url("../assets/fuentes/InterTight-400.woff") format("woff"); }
+  @font-face { font-family: "Inter Tight"; font-weight: 500; src: url("../assets/fuentes/InterTight-500.woff") format("woff"); }
+  @font-face { font-family: "Geist Mono"; font-weight: 500; src: url("../assets/fuentes/GeistMono-500.woff") format("woff"); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; background: #191919; }
+  body { position: relative; color: #FAFAFA; font-family: "Inter Tight", sans-serif; font-feature-settings: "liga" 1; -webkit-font-smoothing: antialiased; }
+  .capa { position: absolute; inset: 0; }
+  .puntos { background-image: radial-gradient(circle, #464646 1.25px, transparent 1.75px); background-size: 24px 24px; background-position: 12px 12px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 85% at 66% 45%, #000 30%, transparent 90%); }
+  .halo-a { background: radial-gradient(circle 560px at 78% 30%, rgba(255,145,172,.34), rgba(255,145,172,.1) 50%, transparent 75%); }
+  .halo-b { background: radial-gradient(circle 520px at 0% 110%, rgba(135,0,60,.6), rgba(90,0,38,.2) 55%, transparent 80%); }
+  .rayos { background: conic-gradient(from 196deg at 80% -10%, transparent 0deg, rgba(255,145,172,.14) 6deg, transparent 13deg, transparent 22deg, rgba(255,208,217,.11) 26deg, transparent 31deg, transparent 40deg, rgba(255,145,172,.09) 47deg, transparent 56deg, transparent 360deg);
+    -webkit-mask-image: linear-gradient(to bottom, #000 20%, transparent 90%); }
+  .piso { left: -20%; right: -20%; top: auto; bottom: -4%; height: 44%; background-image: radial-gradient(circle, rgba(255,208,217,.7) 1.2px, transparent 1.7px); background-size: 24px 24px;
+    transform: perspective(460px) rotateX(70deg); transform-origin: 50% 100%; -webkit-mask-image: radial-gradient(ellipse 60% 90% at 62% 100%, #000 20%, transparent 75%); opacity: .45; }
+  .chispa { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(255,250,251,.95) 0 18%, rgba(255,145,172,.55) 30%, rgba(255,145,172,0) 70%); }
+  .texto { position: absolute; left: 64px; top: 56px; width: 600px; }
+  .capsulas { display: flex; padding-left: 4px; list-style: none; }
+  .capsula { position: relative; font-family: "Geist Mono", monospace; font-weight: 500; font-size: 15px; letter-spacing: .04em; line-height: 1; padding: 11px 18px; border-radius: 400px; background: #353535; white-space: nowrap; }
+  .capsula:first-child { background: #5A0026; }
+  .capsula::before, .capsula:last-child::after { content: ""; position: absolute; top: 50%; width: 9px; height: 9px; margin-top: -4.5px; border-radius: 50%; background: #FAFAFA; z-index: 1; }
+  .capsula::before { left: -4.5px; }
+  .capsula:last-child::after { right: -4.5px; }
+  .presenta { display: flex; align-items: center; gap: 14px; margin-top: 34px; }
+  .presenta span, .wtm span { font-family: "Geist Mono", monospace; font-size: 13px; letter-spacing: .06em; color: #A4A4A4; }
+  .presenta img { height: 40px; }
+  h1 { margin-top: 14px; font-weight: 500; font-size: 148px; line-height: .86; letter-spacing: -.02em;
+    background: linear-gradient(180deg, #FFFFFF 10%, #FAFAFA 50%, #FFD0D9 100%); -webkit-background-clip: text; color: transparent; filter: drop-shadow(0 0 30px rgba(255,145,172,.3)); }
+  h1 span { display: block; }
+  .sub { margin-top: 16px; font-size: 36px; font-weight: 500; letter-spacing: -.01em; }
+  .bajada { margin-top: 12px; font-size: 21px; color: rgba(250,250,250,.78); }
+  .bajada b { color: #FF91AC; font-weight: 500; }
+  .wtm { display: flex; align-items: center; gap: 14px; margin-top: 20px; }
+  .wtm img { height: 26px; }
+  .flujo-og { position: absolute; right: 28px; top: 34px; width: 560px; }
+  .flujo-og svg { width: 100%; height: auto; overflow: visible; }
+  .flujo__arista { fill: none; stroke: #FF91AC; stroke-width: 2.6; stroke-linecap: round; opacity: .92; }
+  .flujo__corriente { fill: none; stroke: #FFE8EC; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 1.5 17; opacity: .6; }
+  .flujo__etiqueta { fill: #FAFAFA; font-family: "Inter Tight", sans-serif; font-weight: 500; text-anchor: middle; }
+  .flujo__etiqueta--cero { fill: #FFD0D9; }
+  .url { position: absolute; right: 48px; bottom: 34px; font-family: "Geist Mono", monospace; font-weight: 500; font-size: 15px; letter-spacing: .04em; color: #FFD0D9; }
+  .grano { opacity: .07; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+</style>
+</head>
+<body>
+  <div class="capa puntos"></div>
+  <div class="capa halo-a"></div>
+  <div class="capa halo-b"></div>
+  <div class="capa rayos"></div>
+  <div class="capa piso"></div>
+  <div class="capa" id="chispas"></div>
+
+  <div class="flujo-og">
+<!-- heroe:inicio -->
+<svg class="flujo flujo--compu" id="flujo-compu" viewBox="0 0 640 600" role="img" aria-labelledby="flujo-compu-titulo">
+<title id="flujo-compu-titulo">Un workflow de n8n: del Nodo Cero salen conexiones rosas hacia un agente de IA, Supabase, Clerk y Avalanche Fuji, que se juntan en tu proyecto.</title>
+<defs>
+  <filter id="flujo-compu-desenfoque" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="16"/></filter>
+  <filter id="flujo-compu-brillo" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <linearGradient id="flujo-compu-nodo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E2E2E"/><stop offset="1" stop-color="#222222"/></linearGradient>
+</defs>
+<g class="flujo__halos"><rect x="14" y="230" width="140" height="140" rx="20" fill="#FF91AC" filter="url(#flujo-compu-desenfoque)" opacity="0.45" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.0010;0.0510;0.2010;0.9900;1.0000" values="0.45;0.45;0.85;0.6;0.45;0.45"/></rect><rect x="292" y="48" width="96" height="96" rx="20" fill="#FF91AC" filter="url(#flujo-compu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.2396;0.2896;0.4396;0.9900;1.0000" values="0.12;0.12;0.75;0.27;0.12;0.12"/></rect><rect x="292" y="180" width="96" height="96" rx="20" fill="#FF91AC" filter="url(#flujo-compu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.2646;0.3146;0.4646;0.9900;1.0000" values="0.12;0.12;0.75;0.27;0.12;0.12"/></rect><rect x="292" y="312" width="96" height="96" rx="20" fill="#FF91AC" filter="url(#flujo-compu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.2896;0.3396;0.4896;0.9900;1.0000" values="0.12;0.12;0.75;0.27;0.12;0.12"/></rect><rect x="292" y="444" width="96" height="96" rx="20" fill="#FF91AC" filter="url(#flujo-compu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.3146;0.3646;0.5146;0.9900;1.0000" values="0.12;0.12;0.75;0.27;0.12;0.12"/></rect><rect x="514" y="250" width="100" height="100" rx="20" fill="#FF91AC" filter="url(#flujo-compu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.6583;0.7083;0.8583;0.9900;1.0000" values="0.12;0.12;0.9;0.27;0.12;0.12"/></rect></g>
+<g class="flujo__aristas"><path id="flujo-compu-a0" class="flujo__arista" d="M148 300C223 300 223 96 298 96"/><path id="flujo-compu-b0" class="flujo__arista" d="M382 96C451 96 451 300 520 300"/><path id="flujo-compu-a1" class="flujo__arista" d="M148 300C223 300 223 228 298 228"/><path id="flujo-compu-b1" class="flujo__arista" d="M382 228C451 228 451 300 520 300"/><path id="flujo-compu-a2" class="flujo__arista" d="M148 300C223 300 223 360 298 360"/><path id="flujo-compu-b2" class="flujo__arista" d="M382 360C451 360 451 300 520 300"/><path id="flujo-compu-a3" class="flujo__arista" d="M148 300C223 300 223 492 298 492"/><path id="flujo-compu-b3" class="flujo__arista" d="M382 492C451 492 451 300 520 300"/></g>
+<g class="flujo__corrientes"><path class="flujo__corriente" d="M148 300C223 300 223 96 298 96"/><path class="flujo__corriente" d="M382 96C451 96 451 300 520 300"/><path class="flujo__corriente" d="M148 300C223 300 223 228 298 228"/><path class="flujo__corriente" d="M382 228C451 228 451 300 520 300"/><path class="flujo__corriente" d="M148 300C223 300 223 360 298 360"/><path class="flujo__corriente" d="M382 360C451 360 451 300 520 300"/><path class="flujo__corriente" d="M148 300C223 300 223 492 298 492"/><path class="flujo__corriente" d="M382 492C451 492 451 300 520 300"/></g>
+<g class="flujo__nodo"><rect x="298" y="54" width="84" height="84" rx="14" fill="url(#flujo-compu-nodo)" stroke="#4A4A4A" stroke-width="1.5"/><path d="M337 84Q337 99 352 99Q337 99 337 114Q337 99 322 99Q337 99 337 84Z" fill="none" stroke="#FAFAFA" stroke-width="2.2" stroke-linejoin="round"/><path d="M352 78Q352 84 358 84Q352 84 352 90Q352 84 346 84Q352 84 352 78Z" fill="#FAFAFA"/><text x="340" y="159" class="flujo__etiqueta" font-size="15">Agente de IA</text></g><g class="flujo__nodo"><rect x="298" y="186" width="84" height="84" rx="14" fill="url(#flujo-compu-nodo)" stroke="#4A4A4A" stroke-width="1.5"/><image href="../assets/logos/supabase-logo-icon.svg" x="323" y="210.37614678899084" width="34" height="35.24770642201835"/><text x="340" y="291" class="flujo__etiqueta" font-size="15">Supabase</text></g><g class="flujo__nodo"><rect x="298" y="318" width="84" height="84" rx="14" fill="url(#flujo-compu-nodo)" stroke="#4A4A4A" stroke-width="1.5"/><image href="../assets/logos/symbol-light.svg" x="322" y="342" width="36" height="36"/><text x="340" y="423" class="flujo__etiqueta" font-size="15">Clerk</text></g><g class="flujo__nodo"><rect x="298" y="450" width="84" height="84" rx="14" fill="url(#flujo-compu-nodo)" stroke="#4A4A4A" stroke-width="1.5"/><path d="M340.0 476.0L353.9 484.0L353.9 501.3L340.0 509.9L326.1 501.3L326.1 484.0Z" fill="none" stroke="#FAFAFA" stroke-width="2.2" stroke-linejoin="round"/><path d="M326.1 484.0L340.0 492.0L353.9 484.0M340.0 492.0L340.0 509.9" fill="none" stroke="#FAFAFA" stroke-width="2.2" stroke-linejoin="round"/><text x="340" y="555" class="flujo__etiqueta" font-size="15">Avalanche Fuji</text></g><g class="flujo__nodo flujo__nodo--fin"><rect x="520" y="256" width="88" height="88" rx="14" fill="#262626" stroke="#FF91AC" stroke-width="2" stroke-dasharray="7 6"/><path d="M550 300H578M564 286V314" stroke="#FAFAFA" stroke-width="3" stroke-linecap="round"/><text x="564" y="365" class="flujo__etiqueta" font-size="15">Tu proyecto</text></g>
+<g class="flujo__nodo flujo__nodo--cero"><image href="../assets/logos/nodo-cero_simbolo_fondo-oscuro.svg" x="4.6" y="220.6" width="158.7" height="158.7"/><text x="84" y="387" class="flujo__etiqueta flujo__etiqueta--cero" font-size="16">Nodo Cero</text></g>
+<g class="flujo__puertos"><circle cx="298" cy="96" r="6.5" fill="#FAFAFA"/><circle cx="382" cy="96" r="6.5" fill="#FAFAFA"/><circle cx="298" cy="228" r="6.5" fill="#FAFAFA"/><circle cx="382" cy="228" r="6.5" fill="#FAFAFA"/><circle cx="298" cy="360" r="6.5" fill="#FAFAFA"/><circle cx="382" cy="360" r="6.5" fill="#FAFAFA"/><circle cx="298" cy="492" r="6.5" fill="#FAFAFA"/><circle cx="382" cy="492" r="6.5" fill="#FAFAFA"/><circle cx="520" cy="300" r="6.5" fill="#FAFAFA"/><circle cx="148" cy="300" r="8.1" fill="#FAFAFA"/></g>
+<g class="flujo__pulsos" filter="url(#flujo-compu-brillo)"><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.0313;0.2500;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-a0"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.0313;0.0353;0.2460;0.2500;1" values="0;0;1;1;0;0"/></circle><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.3646;0.5833;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-b0"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.3646;0.3686;0.5793;0.5833;1" values="0;0;1;1;0;0"/></circle><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.0563;0.2750;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-a1"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.0563;0.0603;0.2710;0.2750;1" values="0;0;1;1;0;0"/></circle><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.3896;0.6083;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-b1"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.3896;0.3936;0.6043;0.6083;1" values="0;0;1;1;0;0"/></circle><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.0813;0.3000;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-a2"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.0813;0.0853;0.2960;0.3000;1" values="0;0;1;1;0;0"/></circle><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.4146;0.6333;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-b2"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.4146;0.4186;0.6293;0.6333;1" values="0;0;1;1;0;0"/></circle><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.1063;0.3250;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-a3"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.1063;0.1103;0.3210;0.3250;1" values="0;0;1;1;0;0"/></circle><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.4396;0.6583;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-b3"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.4396;0.4436;0.6543;0.6583;1" values="0;0;1;1;0;0"/></circle></g>
+</svg>
+<!-- heroe:fin -->
+  </div>
+
+  <div class="texto">
+    <ul class="capsulas"><li class="capsula">SÁB 21 NOV 2026</li><li class="capsula">08:00–16:00</li><li class="capsula">SANTA CRUZ</li></ul>
+    <p class="presenta"><span>PRESENTA</span><img src="../assets/logos/n8n-logo-white-accent.svg" alt="n8n"></p>
+    <h1><span>Nodo</span><span>Cero</span></h1>
+    <p class="sub">Hackathon n8n Bolivia</p>
+    <p class="bajada">Workflows, guías y recursos · <b>enfocada en mujeres</b></p>
+    <p class="wtm"><span>DE LA MANO DE</span><img src="../assets/logos/wtm-santa-cruz-para-fondo-oscuro.png" alt="Women Techmakers Santa Cruz"></p>
+  </div>
+  <p class="url">NODO-CERO-BO.GITHUB.IO</p>
+  <div class="capa grano"></div>
+
+<script>
+  // Chispas fijas (semilla determinista) y el flujo congelado en un momento lindo.
+  let s = 7; const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
+  const caja = document.getElementById('chispas');
+  for (let i = 0; i < 46; i++) {
+    const d = document.createElement('i'); d.className = 'chispa';
+    const r = 4 + rnd() * 12; d.style.cssText = `left:${560 + rnd() * 640}px;top:${rnd() * 630}px;width:${r}px;height:${r}px;opacity:${.35 + rnd() * .65}`;
+    caja.appendChild(d);
+  }
+  const svg = document.querySelector('.flujo-og svg');
+  if (svg) { svg.pauseAnimations(); svg.setCurrentTime(1.42); }
+</script>
+</body>
+</html>

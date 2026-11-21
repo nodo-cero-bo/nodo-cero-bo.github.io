@@ -1,0 +1,140 @@
+{
+  "generado": "2026-11-21T07:20:44.356Z",
+  "provisional": false,
+  "repo": "https://github.com/nodo-cero-bo/guias",
+  "guias": [
+    {
+      "titulo": "Tu cuenta de n8n Cloud",
+      "resumen": "Creá tu cuenta de prueba en n8n Cloud, recorré el editor y corré tu primer workflow: la base de todo lo que vas…",
+      "ruta": "00-empezar/01-cuenta-n8n-cloud.md",
+      "grupo": "00-empezar",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/01-cuenta-n8n-cloud.md"
+    },
+    {
+      "titulo": "Importar los workflows de la hackathon",
+      "resumen": "Tres formas de traer a tu n8n los workflows de Nodo Cero, listos para usar: pegar el JSON en el canvas…",
+      "ruta": "00-empezar/02-importar-workflows.md",
+      "grupo": "00-empezar",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/02-importar-workflows.md"
+    },
+    {
+      "titulo": "Credenciales: las llaves de tus workflows",
+      "resumen": "Qué es una credencial en n8n, cómo crear las que piden los workflows de Nodo Cero y cómo cuidarlas para que…",
+      "ruta": "00-empezar/03-credenciales.md",
+      "grupo": "00-empezar",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/03-credenciales.md"
+    },
+    {
+      "titulo": "Tu proyecto en Supabase",
+      "resumen": "Creá un proyecto gratis en Supabase, encontrá su URL y sus claves, cargá las tablas de Nodo Cero con el SQL…",
+      "ruta": "00-empezar/04-cuenta-supabase.md",
+      "grupo": "00-empezar",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/04-cuenta-supabase.md"
+    },
+    {
+      "titulo": "Tu aplicación en Clerk",
+      "resumen": "Creá una aplicación de Clerk para que tu proyecto tenga login de verdad, y encontrá las claves, el secreto de…",
+      "ruta": "00-empezar/05-cuenta-clerk.md",
+      "grupo": "00-empezar",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/05-cuenta-clerk.md"
+    },
+    {
+      "titulo": "Core Wallet y Avalanche Fuji",
+      "resumen": "Descargá Core Wallet, creá una wallet de prueba, pasala a la red Fuji, pedí AVAX de prueba en el faucet y mirá…",
+      "ruta": "00-empezar/06-core-wallet-y-fuji.md",
+      "grupo": "00-empezar",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/06-core-wallet-y-fuji.md"
+    },
+    {
+      "titulo": "Tu clave de Gemini",
+      "resumen": "Sacá una clave gratis de la API de Gemini en Google AI Studio y conectala a n8n para que tus agentes respondan…",
+      "ruta": "00-empezar/07-clave-gemini.md",
+      "grupo": "00-empezar",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/07-clave-gemini.md"
+    },
+    {
+      "titulo": "Recursos de Avalanche y Team1",
+      "resumen": "Todo lo de Avalanche Fuji en un lugar: Core Wallet, el faucet, el explorador, Avalanche Academy, Team1, la…",
+      "ruta": "avalanche/recursos.md",
+      "grupo": "avalanche",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/avalanche/recursos.md"
+    },
+    {
+      "titulo": "Asistente con IA para tu comunidad",
+      "resumen": "Un chat público que responde preguntas con la información de tus propios documentos y recuerda la conversación…",
+      "ruta": "proyectos/01-asistente-ia-para-tu-comunidad.md",
+      "grupo": "proyectos",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/proyectos/01-asistente-ia-para-tu-comunidad.md"
+    },
+    {
+      "titulo": "App con login y datos",
+      "resumen": "Una página donde las personas inician sesión con Clerk, n8n verifica quién pide cada cosa y responde con sus…",
+      "ruta": "proyectos/02-app-con-login-y-datos.md",
+      "grupo": "proyectos",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/proyectos/02-app-con-login-y-datos.md"
+    },
+    {
+      "titulo": "Pagos verificables en Avalanche Fuji",
+      "resumen": "Un verificador de pagos: alguien paga con AVAX de prueba, manda el hash de su transacción y n8n confirma en la…",
+      "ruta": "proyectos/03-pagos-verificables-en-fuji.md",
+      "grupo": "proyectos",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/proyectos/03-pagos-verificables-en-fuji.md"
+    },
+    {
+      "titulo": "Agente Web3 que lee Fuji",
+      "resumen": "Un agente de IA que contesta en español preguntas sobre la red Fuji de Avalanche: cuánto tiene una wallet, qué…",
+      "ruta": "proyectos/04-agente-web3-que-lee-fuji.md",
+      "grupo": "proyectos",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/proyectos/04-agente-web3-que-lee-fuji.md"
+    },
+    {
+      "titulo": "Formularios inteligentes que guardan y clasifican",
+      "resumen": "Un formulario de n8n que guarda cada respuesta en Supabase y, en cuanto entra, la IA la lee, la clasifica y…",
+      "ruta": "proyectos/05-formularios-inteligentes.md",
+      "grupo": "proyectos",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/proyectos/05-formularios-inteligentes.md"
+    },
+    {
+      "titulo": "Tu contrato en Fuji y n8n escuchando sus eventos",
+      "resumen": "Desplegá tu propio contrato inteligente en la red Fuji con Remix y Core Wallet, y armá un workflow de n8n que…",
+      "ruta": "proyectos/06-tu-contrato-en-fuji.md",
+      "grupo": "proyectos",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/proyectos/06-tu-contrato-en-fuji.md"
+    },
+    {
+      "titulo": "Impacto ambiental o social: reportes ciudadanos",
+      "resumen": "Una idea abierta, inspirada en la sede, el Centro de Educación Ambiental: reportes ciudadanos de basurales…",
+      "ruta": "proyectos/07-impacto-ambiental-o-social.md",
+      "grupo": "proyectos",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/proyectos/07-impacto-ambiental-o-social.md"
+    },
+    {
+      "titulo": "Automatizá tu emprendimiento",
+      "resumen": "Pedidos, consultas y catálogo de un emprendimiento atendidos por n8n: un formulario que toma pedidos, una API…",
+      "ruta": "proyectos/08-automatiza-tu-emprendimiento.md",
+      "grupo": "proyectos",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/proyectos/08-automatiza-tu-emprendimiento.md"
+    },
+    {
+      "titulo": "Banco de ideas",
+      "resumen": "Ideas de proyecto por área, cada una con los workflows de Nodo Cero con los que conviene arrancar.",
+      "ruta": "ideas.md",
+      "grupo": "",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/ideas.md"
+    },
+    {
+      "titulo": "Cómo presentar tu proyecto",
+      "resumen": "Cómo armar una demo clara: el problema, tu solución, el flujo funcionando en vivo y qué sigue.",
+      "ruta": "presentar.md",
+      "grupo": "",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/presentar.md"
+    },
+    {
+      "titulo": "Seguir construyendo",
+      "resumen": "Qué hacer después del sábado para que tu proyecto no se quede en la demo: guardarlo, publicarlo en tu GitHub…",
+      "ruta": "seguir-construyendo.md",
+      "grupo": "",
+      "url": "https://github.com/nodo-cero-bo/guias/blob/main/seguir-construyendo.md"
+    }
+  ]
+}

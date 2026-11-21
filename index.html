@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nodo Cero · Hackathon n8n Bolivia: workflows, guías y recursos</title>
+<meta name="description" content="La hackathon de la comunidad n8n en Bolivia, enfocada en mujeres, de la mano de Women Techmakers Santa Cruz. Workflows de n8n listos para importar, guías, Avalanche Fuji, Supabase y Clerk. Sábado 21 de noviembre de 2026, Santa Cruz de la Sierra.">
+<link rel="canonical" href="https://nodo-cero-bo.github.io/">
+<meta name="theme-color" content="#191919">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nodo Cero">
+<meta property="og:locale" content="es_BO">
+<meta property="og:url" content="https://nodo-cero-bo.github.io/">
+<meta property="og:title" content="Nodo Cero · Hackathon n8n Bolivia">
+<meta property="og:description" content="Workflows de n8n listos para importar, guías y recursos para construir con IA, Supabase, Clerk y Avalanche Fuji. Enfocada en mujeres, de la mano de Women Techmakers Santa Cruz.">
+<meta property="og:image" content="https://nodo-cero-bo.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nodo Cero, Hackathon n8n Bolivia: un flujo de nodos de n8n conectados con líneas rosas sobre una grilla de puntos.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nodo Cero · Hackathon n8n Bolivia">
+<meta name="twitter:description" content="Workflows de n8n listos para importar, guías y recursos para construir con IA, Supabase, Clerk y Avalanche Fuji.">
+<meta name="twitter:image" content="https://nodo-cero-bo.github.io/assets/og.png">
+<meta name="twitter:image:alt" content="Nodo Cero, Hackathon n8n Bolivia: un flujo de nodos de n8n conectados con líneas rosas sobre una grilla de puntos.">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fuentes/InterTight-500.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="assets/fuentes/InterTight-400.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="assets/fuentes/GeistMono-500.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="assets/css/estilos.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Nodo Cero – Hackathon n8n Bolivia",
+  "description": "La hackathon de la comunidad n8n en Bolivia, enfocada en mujeres, de la mano de Women Techmakers Santa Cruz.",
+  "startDate": "2026-11-21T08:00:00-04:00",
+  "endDate": "2026-11-21T16:00:00-04:00",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "Centro de Educación Ambiental (CEA), Gobierno Autónomo Departamental de Santa Cruz",
+    "address": { "@type": "PostalAddress", "addressLocality": "Santa Cruz de la Sierra", "addressCountry": "BO" }
+  },
+  "image": "https://nodo-cero-bo.github.io/assets/og.png",
+  "url": "https://nodo-cero-bo.github.io/",
+  "sameAs": "https://luma.com/n8n-rfgv"
+}
+</script>
+</head>
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera" id="cabecera">
+  <div class="contenedor cabecera__fila">
+    <a class="cabecera__marca" href="#inicio" aria-label="Nodo Cero, ir al inicio">
+      <img src="assets/logos/nodo-cero_horizontal_fondo-oscuro.svg" alt="Nodo Cero, Hackathon n8n Bolivia" width="2039" height="744">
+    </a>
+    <nav class="cabecera__nav" id="menu" aria-label="Secciones">
+      <a href="#empezar">Empezá</a>
+      <a href="#workflows">Workflows</a>
+      <a href="#guias">Guías</a>
+      <a href="#avalanche">Avalanche Fuji</a>
+      <a href="#supabase-clerk">Supabase y Clerk</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#mentoria">Mentoría</a>
+      <a class="boton boton--chico boton--rosa" href="#registrar">Registrá tu proyecto</a>
+    </nav>
+    <button class="cabecera__menu" type="button" aria-expanded="false" aria-controls="menu">
+      <span class="cabecera__menu-icono" aria-hidden="true"></span>
+      <span class="cabecera__menu-texto">Menú</span>
+    </button>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ============================================================ PORTADA -->
+<section class="heroe" id="inicio" aria-labelledby="titulo-heroe">
+  <div class="heroe__fondo" aria-hidden="true">
+    <div class="heroe__puntos"></div>
+    <div class="heroe__halo heroe__halo--a"></div>
+    <div class="heroe__halo heroe__halo--b"></div>
+    <div class="heroe__halo heroe__halo--c"></div>
+    <div class="heroe__rayos"></div>
+    <div class="heroe__piso"></div>
+    <canvas class="heroe__chispas" id="chispas"></canvas>
+    <div class="heroe__grano"></div>
+  </div>
+
+  <div class="contenedor heroe__grilla">
+    <div class="heroe__texto">
+      <ul class="capsulas" aria-label="Fecha, horario y ciudad">
+        <li class="capsula capsula--acento">SÁB 21 NOV 2026</li>
+        <li class="capsula">08:00–16:00</li>
+        <li class="capsula">SANTA CRUZ</li>
+      </ul>
+
+      <p class="heroe__presenta">
+        <span>Presenta</span>
+        <img src="assets/logos/n8n-logo-white-accent.svg" alt="n8n" width="480" height="96">
+      </p>
+
+      <h1 class="heroe__titulo" id="titulo-heroe"><span>Nodo</span> <span>Cero</span></h1>
+      <p class="heroe__subtitulo">Hackathon n8n Bolivia</p>
+      <p class="heroe__bajada">La hackathon de la comunidad n8n en Bolivia, <strong>enfocada en mujeres</strong>. Workflows listos para importar, guías y todo lo que necesitás para construir hoy y seguir después.</p>
+
+      <p class="heroe__wtm">
+        <span>De la mano de</span>
+        <img src="assets/logos/wtm-santa-cruz-para-fondo-oscuro.png" alt="Women Techmakers Santa Cruz" width="1361" height="225">
+      </p>
+
+      <p class="heroe__sede">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></svg>
+        <span>Centro de Educación Ambiental (CEA), Gobierno Autónomo Departamental de Santa Cruz</span>
+      </p>
+
+      <div class="heroe__acciones">
+        <a class="boton boton--rosa boton--grande" href="#workflows">Ver workflows</a>
+        <a class="boton boton--borde boton--grande" href="#empezar">Empezá acá</a>
+      </div>
+    </div>
+
+    <div class="heroe__flujo">
+<!-- heroe:inicio -->
+<svg class="flujo flujo--compu" id="flujo-compu" viewBox="0 0 640 600" role="img" aria-labelledby="flujo-compu-titulo">
+<title id="flujo-compu-titulo">Un workflow de n8n: del Nodo Cero salen conexiones rosas hacia un agente de IA, Supabase, Clerk y Avalanche Fuji, que se juntan en tu proyecto.</title>
+<defs>
+  <filter id="flujo-compu-desenfoque" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="16"/></filter>
+  <filter id="flujo-compu-brillo" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <linearGradient id="flujo-compu-nodo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E2E2E"/><stop offset="1" stop-color="#222222"/></linearGradient>
+</defs>
+<g class="flujo__halos"><rect x="14" y="230" width="140" height="140" rx="20" fill="#FF91AC" filter="url(#flujo-compu-desenfoque)" opacity="0.45" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.0010;0.0510;0.2010;0.9900;1.0000" values="0.45;0.45;0.85;0.6;0.45;0.45"/></rect><rect x="292" y="48" width="96" height="96" rx="20" fill="#FF91AC" filter="url(#flujo-compu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.2396;0.2896;0.4396;0.9900;1.0000" values="0.12;0.12;0.75;0.27;0.12;0.12"/></rect><rect x="292" y="180" width="96" height="96" rx="20" fill="#FF91AC" filter="url(#flujo-compu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.2646;0.3146;0.4646;0.9900;1.0000" values="0.12;0.12;0.75;0.27;0.12;0.12"/></rect><rect x="292" y="312" width="96" height="96" rx="20" fill="#FF91AC" filter="url(#flujo-compu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.2896;0.3396;0.4896;0.9900;1.0000" values="0.12;0.12;0.75;0.27;0.12;0.12"/></rect><rect x="292" y="444" width="96" height="96" rx="20" fill="#FF91AC" filter="url(#flujo-compu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.3146;0.3646;0.5146;0.9900;1.0000" values="0.12;0.12;0.75;0.27;0.12;0.12"/></rect><rect x="514" y="250" width="100" height="100" rx="20" fill="#FF91AC" filter="url(#flujo-compu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.6583;0.7083;0.8583;0.9900;1.0000" values="0.12;0.12;0.9;0.27;0.12;0.12"/></rect></g>
+<g class="flujo__aristas"><path id="flujo-compu-a0" class="flujo__arista" d="M148 300C223 300 223 96 298 96"/><path id="flujo-compu-b0" class="flujo__arista" d="M382 96C451 96 451 300 520 300"/><path id="flujo-compu-a1" class="flujo__arista" d="M148 300C223 300 223 228 298 228"/><path id="flujo-compu-b1" class="flujo__arista" d="M382 228C451 228 451 300 520 300"/><path id="flujo-compu-a2" class="flujo__arista" d="M148 300C223 300 223 360 298 360"/><path id="flujo-compu-b2" class="flujo__arista" d="M382 360C451 360 451 300 520 300"/><path id="flujo-compu-a3" class="flujo__arista" d="M148 300C223 300 223 492 298 492"/><path id="flujo-compu-b3" class="flujo__arista" d="M382 492C451 492 451 300 520 300"/></g>
+<g class="flujo__corrientes"><path class="flujo__corriente" d="M148 300C223 300 223 96 298 96"/><path class="flujo__corriente" d="M382 96C451 96 451 300 520 300"/><path class="flujo__corriente" d="M148 300C223 300 223 228 298 228"/><path class="flujo__corriente" d="M382 228C451 228 451 300 520 300"/><path class="flujo__corriente" d="M148 300C223 300 223 360 298 360"/><path class="flujo__corriente" d="M382 360C451 360 451 300 520 300"/><path class="flujo__corriente" d="M148 300C223 300 223 492 298 492"/><path class="flujo__corriente" d="M382 492C451 492 451 300 520 300"/></g>
+<g class="flujo__nodo"><rect x="298" y="54" width="84" height="84" rx="14" fill="url(#flujo-compu-nodo)" stroke="#4A4A4A" stroke-width="1.5"/><path d="M337 84Q337 99 352 99Q337 99 337 114Q337 99 322 99Q337 99 337 84Z" fill="none" stroke="#FAFAFA" stroke-width="2.2" stroke-linejoin="round"/><path d="M352 78Q352 84 358 84Q352 84 352 90Q352 84 346 84Q352 84 352 78Z" fill="#FAFAFA"/><text x="340" y="159" class="flujo__etiqueta" font-size="15">Agente de IA</text></g><g class="flujo__nodo"><rect x="298" y="186" width="84" height="84" rx="14" fill="url(#flujo-compu-nodo)" stroke="#4A4A4A" stroke-width="1.5"/><image href="assets/logos/supabase-logo-icon.svg" x="323" y="210.37614678899084" width="34" height="35.24770642201835"/><text x="340" y="291" class="flujo__etiqueta" font-size="15">Supabase</text></g><g class="flujo__nodo"><rect x="298" y="318" width="84" height="84" rx="14" fill="url(#flujo-compu-nodo)" stroke="#4A4A4A" stroke-width="1.5"/><image href="assets/logos/symbol-light.svg" x="322" y="342" width="36" height="36"/><text x="340" y="423" class="flujo__etiqueta" font-size="15">Clerk</text></g><g class="flujo__nodo"><rect x="298" y="450" width="84" height="84" rx="14" fill="url(#flujo-compu-nodo)" stroke="#4A4A4A" stroke-width="1.5"/><path d="M340.0 476.0L353.9 484.0L353.9 501.3L340.0 509.9L326.1 501.3L326.1 484.0Z" fill="none" stroke="#FAFAFA" stroke-width="2.2" stroke-linejoin="round"/><path d="M326.1 484.0L340.0 492.0L353.9 484.0M340.0 492.0L340.0 509.9" fill="none" stroke="#FAFAFA" stroke-width="2.2" stroke-linejoin="round"/><text x="340" y="555" class="flujo__etiqueta" font-size="15">Avalanche Fuji</text></g><g class="flujo__nodo flujo__nodo--fin"><rect x="520" y="256" width="88" height="88" rx="14" fill="#262626" stroke="#FF91AC" stroke-width="2" stroke-dasharray="7 6"/><path d="M550 300H578M564 286V314" stroke="#FAFAFA" stroke-width="3" stroke-linecap="round"/><text x="564" y="365" class="flujo__etiqueta" font-size="15">Tu proyecto</text></g>
+<g class="flujo__nodo flujo__nodo--cero"><image href="assets/logos/nodo-cero_simbolo_fondo-oscuro.svg" x="4.6" y="220.6" width="158.7" height="158.7"/><text x="84" y="387" class="flujo__etiqueta flujo__etiqueta--cero" font-size="16">Nodo Cero</text></g>
+<g class="flujo__puertos"><circle cx="298" cy="96" r="6.5" fill="#FAFAFA"/><circle cx="382" cy="96" r="6.5" fill="#FAFAFA"/><circle cx="298" cy="228" r="6.5" fill="#FAFAFA"/><circle cx="382" cy="228" r="6.5" fill="#FAFAFA"/><circle cx="298" cy="360" r="6.5" fill="#FAFAFA"/><circle cx="382" cy="360" r="6.5" fill="#FAFAFA"/><circle cx="298" cy="492" r="6.5" fill="#FAFAFA"/><circle cx="382" cy="492" r="6.5" fill="#FAFAFA"/><circle cx="520" cy="300" r="6.5" fill="#FAFAFA"/><circle cx="148" cy="300" r="8.1" fill="#FAFAFA"/></g>
+<g class="flujo__pulsos" filter="url(#flujo-compu-brillo)"><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.0313;0.2500;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-a0"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.0313;0.0353;0.2460;0.2500;1" values="0;0;1;1;0;0"/></circle><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.3646;0.5833;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-b0"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.3646;0.3686;0.5793;0.5833;1" values="0;0;1;1;0;0"/></circle><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.0563;0.2750;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-a1"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.0563;0.0603;0.2710;0.2750;1" values="0;0;1;1;0;0"/></circle><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.3896;0.6083;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-b1"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.3896;0.3936;0.6043;0.6083;1" values="0;0;1;1;0;0"/></circle><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.0813;0.3000;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-a2"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.0813;0.0853;0.2960;0.3000;1" values="0;0;1;1;0;0"/></circle><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.4146;0.6333;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-b2"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.4146;0.4186;0.6293;0.6333;1" values="0;0;1;1;0;0"/></circle><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.1063;0.3250;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-a3"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.1063;0.1103;0.3210;0.3250;1" values="0;0;1;1;0;0"/></circle><circle r="4.5" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.4396;0.6583;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-compu-b3"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.4396;0.4436;0.6543;0.6583;1" values="0;0;1;1;0;0"/></circle></g>
+</svg>
+<svg class="flujo flujo--celu" id="flujo-celu" viewBox="0 0 360 372" role="img" aria-labelledby="flujo-celu-titulo">
+<title id="flujo-celu-titulo">Un workflow de n8n: del Nodo Cero salen conexiones rosas hacia un agente de IA, Supabase, Clerk y Avalanche Fuji, que se juntan en tu proyecto.</title>
+<defs>
+  <filter id="flujo-celu-desenfoque" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="11.52"/></filter>
+  <filter id="flujo-celu-brillo" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="2.16" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <linearGradient id="flujo-celu-nodo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E2E2E"/><stop offset="1" stop-color="#222222"/></linearGradient>
+</defs>
+<g class="flujo__halos"><rect x="1.6799999999999997" y="123.68" width="100.64" height="100.64" rx="14.399999999999999" fill="#FF91AC" filter="url(#flujo-celu-desenfoque)" opacity="0.45" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.0010;0.0510;0.2010;0.9900;1.0000" values="0.45;0.45;0.85;0.6;0.45;0.45"/></rect><rect x="153.68" y="2.6799999999999997" width="66.64" height="66.64" rx="14.399999999999999" fill="#FF91AC" filter="url(#flujo-celu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.2396;0.2896;0.4396;0.9900;1.0000" values="0.12;0.12;0.75;0.27;0.12;0.12"/></rect><rect x="153.68" y="90.68" width="66.64" height="66.64" rx="14.399999999999999" fill="#FF91AC" filter="url(#flujo-celu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.2646;0.3146;0.4646;0.9900;1.0000" values="0.12;0.12;0.75;0.27;0.12;0.12"/></rect><rect x="153.68" y="178.68" width="66.64" height="66.64" rx="14.399999999999999" fill="#FF91AC" filter="url(#flujo-celu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.2896;0.3396;0.4896;0.9900;1.0000" values="0.12;0.12;0.75;0.27;0.12;0.12"/></rect><rect x="153.68" y="266.68" width="66.64" height="66.64" rx="14.399999999999999" fill="#FF91AC" filter="url(#flujo-celu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.3146;0.3646;0.5146;0.9900;1.0000" values="0.12;0.12;0.75;0.27;0.12;0.12"/></rect><rect x="285.68" y="141.68" width="66.64" height="66.64" rx="14.399999999999999" fill="#FF91AC" filter="url(#flujo-celu-desenfoque)" opacity="0.12" class="flujo__halo"><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0.0000;0.6583;0.7083;0.8583;0.9900;1.0000" values="0.12;0.12;0.9;0.27;0.12;0.12"/></rect></g>
+<g class="flujo__aristas"><path id="flujo-celu-a0" class="flujo__arista" d="M98 174C128 174 128 36 158 36"/><path id="flujo-celu-b0" class="flujo__arista" d="M216 36C253 36 253 175 290 175"/><path id="flujo-celu-a1" class="flujo__arista" d="M98 174C128 174 128 124 158 124"/><path id="flujo-celu-b1" class="flujo__arista" d="M216 124C253 124 253 175 290 175"/><path id="flujo-celu-a2" class="flujo__arista" d="M98 174C128 174 128 212 158 212"/><path id="flujo-celu-b2" class="flujo__arista" d="M216 212C253 212 253 175 290 175"/><path id="flujo-celu-a3" class="flujo__arista" d="M98 174C128 174 128 300 158 300"/><path id="flujo-celu-b3" class="flujo__arista" d="M216 300C253 300 253 175 290 175"/></g>
+<g class="flujo__corrientes"><path class="flujo__corriente" d="M98 174C128 174 128 36 158 36"/><path class="flujo__corriente" d="M216 36C253 36 253 175 290 175"/><path class="flujo__corriente" d="M98 174C128 174 128 124 158 124"/><path class="flujo__corriente" d="M216 124C253 124 253 175 290 175"/><path class="flujo__corriente" d="M98 174C128 174 128 212 158 212"/><path class="flujo__corriente" d="M216 212C253 212 253 175 290 175"/><path class="flujo__corriente" d="M98 174C128 174 128 300 158 300"/><path class="flujo__corriente" d="M216 300C253 300 253 175 290 175"/></g>
+<g class="flujo__nodo"><rect x="158" y="7" width="58" height="58" rx="10.08" fill="url(#flujo-celu-nodo)" stroke="#4A4A4A" stroke-width="1.08"/><path d="M184.84 27.36Q184.84 38.16 195.64000000000001 38.16Q184.84 38.16 184.84 48.959999999999994Q184.84 38.16 174.04 38.16Q184.84 38.16 184.84 27.36Z" fill="none" stroke="#FAFAFA" stroke-width="1.584" stroke-linejoin="round"/><path d="M195.64 23.04Q195.64 27.36 199.95999999999998 27.36Q195.64 27.36 195.64 31.68Q195.64 27.36 191.32 27.36Q195.64 27.36 195.64 23.04Z" fill="#FAFAFA"/><text x="187" y="81.82" class="flujo__etiqueta" font-size="12.5">Agente de IA</text></g><g class="flujo__nodo"><rect x="158" y="95" width="58" height="58" rx="10.08" fill="url(#flujo-celu-nodo)" stroke="#4A4A4A" stroke-width="1.08"/><image href="assets/logos/supabase-logo-icon.svg" x="174.76" y="111.3108256880734" width="24.48" height="25.378348623853213"/><text x="187" y="169.82" class="flujo__etiqueta" font-size="12.5">Supabase</text></g><g class="flujo__nodo"><rect x="158" y="183" width="58" height="58" rx="10.08" fill="url(#flujo-celu-nodo)" stroke="#4A4A4A" stroke-width="1.08"/><image href="assets/logos/symbol-light.svg" x="174.04" y="199.04" width="25.919999999999998" height="25.919999999999998"/><text x="187" y="257.82" class="flujo__etiqueta" font-size="12.5">Clerk</text></g><g class="flujo__nodo"><rect x="158" y="271" width="58" height="58" rx="10.08" fill="url(#flujo-celu-nodo)" stroke="#4A4A4A" stroke-width="1.08"/><path d="M187.0 288.5L197.0 294.2L197.0 306.7L187.0 312.9L177.0 306.7L177.0 294.2Z" fill="none" stroke="#FAFAFA" stroke-width="1.584" stroke-linejoin="round"/><path d="M177.0 294.2L187.0 300.0L197.0 294.2M187.0 300.0L187.0 312.9" fill="none" stroke="#FAFAFA" stroke-width="1.584" stroke-linejoin="round"/><text x="187" y="345.82" class="flujo__etiqueta" font-size="12.5">Avalanche Fuji</text></g><g class="flujo__nodo flujo__nodo--fin"><rect x="290" y="146" width="58" height="58" rx="10.08" fill="#262626" stroke="#FF91AC" stroke-width="1.44" stroke-dasharray="5.04 4.32"/><path d="M308.92 175H329.08M319 164.92V185.08" stroke="#FAFAFA" stroke-width="2.16" stroke-linecap="round"/><text x="319" y="220.82" class="flujo__etiqueta" font-size="12.5">Tu proyecto</text></g>
+<g class="flujo__nodo flujo__nodo--cero"><image href="assets/logos/nodo-cero_simbolo_fondo-oscuro.svg" x="-5.0" y="117.0" width="114.1" height="114.1"/><text x="52" y="238.26" class="flujo__etiqueta flujo__etiqueta--cero" font-size="13.5">Nodo Cero</text></g>
+<g class="flujo__puertos"><circle cx="158" cy="36" r="4.7" fill="#FAFAFA"/><circle cx="216" cy="36" r="4.7" fill="#FAFAFA"/><circle cx="158" cy="124" r="4.7" fill="#FAFAFA"/><circle cx="216" cy="124" r="4.7" fill="#FAFAFA"/><circle cx="158" cy="212" r="4.7" fill="#FAFAFA"/><circle cx="216" cy="212" r="4.7" fill="#FAFAFA"/><circle cx="158" cy="300" r="4.7" fill="#FAFAFA"/><circle cx="216" cy="300" r="4.7" fill="#FAFAFA"/><circle cx="290" cy="175" r="4.7" fill="#FAFAFA"/><circle cx="98" cy="174" r="5.8" fill="#FAFAFA"/></g>
+<g class="flujo__pulsos" filter="url(#flujo-celu-brillo)"><circle r="3.2399999999999998" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.0313;0.2500;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-celu-a0"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.0313;0.0353;0.2460;0.2500;1" values="0;0;1;1;0;0"/></circle><circle r="3.2399999999999998" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.3646;0.5833;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-celu-b0"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.3646;0.3686;0.5793;0.5833;1" values="0;0;1;1;0;0"/></circle><circle r="3.2399999999999998" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.0563;0.2750;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-celu-a1"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.0563;0.0603;0.2710;0.2750;1" values="0;0;1;1;0;0"/></circle><circle r="3.2399999999999998" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.3896;0.6083;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-celu-b1"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.3896;0.3936;0.6043;0.6083;1" values="0;0;1;1;0;0"/></circle><circle r="3.2399999999999998" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.0813;0.3000;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-celu-a2"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.0813;0.0853;0.2960;0.3000;1" values="0;0;1;1;0;0"/></circle><circle r="3.2399999999999998" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.4146;0.6333;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-celu-b2"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.4146;0.4186;0.6293;0.6333;1" values="0;0;1;1;0;0"/></circle><circle r="3.2399999999999998" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.1063;0.3250;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-celu-a3"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.1063;0.1103;0.3210;0.3250;1" values="0;0;1;1;0;0"/></circle><circle r="3.2399999999999998" fill="#FFE8EC" opacity="0" class="flujo__pulso"><animateMotion dur="4.8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;0.4396;0.6583;1" calcMode="spline" keySplines="0 0 1 1;0.45 0 0.55 1;0 0 1 1"><mpath href="#flujo-celu-b3"/></animateMotion><animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" keyTimes="0;0.4396;0.4436;0.6543;0.6583;1" values="0;0;1;1;0;0"/></circle></g>
+</svg>
+<!-- heroe:fin -->
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ CINTA DE ALIADOS -->
+<section class="cinta" aria-label="Quienes hacen posible Nodo Cero">
+  <div class="contenedor cinta__fila">
+    <div class="cinta__grupo cinta__grupo--n8n">
+      <span class="cinta__rotulo">Presenta</span>
+      <img class="logo-n8n" src="assets/logos/n8n-logo-white-accent.svg" alt="n8n" width="480" height="96">
+    </div>
+    <div class="cinta__grupo">
+      <span class="cinta__rotulo">En colaboración con</span>
+      <img class="logo-wtm" src="assets/logos/wtm-santa-cruz-para-fondo-oscuro.png" alt="Women Techmakers Santa Cruz" width="1361" height="225">
+    </div>
+    <div class="cinta__grupo">
+      <span class="cinta__rotulo">Con el apoyo de</span>
+      <span class="cinta__logos">
+        <img class="logo-supabase" src="assets/logos/supabase-logo-wordmark--dark.svg" alt="Supabase" width="581" height="113">
+        <img class="logo-clerk" src="assets/logos/logotype-full-primary-light.svg" alt="Clerk" width="441" height="128">
+        <img class="logo-team1" src="assets/logos/Team1_MAIN_WHITE.svg" alt="Team1" width="1027" height="289">
+        <span class="placa-clara"><img class="logo-aspire" src="assets/logos/aspire-institute-logo.svg" alt="Aspire Institute" width="266" height="91"></span>
+      </span>
+    </div>
+    <div class="cinta__grupo">
+      <span class="cinta__rotulo">Sede</span>
+      <img class="logo-gob" src="assets/logos/gobierno-santa-cruz-blanco.png" alt="Gobierno Autónomo Departamental de Santa Cruz" width="1000" height="254">
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ EMPEZÁ EN 3 PASOS -->
+<section class="seccion" id="empezar" aria-labelledby="titulo-empezar">
+  <div class="contenedor">
+    <header class="seccion__cabeza">
+      <p class="capsula capsula--sola capsula--acento">EMPEZÁ ACÁ</p>
+      <h2 id="titulo-empezar">Empezá en 3 pasos</h2>
+      <p class="seccion__bajada">En diez minutos podés tener tu primer workflow andando. Si te trabás, pedí ayuda: la mentoría está para eso.</p>
+    </header>
+
+    <ol class="pasos">
+      <li class="paso tarjeta">
+        <span class="paso__puerto paso__puerto--entrada" aria-hidden="true"></span>
+        <span class="paso__puerto paso__puerto--salida" aria-hidden="true"></span>
+        <p class="paso__numero">PASO 1</p>
+        <h3>Creá tus cuentas</h3>
+        <p>n8n Cloud para construir. Según tu idea, sumá Supabase, Clerk, una clave de Google AI Studio para la IA y Core Wallet para Fuji.</p>
+        <div class="paso__enlaces">
+          <a class="enlace-flecha" href="https://app.n8n.cloud/register" target="_blank" rel="noopener">Crear cuenta en n8n Cloud</a>
+          <a class="enlace-flecha" data-guia="cuentas" href="https://github.com/nodo-cero-bo/guias/tree/main/00-empezar" target="_blank" rel="noopener">Guía: crear tus cuentas</a>
+        </div>
+      </li>
+      <li class="paso tarjeta">
+        <span class="paso__puerto paso__puerto--entrada" aria-hidden="true"></span>
+        <span class="paso__puerto paso__puerto--salida" aria-hidden="true"></span>
+        <p class="paso__numero">PASO 2</p>
+        <h3>Importá un workflow</h3>
+        <p>Elegí uno del catálogo, tocá «Copiar workflow» y pegalo en el canvas de n8n con Ctrl+V (Cmd+V en Mac). También podés usar «Import from URL» o subir el archivo.</p>
+        <div class="paso__enlaces">
+          <a class="enlace-flecha" href="#workflows">Ir al catálogo</a>
+          <a class="enlace-flecha" data-guia="importar" href="https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/02-importar-workflows.md" target="_blank" rel="noopener">Guía: importar un workflow</a>
+          <a class="enlace-flecha" href="https://docs.n8n.io/build/manage-workflows/export-and-import" target="_blank" rel="noopener">Docs de n8n: importar y exportar</a>
+        </div>
+      </li>
+      <li class="paso tarjeta">
+        <span class="paso__puerto paso__puerto--entrada" aria-hidden="true"></span>
+        <span class="paso__puerto paso__puerto--salida" aria-hidden="true"></span>
+        <p class="paso__numero">PASO 3</p>
+        <h3>Conectá tus credenciales</h3>
+        <p>Los workflows llegan sin claves. Abrí cada nodo que marque un aviso, elegí «Create new credential» y pegá la clave de tu cuenta. Tus claves quedan en tu n8n, nunca en el workflow.</p>
+        <div class="paso__enlaces">
+          <a class="enlace-flecha" data-guia="credenciales" href="https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/03-credenciales.md" target="_blank" rel="noopener">Guía: conectar credenciales</a>
+          <a class="enlace-flecha" href="https://docs.n8n.io/integrations/builtin/credentials" target="_blank" rel="noopener">Docs de n8n: credenciales</a>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================ CATÁLOGO -->
+<section class="seccion seccion--catalogo" id="workflows" aria-labelledby="titulo-workflows">
+  <div class="contenedor">
+    <header class="seccion__cabeza">
+      <p class="capsula capsula--sola capsula--acento">WORKFLOWS</p>
+      <h2 id="titulo-workflows">Workflows listos para importar</h2>
+      <p class="seccion__bajada">Cada uno trae notas adentro que explican qué hace cada paso y por qué. Copialo, pegalo en n8n y probalo.</p>
+    </header>
+
+    <div class="filtros" role="group" aria-label="Filtrar workflows">
+      <div class="filtros__grupo">
+        <span class="filtros__rotulo" id="rotulo-tec">Tecnología</span>
+        <div class="filtros__chips" role="radiogroup" aria-labelledby="rotulo-tec" data-filtro="tec">
+          <button type="button" class="chip" role="radio" aria-checked="true" data-valor="">Todas</button>
+          <button type="button" class="chip" role="radio" aria-checked="false" data-valor="ia">IA</button>
+          <button type="button" class="chip" role="radio" aria-checked="false" data-valor="avalanche">Avalanche</button>
+          <button type="button" class="chip" role="radio" aria-checked="false" data-valor="supabase">Supabase</button>
+          <button type="button" class="chip" role="radio" aria-checked="false" data-valor="clerk">Clerk</button>
+        </div>
+      </div>
+      <div class="filtros__grupo">
+        <span class="filtros__rotulo" id="rotulo-nivel">Nivel</span>
+        <div class="filtros__chips" role="radiogroup" aria-labelledby="rotulo-nivel" data-filtro="nivel">
+          <button type="button" class="chip" role="radio" aria-checked="true" data-valor="">Todos</button>
+          <button type="button" class="chip" role="radio" aria-checked="false" data-valor="inicial">Inicial</button>
+          <button type="button" class="chip" role="radio" aria-checked="false" data-valor="intermedio">Intermedio</button>
+          <button type="button" class="chip" role="radio" aria-checked="false" data-valor="avanzado">Avanzado</button>
+        </div>
+      </div>
+      <label class="filtros__interruptor">
+        <input type="checkbox" id="filtro-sin-credenciales">
+        <span>Sin credenciales</span>
+      </label>
+    </div>
+
+    <p class="catalogo__estado" id="catalogo-estado" aria-live="polite">Cargando workflows…</p>
+    <div class="catalogo" id="catalogo"></div>
+    <div class="catalogo__mas" id="catalogo-mas" hidden>
+      <button type="button" class="boton boton--borde boton--grande" id="catalogo-ver-todos" aria-controls="catalogo">Ver todos los workflows</button>
+    </div>
+    <noscript>
+      <p class="catalogo__estado">Para copiar workflows con un clic, activá JavaScript. Mientras tanto, están todos en <a href="https://github.com/nodo-cero-bo/workflows">el repo de workflows</a>.</p>
+    </noscript>
+
+    <div class="catalogo__pie">
+      <p><strong>Probado</strong>: corrió de verdad en n8n 2.48.7 y dio el resultado esperado. <strong>Auditado</strong>: pasa el auditor e importa bien; para correr necesita tus cuentas.</p>
+      <a class="boton boton--borde" href="https://github.com/nodo-cero-bo/workflows" target="_blank" rel="noopener">Ver el repo de workflows</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ GUÍAS -->
+<section class="seccion" id="guias" aria-labelledby="titulo-guias">
+  <div class="contenedor">
+    <header class="seccion__cabeza">
+      <p class="capsula capsula--sola capsula--acento">GUÍAS</p>
+      <h2 id="titulo-guias">Guías paso a paso</h2>
+      <p class="seccion__bajada">Paso a paso para pasar de la idea a la demo: cuentas, importación, proyectos completos y cómo presentar.</p>
+    </header>
+<!-- guias:inicio -->
+<div class="guias-grupos" id="guias-lista">
+  <section class="guias-grupo" aria-labelledby="guias-empezar">
+    <header class="guias-grupo__cabeza">
+      <p class="guias-grupo__rotulo">EMPEZAR · 7 GUÍAS</p>
+      <h3 id="guias-empezar">Cuentas y primeros pasos</h3>
+      <p class="guias-grupo__bajada">Creá cada cuenta, importá tu primer workflow y conectá tus credenciales.</p>
+      <a class="enlace-flecha" href="https://github.com/nodo-cero-bo/guias/tree/main/00-empezar" target="_blank" rel="noopener">Ver la carpeta en GitHub</a>
+    </header>
+    <ol class="guias">
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/01-cuenta-n8n-cloud.md" target="_blank" rel="noopener">
+        <span class="guia__num">01</span>
+        <span class="guia__titulo">Tu cuenta de n8n Cloud</span>
+        <span class="guia__resumen">Creá tu cuenta de prueba en n8n Cloud, recorré el editor y corré tu primer workflow: la base de todo lo que vas…</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/02-importar-workflows.md" target="_blank" rel="noopener">
+        <span class="guia__num">02</span>
+        <span class="guia__titulo">Importar los workflows de la hackathon</span>
+        <span class="guia__resumen">Tres formas de traer a tu n8n los workflows de Nodo Cero, listos para usar: pegar el JSON en el canvas…</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/03-credenciales.md" target="_blank" rel="noopener">
+        <span class="guia__num">03</span>
+        <span class="guia__titulo">Credenciales: las llaves de tus workflows</span>
+        <span class="guia__resumen">Qué es una credencial en n8n, cómo crear las que piden los workflows de Nodo Cero y cómo cuidarlas para que…</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/04-cuenta-supabase.md" target="_blank" rel="noopener">
+        <span class="guia__num">04</span>
+        <span class="guia__titulo">Tu proyecto en Supabase</span>
+        <span class="guia__resumen">Creá un proyecto gratis en Supabase, encontrá su URL y sus claves, cargá las tablas de Nodo Cero con el SQL…</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/05-cuenta-clerk.md" target="_blank" rel="noopener">
+        <span class="guia__num">05</span>
+        <span class="guia__titulo">Tu aplicación en Clerk</span>
+        <span class="guia__resumen">Creá una aplicación de Clerk para que tu proyecto tenga login de verdad, y encontrá las claves, el secreto de…</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/06-core-wallet-y-fuji.md" target="_blank" rel="noopener">
+        <span class="guia__num">06</span>
+        <span class="guia__titulo">Core Wallet y Avalanche Fuji</span>
+        <span class="guia__resumen">Descargá Core Wallet, creá una wallet de prueba, pasala a la red Fuji, pedí AVAX de prueba en el faucet y mirá…</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/00-empezar/07-clave-gemini.md" target="_blank" rel="noopener">
+        <span class="guia__num">07</span>
+        <span class="guia__titulo">Tu clave de Gemini</span>
+        <span class="guia__resumen">Sacá una clave gratis de la API de Gemini en Google AI Studio y conectala a n8n para que tus agentes respondan…</span>
+      </a></li>
+    </ol>
+  </section>
+  <section class="guias-grupo" aria-labelledby="guias-proyectos">
+    <header class="guias-grupo__cabeza">
+      <p class="guias-grupo__rotulo">PROYECTOS · 8 GUÍAS</p>
+      <h3 id="guias-proyectos">Guías de proyecto</h3>
+      <p class="guias-grupo__bajada">Proyectos completos, paso a paso, que juntan IA, Supabase, Clerk y Avalanche Fuji.</p>
+      <a class="enlace-flecha" href="https://github.com/nodo-cero-bo/guias/tree/main/proyectos" target="_blank" rel="noopener">Ver la carpeta en GitHub</a>
+    </header>
+    <ol class="guias">
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/proyectos/01-asistente-ia-para-tu-comunidad.md" target="_blank" rel="noopener">
+        <span class="guia__num">01</span>
+        <span class="guia__titulo">Asistente con IA para tu comunidad</span>
+        <span class="guia__resumen">Un chat público que responde preguntas con la información de tus propios documentos y recuerda la conversación…</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/proyectos/02-app-con-login-y-datos.md" target="_blank" rel="noopener">
+        <span class="guia__num">02</span>
+        <span class="guia__titulo">App con login y datos</span>
+        <span class="guia__resumen">Una página donde las personas inician sesión con Clerk, n8n verifica quién pide cada cosa y responde con sus…</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/proyectos/03-pagos-verificables-en-fuji.md" target="_blank" rel="noopener">
+        <span class="guia__num">03</span>
+        <span class="guia__titulo">Pagos verificables en Avalanche Fuji</span>
+        <span class="guia__resumen">Un verificador de pagos: alguien paga con AVAX de prueba, manda el hash de su transacción y n8n confirma en la…</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/proyectos/04-agente-web3-que-lee-fuji.md" target="_blank" rel="noopener">
+        <span class="guia__num">04</span>
+        <span class="guia__titulo">Agente Web3 que lee Fuji</span>
+        <span class="guia__resumen">Un agente de IA que contesta en español preguntas sobre la red Fuji de Avalanche: cuánto tiene una wallet, qué…</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/proyectos/05-formularios-inteligentes.md" target="_blank" rel="noopener">
+        <span class="guia__num">05</span>
+        <span class="guia__titulo">Formularios inteligentes que guardan y clasifican</span>
+        <span class="guia__resumen">Un formulario de n8n que guarda cada respuesta en Supabase y, en cuanto entra, la IA la lee, la clasifica y…</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/proyectos/06-tu-contrato-en-fuji.md" target="_blank" rel="noopener">
+        <span class="guia__num">06</span>
+        <span class="guia__titulo">Tu contrato en Fuji y n8n escuchando sus eventos</span>
+        <span class="guia__resumen">Desplegá tu propio contrato inteligente en la red Fuji con Remix y Core Wallet, y armá un workflow de n8n que…</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/proyectos/07-impacto-ambiental-o-social.md" target="_blank" rel="noopener">
+        <span class="guia__num">07</span>
+        <span class="guia__titulo">Impacto ambiental o social: reportes ciudadanos</span>
+        <span class="guia__resumen">Una idea abierta, inspirada en la sede, el Centro de Educación Ambiental: reportes ciudadanos de basurales…</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/proyectos/08-automatiza-tu-emprendimiento.md" target="_blank" rel="noopener">
+        <span class="guia__num">08</span>
+        <span class="guia__titulo">Automatizá tu emprendimiento</span>
+        <span class="guia__resumen">Pedidos, consultas y catálogo de un emprendimiento atendidos por n8n: un formulario que toma pedidos, una API…</span>
+      </a></li>
+    </ol>
+  </section>
+  <section class="guias-grupo" aria-labelledby="guias-avalanche">
+    <header class="guias-grupo__cabeza">
+      <p class="guias-grupo__rotulo">AVALANCHE FUJI · 1 GUÍA</p>
+      <h3 id="guias-avalanche">Avalanche Fuji</h3>
+      <p class="guias-grupo__bajada">Contratos, wallets y transacciones en la red de prueba de Avalanche.</p>
+      <a class="enlace-flecha" href="https://github.com/nodo-cero-bo/guias/tree/main/avalanche" target="_blank" rel="noopener">Ver la carpeta en GitHub</a>
+    </header>
+    <ol class="guias">
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/avalanche/recursos.md" target="_blank" rel="noopener">
+        <span class="guia__num">01</span>
+        <span class="guia__titulo">Recursos de Avalanche y Team1</span>
+        <span class="guia__resumen">Todo lo de Avalanche Fuji en un lugar: Core Wallet, el faucet, el explorador, Avalanche Academy, Team1, la…</span>
+      </a></li>
+    </ol>
+  </section>
+  <section class="guias-grupo" aria-labelledby="guias-mas">
+    <header class="guias-grupo__cabeza">
+      <p class="guias-grupo__rotulo">IDEAS, DEMO Y DESPUÉS · 3 GUÍAS</p>
+      <h3 id="guias-mas">De la idea a la demo, y después</h3>
+      <p class="guias-grupo__bajada">De dónde sacar la idea, cómo mostrarla en la presentación y cómo seguir cuando termine el día.</p>
+      <a class="enlace-flecha" href="https://github.com/nodo-cero-bo/guias" target="_blank" rel="noopener">Ver el repo de guías</a>
+    </header>
+    <ol class="guias">
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/ideas.md" target="_blank" rel="noopener">
+        <span class="guia__num">01</span>
+        <span class="guia__titulo">Banco de ideas</span>
+        <span class="guia__resumen">Ideas de proyecto por área, cada una con los workflows de Nodo Cero con los que conviene arrancar.</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/presentar.md" target="_blank" rel="noopener">
+        <span class="guia__num">02</span>
+        <span class="guia__titulo">Cómo presentar tu proyecto</span>
+        <span class="guia__resumen">Cómo armar una demo clara: el problema, tu solución, el flujo funcionando en vivo y qué sigue.</span>
+      </a></li>
+      <li><a class="guia tarjeta" href="https://github.com/nodo-cero-bo/guias/blob/main/seguir-construyendo.md" target="_blank" rel="noopener">
+        <span class="guia__num">03</span>
+        <span class="guia__titulo">Seguir construyendo</span>
+        <span class="guia__resumen">Qué hacer después del sábado para que tu proyecto no se quede en la demo: guardarlo, publicarlo en tu GitHub…</span>
+      </a></li>
+    </ol>
+  </section>
+</div>
+<!-- guias:fin -->
+  </div>
+</section>
+
+<!-- ============================================================ AVALANCHE FUJI -->
+<section class="seccion seccion--avalanche" id="avalanche" aria-labelledby="titulo-avalanche">
+  <div class="seccion__aura" aria-hidden="true"></div>
+  <div class="contenedor">
+    <header class="seccion__cabeza seccion__cabeza--con-logo">
+      <div>
+        <p class="capsula capsula--sola capsula--acento">TRACK AVALANCHE FUJI</p>
+        <h2 id="titulo-avalanche">Construí sobre Avalanche Fuji</h2>
+        <p class="seccion__bajada">Fuji es la red de prueba de Avalanche: funciona igual que la red principal, pero el AVAX es de prueba y no cuesta nada. Los equipos que integren Fuji en su proyecto tienen una mención especial.</p>
+      </div>
+      <p class="apoyo">
+        <span>Con el apoyo de</span>
+        <img src="assets/logos/Team1_MAIN_WHITE.svg" alt="Team1" width="1027" height="289">
+      </p>
+    </header>
+
+    <div class="fuji">
+      <div class="red deboss" aria-labelledby="titulo-red">
+        <h3 class="red__titulo" id="titulo-red">Datos de la red</h3>
+        <dl class="red__datos">
+          <div><dt>Nombre</dt><dd>Avalanche Fuji C-Chain</dd></div>
+          <div><dt>Chain ID</dt><dd><code>43113</code> <span class="tenue">(<code>0xa869</code>)</span></dd></div>
+          <div class="red__rpc">
+            <dt>RPC</dt>
+            <dd>
+              <code id="rpc-fuji">https://<wbr>api.avax-test.network/<wbr>ext/<wbr>bc/<wbr>C/<wbr>rpc</code>
+              <button type="button" class="boton boton--chico boton--borde" data-copiar-texto="https://api.avax-test.network/ext/bc/C/rpc" data-aviso="RPC de Fuji copiado">Copiar RPC</button>
+            </dd>
+          </div>
+          <div><dt>Símbolo</dt><dd><code>AVAX</code></dd></div>
+          <div><dt>Explorador</dt><dd><a href="https://build.avax.network/explorer/fuji/c-chain?utm_source=nodo-cero&amp;utm_medium=sitio&amp;utm_campaign=hackathon-n8n-bolivia-2026" target="_blank" rel="noopener">build.avax.network/explorer/fuji</a></dd></div>
+        </dl>
+        <button type="button" class="boton boton--borde boton--ancho" id="agregar-fuji" hidden>Agregar Fuji a mi wallet</button>
+        <a class="enlace-flecha" href="#workflows" data-filtrar="avalanche">Ver los workflows de Avalanche</a>
+      </div>
+
+      <ol class="llamados">
+        <li class="llamado tarjeta">
+          <p class="llamado__numero">01</p>
+          <h3>Descargá Core Wallet</h3>
+          <p>La wallet de Avalanche, para el navegador o el celular. Después activá el modo testnet: en la extensión, Configuración → Testnet Mode; en el celular, tocá tu avatar → Testnet Mode.</p>
+          <div class="llamado__acciones">
+            <a class="boton boton--rosa" href="https://core.app/download?utm_source=nodo-cero&amp;utm_medium=sitio&amp;utm_campaign=hackathon-n8n-bolivia-2026" target="_blank" rel="noopener">Descargar Core</a>
+            <a class="enlace-flecha" href="https://support.core.app/en/articles/13052998-core-extension-how-do-i-toggle-testnet-on-and-off" target="_blank" rel="noopener">Testnet en la extensión</a>
+            <a class="enlace-flecha" href="https://support.core.app/en/articles/11469939-core-mobile-how-do-i-toggle-testnet-mode-on-and-off" target="_blank" rel="noopener">Testnet en el celular</a>
+          </div>
+        </li>
+        <li class="llamado tarjeta">
+          <p class="llamado__numero">02</p>
+          <h3>Pedí AVAX de prueba</h3>
+          <p>En el faucet oficial del Builder Hub: iniciá sesión, conectá Core y pedí AVAX para la C-Chain de Fuji. Con eso pagás el gas de tus pruebas.</p>
+          <div class="llamado__acciones">
+            <a class="boton boton--rosa" href="https://build.avax.network/console/primary-network/faucet?utm_source=nodo-cero&amp;utm_medium=sitio&amp;utm_campaign=hackathon-n8n-bolivia-2026" target="_blank" rel="noopener">Ir al faucet</a>
+          </div>
+        </li>
+        <li class="llamado llamado--academia tarjeta">
+          <p class="llamado__numero">03</p>
+          <h3>Aprendé en Avalanche Academy</h3>
+          <p>Cursos gratis del Builder Hub, en inglés y con certificado. Creá tu cuenta y anotate en el que te sirva hoy.</p>
+          <div class="academia">
+            <div>
+              <p class="academia__rotulo">PARA DESARROLLADORAS</p>
+              <ul>
+                <li><a href="https://build.avax.network/academy/avalanche-l1/avalanche-fundamentals?utm_source=nodo-cero&amp;utm_medium=sitio&amp;utm_campaign=hackathon-n8n-bolivia-2026" target="_blank" rel="noopener">Avalanche Fundamentals</a> <span>1 h · consenso, cadenas y máquinas virtuales</span></li>
+                <li><a href="https://build.avax.network/academy/blockchain/solidity-foundry?utm_source=nodo-cero&amp;utm_medium=sitio&amp;utm_campaign=hackathon-n8n-bolivia-2026" target="_blank" rel="noopener">Intro to Solidity</a> <span>1 h · tus primeros contratos inteligentes</span></li>
+                <li><a href="https://build.avax.network/academy/blockchain/x402-payment-infrastructure?utm_source=nodo-cero&amp;utm_medium=sitio&amp;utm_campaign=hackathon-n8n-bolivia-2026" target="_blank" rel="noopener">x402 Payments</a> <span>2 h · pagos por HTTP, pensados para agentes de IA</span></li>
+              </ul>
+            </div>
+            <div>
+              <p class="academia__rotulo">PARA EL LADO DE NEGOCIO</p>
+              <ul>
+                <li><a href="https://build.avax.network/academy/blockchain/blockchain-fundamentals?utm_source=nodo-cero&amp;utm_medium=sitio&amp;utm_campaign=hackathon-n8n-bolivia-2026" target="_blank" rel="noopener">Blockchain Fundamentals</a> <span>1 h · qué es una blockchain, pagos, firmas, tokens y casos de uso</span></li>
+                <li><a href="https://build.avax.network/academy/avalanche-l1/l1-native-tokenomics?utm_source=nodo-cero&amp;utm_medium=sitio&amp;utm_campaign=hackathon-n8n-bolivia-2026" target="_blank" rel="noopener">L1 Native Tokenomics</a> <span>2 h · diseño de tokens, distribución y gobernanza</span></li>
+              </ul>
+              <p class="academia__nota">La Academy no tiene hoy una ruta aparte de negocio: estos dos son los que mejor explican el modelo y los casos de uso.</p>
+            </div>
+          </div>
+          <div class="llamado__acciones">
+            <a class="boton boton--rosa" href="https://build.avax.network/academy?utm_source=nodo-cero&amp;utm_medium=sitio&amp;utm_campaign=hackathon-n8n-bolivia-2026" target="_blank" rel="noopener">Ver todos los cursos</a>
+          </div>
+        </li>
+        <li class="llamado tarjeta">
+          <p class="llamado__numero">04</p>
+          <img class="llamado__logo" src="assets/logos/T1_LATAM_Wordmark.svg" alt="Team1 LATAM" width="1520" height="207">
+          <h3>Sumate a Team1 LATAM</h3>
+          <p>La red global de builders de Avalanche, con Team1 LATAM en la región: talleres, hackathons y gente que construye. Anotate en la lista de team1.network y entrá a su Discord.</p>
+          <div class="llamado__acciones">
+            <a class="boton boton--rosa" href="https://www.team1.network/?utm_source=nodo-cero&amp;utm_medium=sitio&amp;utm_campaign=hackathon-n8n-bolivia-2026#waitlist" target="_blank" rel="noopener">Sumarme a Team1</a>
+            <a class="enlace-flecha" href="https://discord.gg/team1?utm_source=nodo-cero&amp;utm_medium=sitio&amp;utm_campaign=hackathon-n8n-bolivia-2026" target="_blank" rel="noopener">Discord de Team1</a>
+          </div>
+        </li>
+        <li class="llamado tarjeta">
+          <p class="llamado__numero">05</p>
+          <h3>Explorá tus transacciones</h3>
+          <p>Pegá un hash o tu dirección en el explorador de Fuji y mirá qué pasó: quién envió, cuánto, el gas y el bloque.</p>
+          <div class="llamado__acciones">
+            <a class="boton boton--rosa" href="https://build.avax.network/explorer/fuji/c-chain?utm_source=nodo-cero&amp;utm_medium=sitio&amp;utm_campaign=hackathon-n8n-bolivia-2026" target="_blank" rel="noopener">Abrir el explorador</a>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ SUPABASE Y CLERK -->
+<section class="seccion" id="supabase-clerk" aria-labelledby="titulo-sc">
+  <div class="contenedor">
+    <header class="seccion__cabeza">
+      <p class="capsula capsula--sola capsula--acento">SUPABASE Y CLERK</p>
+      <h2 id="titulo-sc">Datos y login, resueltos</h2>
+      <p class="seccion__bajada">Dos herramientas para que tu proyecto se sienta real desde el primer día: dónde guardar lo que pasa y quién está del otro lado.</p>
+    </header>
+
+    <div class="dupla">
+      <article class="sponsor tarjeta" aria-labelledby="titulo-supabase">
+        <img class="sponsor__logo logo-supabase" src="assets/logos/supabase-logo-wordmark--dark.svg" alt="" width="581" height="113">
+        <h3 id="titulo-supabase"><span class="oculto">Supabase: </span>Postgres con API, vectores y webhooks</h3>
+        <p>Hoy te sirve para guardar lo que produce tu workflow, armar una API sobre tus datos y darle memoria y documentos a tu agente de IA con pgvector.</p>
+        <ul class="sponsor__usos">
+          <li>Guardar respuestas de formularios y pagos verificados</li>
+          <li>Memoria del agente y búsqueda en tus documentos (RAG)</li>
+          <li>Avisarle a n8n cuando entra una fila nueva</li>
+        </ul>
+        <div class="sponsor__acciones">
+          <a class="boton boton--rosa" href="https://supabase.com/dashboard/new" target="_blank" rel="noopener">Creá tu proyecto</a>
+          <a class="boton boton--borde" href="#workflows" data-filtrar="supabase">Workflows de Supabase</a>
+        </div>
+        <ul class="sponsor__docs">
+          <li><a class="enlace-flecha" href="https://supabase.com/docs/guides/getting-started/api-keys" target="_blank" rel="noopener">Claves de API</a></li>
+          <li><a class="enlace-flecha" href="https://supabase.com/docs/guides/ai/vector-columns" target="_blank" rel="noopener">Vectores con pgvector</a></li>
+          <li><a class="enlace-flecha" href="https://supabase.com/docs/guides/database/webhooks" target="_blank" rel="noopener">Database Webhooks</a></li>
+          <li><a class="enlace-flecha" href="https://supabase.com/docs/guides/database/postgres/row-level-security" target="_blank" rel="noopener">Row Level Security</a></li>
+        </ul>
+      </article>
+
+      <article class="sponsor tarjeta" aria-labelledby="titulo-clerk">
+        <img class="sponsor__logo logo-clerk" src="assets/logos/logotype-full-primary-light.svg" alt="" width="441" height="128">
+        <h3 id="titulo-clerk"><span class="oculto">Clerk: </span>Login y usuarias, listos para tu app</h3>
+        <p>Hoy te sirve para que tu proyecto sepa quién es quién y para que n8n verifique la sesión antes de responder. Hay una mención al mejor uso de Clerk.</p>
+        <ul class="sponsor__usos">
+          <li>Inicio de sesión y registro sin armarlos de cero</li>
+          <li>Webhooks de usuarias que llegan a n8n y a Supabase</li>
+          <li>APIs de n8n protegidas con la sesión (JWT)</li>
+        </ul>
+        <div class="sponsor__acciones">
+          <a class="boton boton--rosa" href="https://dashboard.clerk.com/sign-up" target="_blank" rel="noopener">Creá tu aplicación</a>
+          <a class="boton boton--borde" href="#workflows" data-filtrar="clerk">Workflows de Clerk</a>
+        </div>
+        <ul class="sponsor__docs">
+          <li><a class="enlace-flecha" href="https://clerk.com/docs/getting-started/quickstart/overview" target="_blank" rel="noopener">Quickstart</a></li>
+          <li><a class="enlace-flecha" href="https://clerk.com/docs/guides/development/webhooks/overview" target="_blank" rel="noopener">Webhooks</a></li>
+          <li><a class="enlace-flecha" href="https://clerk.com/docs/guides/sessions/manual-jwt-verification" target="_blank" rel="noopener">Verificar la sesión (JWT)</a></li>
+          <li><a class="enlace-flecha" href="https://clerk.com/docs/reference/backend-api" target="_blank" rel="noopener">Backend API</a></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ AGENDA -->
+<section class="seccion seccion--agenda" id="agenda" aria-labelledby="titulo-agenda">
+  <div class="contenedor">
+    <header class="seccion__cabeza">
+      <p class="capsula capsula--sola capsula--acento">AGENDA</p>
+      <h2 id="titulo-agenda">El día, de punta a punta</h2>
+      <p class="seccion__bajada">Sábado 21 de noviembre, de 08:00 a 16:00, en el Centro de Educación Ambiental (CEA), Santa Cruz de la Sierra. Equipos de hasta 4.</p>
+    </header>
+    <ol class="agenda" id="agenda-lista">
+      <li class="agenda__item" data-desde="08:00" data-hasta="12:30"><time datetime="2026-11-21T08:00-04:00">08:00</time><span class="agenda__nodo" aria-hidden="true"></span><p>Acreditación y café</p></li>
+      <li class="agenda__item" data-desde="12:30" data-hasta="14:30"><time datetime="2026-11-21T12:30-04:00">12:30</time><span class="agenda__nodo" aria-hidden="true"></span><p>Almuerzo, con el apoyo de Clerk</p></li>
+      <li class="agenda__item" data-desde="14:30" data-hasta="15:00"><time datetime="2026-11-21T14:30-04:00">14:30</time><span class="agenda__nodo" aria-hidden="true"></span><p>Refrigerio</p></li>
+      <li class="agenda__item" data-desde="15:00" data-hasta="15:45"><time datetime="2026-11-21T15:00-04:00">15:00</time><span class="agenda__nodo" aria-hidden="true"></span><p>Presentaciones</p></li>
+      <li class="agenda__item" data-desde="15:45" data-hasta="16:00"><time datetime="2026-11-21T15:45-04:00">15:45</time><span class="agenda__nodo" aria-hidden="true"></span><p>Cierre, menciones y foto grupal</p></li>
+      <li class="agenda__item" data-desde="16:00" data-hasta="16:01"><time datetime="2026-11-21T16:00-04:00">16:00</time><span class="agenda__nodo" aria-hidden="true"></span><p>Fin</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================ MENTORÍA -->
+<section class="seccion" id="mentoria" aria-labelledby="titulo-mentoria">
+  <div class="contenedor">
+    <header class="seccion__cabeza">
+      <p class="capsula capsula--sola capsula--acento">MENTORÍA</p>
+      <h2 id="titulo-mentoria">Quienes te acompañan</h2>
+      <p class="seccion__bajada">Diez personas que saben de automatización, IA, datos, pruebas y negocio. Buscalas durante el día y contales qué estás armando.</p>
+    </header>
+<!-- mentoria:inicio -->
+<ul class="mentoria">
+  <li class="persona">
+    <div class="persona__nodo">
+      <span class="persona__puerto persona__puerto--entrada" aria-hidden="true"></span>
+      <img src="assets/mentoria/anabel.webp" alt="Foto de Anabel Quiñones" width="480" height="480" loading="lazy" decoding="async">
+      <span class="persona__puerto persona__puerto--salida" aria-hidden="true"></span>
+    </div>
+    <h3 class="persona__nombre">Anabel Quiñones</h3>
+    <ul class="persona__areas" aria-label="Áreas"><li>AUTOMATIZACIÓN</li></ul>
+  </li>
+  <li class="persona">
+    <div class="persona__nodo">
+      <span class="persona__puerto persona__puerto--entrada" aria-hidden="true"></span>
+      <img src="assets/mentoria/diana.webp" alt="Foto de Diana Murillo" width="480" height="480" loading="lazy" decoding="async">
+      <span class="persona__puerto persona__puerto--salida" aria-hidden="true"></span>
+    </div>
+    <h3 class="persona__nombre">Diana Murillo</h3>
+    <ul class="persona__areas" aria-label="Áreas"><li>PRUEBAS Y DOCUMENTACIÓN</li><li>APIS E INTEGRACIONES</li></ul>
+  </li>
+  <li class="persona">
+    <div class="persona__nodo">
+      <span class="persona__puerto persona__puerto--entrada" aria-hidden="true"></span>
+      <img src="assets/mentoria/jhon.webp" alt="Foto de Jhon Rivera" width="480" height="480" loading="lazy" decoding="async">
+      <span class="persona__puerto persona__puerto--salida" aria-hidden="true"></span>
+    </div>
+    <h3 class="persona__nombre">Jhon Rivera</h3>
+    <ul class="persona__areas" aria-label="Áreas"><li>AUTOMATIZACIÓN</li><li>BASES DE DATOS</li><li>AGENTES DE IA</li></ul>
+  </li>
+  <li class="persona">
+    <div class="persona__nodo">
+      <span class="persona__puerto persona__puerto--entrada" aria-hidden="true"></span>
+      <img src="assets/mentoria/lucy.webp" alt="Foto de Lucy Quinteros" width="480" height="480" loading="lazy" decoding="async">
+      <span class="persona__puerto persona__puerto--salida" aria-hidden="true"></span>
+    </div>
+    <h3 class="persona__nombre">Lucy Quinteros</h3>
+    <ul class="persona__areas" aria-label="Áreas"><li>APIS E INTEGRACIONES</li><li>BASES DE DATOS</li><li>AGENTES DE IA</li></ul>
+  </li>
+  <li class="persona">
+    <div class="persona__nodo">
+      <span class="persona__puerto persona__puerto--entrada" aria-hidden="true"></span>
+      <img src="assets/mentoria/luishino.webp" alt="Foto de Luishiño Pericena" width="480" height="480" loading="lazy" decoding="async">
+      <span class="persona__puerto persona__puerto--salida" aria-hidden="true"></span>
+    </div>
+    <h3 class="persona__nombre">Luishiño Pericena</h3>
+    <ul class="persona__areas" aria-label="Áreas"><li>AUTOMATIZACIÓN</li><li>APIS E INTEGRACIONES</li><li>BASES DE DATOS</li></ul>
+  </li>
+  <li class="persona">
+    <div class="persona__nodo">
+      <span class="persona__puerto persona__puerto--entrada" aria-hidden="true"></span>
+      <img src="assets/mentoria/ingrid.webp" alt="Foto de María Ingrid Rivero" width="480" height="480" loading="lazy" decoding="async">
+      <span class="persona__puerto persona__puerto--salida" aria-hidden="true"></span>
+    </div>
+    <h3 class="persona__nombre">María Ingrid Rivero</h3>
+    <ul class="persona__areas" aria-label="Áreas"><li>PROYECTOS SOCIALES</li></ul>
+  </li>
+  <li class="persona">
+    <div class="persona__nodo">
+      <span class="persona__puerto persona__puerto--entrada" aria-hidden="true"></span>
+      <img src="assets/mentoria/nathalia.webp" alt="Foto de Nathalia Chavez" width="480" height="480" loading="lazy" decoding="async">
+      <span class="persona__puerto persona__puerto--salida" aria-hidden="true"></span>
+    </div>
+    <h3 class="persona__nombre">Nathalia Chavez</h3>
+    <ul class="persona__areas" aria-label="Áreas"><li>GESTIÓN DE PROYECTOS</li><li>PRUEBAS Y DOCUMENTACIÓN</li><li>AUTOMATIZACIÓN</li></ul>
+  </li>
+  <li class="persona">
+    <div class="persona__nodo">
+      <span class="persona__puerto persona__puerto--entrada" aria-hidden="true"></span>
+      <img src="assets/mentoria/rosiely.webp" alt="Foto de Rosiely Añez" width="480" height="480" loading="lazy" decoding="async">
+      <span class="persona__puerto persona__puerto--salida" aria-hidden="true"></span>
+    </div>
+    <h3 class="persona__nombre">Rosiely Añez</h3>
+    <ul class="persona__areas" aria-label="Áreas"><li>PRUEBAS Y DOCUMENTACIÓN</li></ul>
+  </li>
+  <li class="persona">
+    <div class="persona__nodo">
+      <span class="persona__puerto persona__puerto--entrada" aria-hidden="true"></span>
+      <img src="assets/mentoria/ruth.webp" alt="Foto de Ruth Chumacero" width="480" height="480" loading="lazy" decoding="async">
+      <span class="persona__puerto persona__puerto--salida" aria-hidden="true"></span>
+    </div>
+    <h3 class="persona__nombre">Ruth Chumacero</h3>
+    <ul class="persona__areas" aria-label="Áreas"><li>MODELO DE NEGOCIO</li></ul>
+  </li>
+  <li class="persona">
+    <div class="persona__nodo">
+      <span class="persona__puerto persona__puerto--entrada" aria-hidden="true"></span>
+      <img src="assets/mentoria/yely.webp" alt="Foto de Yely Galindo" width="480" height="480" loading="lazy" decoding="async">
+      <span class="persona__puerto persona__puerto--salida" aria-hidden="true"></span>
+    </div>
+    <h3 class="persona__nombre">Yely Galindo</h3>
+    <ul class="persona__areas" aria-label="Áreas"><li>APIS E INTEGRACIONES</li><li>BASES DE DATOS</li><li>AGENTES DE IA</li><li>PRUEBAS Y DOCUMENTACIÓN</li><li>AUTOMATIZACIÓN</li></ul>
+  </li>
+</ul>
+<!-- mentoria:fin -->
+  </div>
+</section>
+
+<!-- ============================================================ REGISTRÁ TU PROYECTO -->
+<section class="seccion" id="registrar" aria-labelledby="titulo-registrar">
+  <div class="contenedor">
+    <div class="registro">
+      <div class="registro__aura" aria-hidden="true"></div>
+      <div class="registro__texto">
+        <p class="capsula capsula--sola">VITRINA DE PROYECTOS</p>
+        <h2 id="titulo-registrar">Registrá tu proyecto</h2>
+        <p>Cuando tu equipo tenga algo para mostrar, registralo en la vitrina: nombre del proyecto y del equipo, qué hace y qué tecnologías usa. Si querés, sumá el enlace al repo o al video y el hash de una transacción en Fuji. Necesitás una cuenta de GitHub.</p>
+        <div class="registro__acciones">
+          <a class="boton boton--rosa boton--grande" href="https://github.com/nodo-cero-bo/proyectos/issues/new?template=proyecto.yml" target="_blank" rel="noopener">Registrar mi proyecto</a>
+          <a class="boton boton--claro boton--grande" href="https://github.com/nodo-cero-bo/proyectos" target="_blank" rel="noopener">Ver los proyectos</a>
+        </div>
+      </div>
+      <ul class="registro__campos" aria-label="Qué pide el formulario">
+        <li>NOMBRE Y EQUIPO</li>
+        <li>QUÉ HACE</li>
+        <li>TECNOLOGÍAS</li>
+        <li>REPO O VIDEO</li>
+        <li>HASH EN FUJI</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ ALIADOS -->
+<section class="seccion" id="aliados" aria-labelledby="titulo-aliados">
+  <div class="contenedor">
+    <header class="seccion__cabeza seccion__cabeza--centro">
+      <p class="capsula capsula--sola capsula--acento">ALIADOS</p>
+      <h2 id="titulo-aliados">Quienes lo hacen posible</h2>
+    </header>
+    <div class="aliados">
+      <div class="aliados__nivel aliados__nivel--presenta">
+        <p class="aliados__rotulo">Presenta</p>
+        <a href="https://n8n.io" target="_blank" rel="noopener"><img class="logo-n8n" src="assets/logos/n8n-logo-white-accent.svg" alt="n8n" width="480" height="96"></a>
+      </div>
+      <div class="aliados__nivel">
+        <p class="aliados__rotulo">En colaboración con</p>
+        <img class="logo-wtm" src="assets/logos/wtm-santa-cruz-para-fondo-oscuro.png" alt="Women Techmakers Santa Cruz" width="1361" height="225">
+      </div>
+      <div class="aliados__nivel">
+        <p class="aliados__rotulo">Con el apoyo de</p>
+        <div class="aliados__logos">
+          <a href="https://supabase.com" target="_blank" rel="noopener"><img class="logo-supabase" src="assets/logos/supabase-logo-wordmark--dark.svg" alt="Supabase" width="581" height="113"></a>
+          <a href="https://clerk.com" target="_blank" rel="noopener"><img class="logo-clerk" src="assets/logos/logotype-full-primary-light.svg" alt="Clerk" width="441" height="128"></a>
+          <a href="https://www.team1.network/?utm_source=nodo-cero&amp;utm_medium=sitio&amp;utm_campaign=hackathon-n8n-bolivia-2026" target="_blank" rel="noopener"><img class="logo-team1" src="assets/logos/Team1_MAIN_WHITE.svg" alt="Team1" width="1027" height="289"></a>
+          <a class="placa-clara" href="https://www.aspireleaders.org" target="_blank" rel="noopener"><img class="logo-aspire" src="assets/logos/aspire-institute-logo.svg" alt="Aspire Institute" width="266" height="91"></a>
+        </div>
+      </div>
+      <div class="aliados__nivel">
+        <p class="aliados__rotulo">Sede</p>
+        <img class="logo-gob" src="assets/logos/gobierno-santa-cruz-blanco.png" alt="Gobierno Autónomo Departamental de Santa Cruz" width="1000" height="254">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ SEGUÍ CONSTRUYENDO -->
+<section class="seccion" id="seguir" aria-labelledby="titulo-seguir">
+  <div class="contenedor">
+    <header class="seccion__cabeza">
+      <p class="capsula capsula--sola capsula--acento">DESPUÉS DE HOY</p>
+      <h2 id="titulo-seguir">Seguí construyendo</h2>
+      <p class="seccion__bajada">El evento termina a las 16:00; tus workflows, no. Todo esto queda abierto: seguí aprendiendo a tu ritmo.</p>
+    </header>
+    <ul class="recursos">
+      <li><a class="recurso tarjeta" href="https://docs.n8n.io" target="_blank" rel="noopener"><span class="recurso__rotulo">n8n</span><strong>Documentación de n8n</strong><span>Cada nodo, cada credencial y cómo se usan.</span></a></li>
+      <li><a class="recurso tarjeta" href="https://learn.n8n.io/" target="_blank" rel="noopener"><span class="recurso__rotulo">n8n</span><strong>n8n Academy</strong><span>Cursos oficiales y gratis: de tus primeros workflows a IA y buenas prácticas.</span></a></li>
+      <li><a class="recurso tarjeta" href="https://n8n.io/workflows" target="_blank" rel="noopener"><span class="recurso__rotulo">n8n</span><strong>Plantillas de n8n</strong><span>Miles de workflows de la comunidad para inspirarte.</span></a></li>
+      <li><a class="recurso tarjeta" href="https://community.n8n.io" target="_blank" rel="noopener"><span class="recurso__rotulo">n8n</span><strong>Foro de la comunidad de n8n</strong><span>Preguntá, compartí lo que armaste y ayudá a otras personas.</span></a></li>
+      <li><a class="recurso tarjeta" href="https://build.avax.network/academy?utm_source=nodo-cero&amp;utm_medium=sitio&amp;utm_campaign=hackathon-n8n-bolivia-2026" target="_blank" rel="noopener"><span class="recurso__rotulo">AVALANCHE</span><strong>Avalanche Academy</strong><span>Cursos gratis con certificado, de los fundamentos a tu propia L1.</span></a></li>
+      <li><a class="recurso tarjeta" href="https://supabase.com/docs" target="_blank" rel="noopener"><span class="recurso__rotulo">SUPABASE</span><strong>Docs de Supabase</strong><span>Base de datos, autenticación, almacenamiento y vectores.</span></a></li>
+      <li><a class="recurso tarjeta" href="https://clerk.com/docs" target="_blank" rel="noopener"><span class="recurso__rotulo">CLERK</span><strong>Docs de Clerk</strong><span>Login, usuarias, organizaciones y sesiones.</span></a></li>
+      <li><a class="recurso tarjeta" href="https://github.com/nodo-cero-bo" target="_blank" rel="noopener"><span class="recurso__rotulo">GITHUB</span><strong>Los repos de Nodo Cero</strong><span>Workflows, guías y la vitrina de proyectos, abiertos: usalos, copialos y mejoralos.</span></a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================ PIE -->
+<footer class="pie">
+  <div class="pie__puntos" aria-hidden="true"></div>
+  <div class="contenedor pie__grilla">
+    <div class="pie__marca">
+      <img src="assets/logos/nodo-cero_horizontal_fondo-oscuro.svg" alt="Nodo Cero, Hackathon n8n Bolivia" width="2039" height="744">
+      <p>Hecho por la comunidad n8n en Bolivia.</p>
+      <a class="boton boton--borde" href="https://luma.com/n8n-rfgv" target="_blank" rel="noopener">Nodo Cero en Luma</a>
+    </div>
+    <nav class="pie__enlaces" aria-label="Repos">
+      <p class="pie__rotulo">REPOS</p>
+      <a href="https://github.com/nodo-cero-bo/workflows" target="_blank" rel="noopener">workflows</a>
+      <a href="https://github.com/nodo-cero-bo/guias" target="_blank" rel="noopener">guias</a>
+      <a href="https://github.com/nodo-cero-bo/proyectos" target="_blank" rel="noopener">proyectos</a>
+      <a href="https://github.com/nodo-cero-bo/nodo-cero-bo.github.io" target="_blank" rel="noopener">esta página</a>
+    </nav>
+    <div class="pie__licencias">
+      <p class="pie__rotulo">LICENCIAS</p>
+      <p>Código y workflows: MIT. Guías: CC BY 4.0. Los logos son de sus marcas y no entran en ninguna licencia. Tipografías Inter Tight y Geist Mono, con licencia SIL OFL 1.1.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

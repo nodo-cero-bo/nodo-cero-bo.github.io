@@ -1,0 +1,98 @@
+{
+  "nota": "Personas de la mentoría que consintieron publicar su foto y su nombre, con sus áreas. Fuente: personas.json del kit de Nodo Cero.",
+  "personas": [
+    {
+      "id": "anabel",
+      "nombre": "Anabel Quiñones",
+      "areas": [
+        "AUTOMATIZACIÓN"
+      ],
+      "foto": "assets/mentoria/anabel.webp"
+    },
+    {
+      "id": "diana",
+      "nombre": "Diana Murillo",
+      "areas": [
+        "PRUEBAS Y DOCUMENTACIÓN",
+        "APIS E INTEGRACIONES"
+      ],
+      "foto": "assets/mentoria/diana.webp"
+    },
+    {
+      "id": "jhon",
+      "nombre": "Jhon Rivera",
+      "areas": [
+        "AUTOMATIZACIÓN",
+        "BASES DE DATOS",
+        "AGENTES DE IA"
+      ],
+      "foto": "assets/mentoria/jhon.webp"
+    },
+    {
+      "id": "lucy",
+      "nombre": "Lucy Quinteros",
+      "areas": [
+        "APIS E INTEGRACIONES",
+        "BASES DE DATOS",
+        "AGENTES DE IA"
+      ],
+      "foto": "assets/mentoria/lucy.webp"
+    },
+    {
+      "id": "luishino",
+      "nombre": "Luishiño Pericena",
+      "areas": [
+        "AUTOMATIZACIÓN",
+        "APIS E INTEGRACIONES",
+        "BASES DE DATOS"
+      ],
+      "foto": "assets/mentoria/luishino.webp"
+    },
+    {
+      "id": "ingrid",
+      "nombre": "María Ingrid Rivero",
+      "areas": [
+        "PROYECTOS SOCIALES"
+      ],
+      "foto": "assets/mentoria/ingrid.webp"
+    },
+    {
+      "id": "nathalia",
+      "nombre": "Nathalia Chavez",
+      "areas": [
+        "GESTIÓN DE PROYECTOS",
+        "PRUEBAS Y DOCUMENTACIÓN",
+        "AUTOMATIZACIÓN"
+      ],
+      "foto": "assets/mentoria/nathalia.webp"
+    },
+    {
+      "id": "rosiely",
+      "nombre": "Rosiely Añez",
+      "areas": [
+        "PRUEBAS Y DOCUMENTACIÓN"
+      ],
+      "foto": "assets/mentoria/rosiely.webp"
+    },
+    {
+      "id": "ruth",
+      "nombre": "Ruth Chumacero",
+      "areas": [
+        "MODELO DE NEGOCIO"
+      ],
+      "foto": "assets/mentoria/ruth.webp"
+    },
+    {
+      "id": "yely",
+      "nombre": "Yely Galindo",
+      "areas": [
+        "APIS E INTEGRACIONES",
+        "BASES DE DATOS",
+        "AGENTES DE IA",
+        "PRUEBAS Y DOCUMENTACIÓN",
+        "AUTOMATIZACIÓN"
+      ],
+      "foto": "assets/mentoria/yely.webp"
+    }
+  ]
+}

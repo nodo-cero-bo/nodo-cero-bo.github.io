@@ -1,0 +1,812 @@
+{
+  "generado": "2026-11-21T07:20:44.159Z",
+  "provisional": false,
+  "config": {
+    "org": "nodo-cero-bo",
+    "repos": {
+      "workflows": "workflows",
+      "guias": "guias",
+      "sitio": "nodo-cero-bo.github.io",
+      "perfil": ".github",
+      "proyectos": "proyectos"
+    },
+    "sitio_url": "https://nodo-cero-bo.github.io",
+    "rama": "main"
+  },
+  "repo_workflows": "https://github.com/nodo-cero-bo/workflows",
+  "total": 23,
+  "disponibles": 23,
+  "workflows": [
+    {
+      "id": "01-hola-n8n",
+      "titulo": "Hola n8n: datos, expresiones y decisiones",
+      "resumen": "Tu primer workflow: armá datos, transformalos con JavaScript y tomá una decisión con IF.",
+      "categoria": "fundamentos",
+      "nivel": "inicial",
+      "minutos": 10,
+      "tecnologias": [
+        "n8n"
+      ],
+      "credenciales": [],
+      "aprendes": [
+        "Qué es un ítem y cómo viaja de nodo en nodo",
+        "Expresiones con {{ }} y $json",
+        "Edit Fields (Set) con campos de distintos tipos",
+        "Code node en JavaScript que transforma ítems",
+        "IF con dos ramas"
+      ],
+      "probado": "ejecutado",
+      "orden": 1,
+      "ruta": "00-fundamentos/01-hola-n8n",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/00-fundamentos/01-hola-n8n",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/00-fundamentos/01-hola-n8n/workflow.json",
+      "archivo": "workflows/01-hola-n8n.json",
+      "nodos": 6,
+      "notas": 5,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "02-mi-primera-api",
+      "titulo": "Tu primera API",
+      "resumen": "Un Webhook que recibe tu nombre y responde un saludo en JSON: tu propia API en cinco nodos.",
+      "categoria": "fundamentos",
+      "nivel": "inicial",
+      "minutos": 10,
+      "tecnologias": [
+        "n8n"
+      ],
+      "credenciales": [],
+      "aprendes": [
+        "Webhook con método POST y path propio",
+        "URL de prueba y URL de producción",
+        "Validar el pedido con IF",
+        "Respond to Webhook con JSON y códigos 200 y 400",
+        "La hora de Bolivia con $now"
+      ],
+      "probado": "ejecutado",
+      "orden": 2,
+      "ruta": "00-fundamentos/02-mi-primera-api",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/00-fundamentos/02-mi-primera-api",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/00-fundamentos/02-mi-primera-api/workflow.json",
+      "archivo": "workflows/02-mi-primera-api.json",
+      "nodos": 5,
+      "notas": 6,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "03-http-request",
+      "titulo": "Llamar a cualquier API con HTTP Request",
+      "resumen": "Consultá el clima de Santa Cruz y el último bloque de Avalanche Fuji, y leé cada respuesta.",
+      "categoria": "fundamentos",
+      "nivel": "inicial",
+      "minutos": 15,
+      "tecnologias": [
+        "n8n",
+        "avalanche"
+      ],
+      "credenciales": [],
+      "aprendes": [
+        "Método, URL, query parameters, headers y body JSON",
+        "GET a una API pública sin clave",
+        "POST con JSON-RPC al RPC público de Fuji",
+        "Leer datos anidados y de otro nodo con expresiones",
+        "Pasar un número hexadecimal a decimal"
+      ],
+      "probado": "ejecutado",
+      "orden": 3,
+      "ruta": "00-fundamentos/03-http-request",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/00-fundamentos/03-http-request",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/00-fundamentos/03-http-request/workflow.json",
+      "archivo": "workflows/03-http-request.json",
+      "nodos": 4,
+      "notas": 6,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "04-formulario",
+      "titulo": "Un formulario de n8n",
+      "resumen": "Un formulario con los colores de Nodo Cero que procesa la respuesta y muestra una página final para cada persona.",
+      "categoria": "fundamentos",
+      "nivel": "inicial",
+      "minutos": 10,
+      "tecnologias": [
+        "n8n"
+      ],
+      "credenciales": [],
+      "aprendes": [
+        "n8n Form Trigger con campos obligatorios y desplegables",
+        "Procesar la respuesta con un Code node",
+        "Página final con el nodo n8n Form (Form Ending)",
+        "Estilo propio con CSS",
+        "URL de prueba y de producción de un formulario"
+      ],
+      "probado": "ejecutado",
+      "orden": 4,
+      "ruta": "00-fundamentos/04-formulario",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/00-fundamentos/04-formulario",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/00-fundamentos/04-formulario/workflow.json",
+      "archivo": "workflows/04-formulario.json",
+      "nodos": 3,
+      "notas": 4,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "05-agente-ia",
+      "titulo": "Tu primer agente de IA",
+      "resumen": "Un agente que conversa en el chat de n8n con Google Gemini, recuerda la conversación y responde como el asistente de Nodo Cero.",
+      "categoria": "ia",
+      "nivel": "inicial",
+      "minutos": 15,
+      "tecnologias": [
+        "n8n",
+        "ia"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Google Gemini(PaLM) Api",
+          "tipo_n8n": "googlePalmApi",
+          "como": "Creá una clave gratis en Google AI Studio (aistudio.google.com/apikey) y pegala en API Key; el Host queda como viene."
+        }
+      ],
+      "aprendes": [
+        "Chat Trigger y el chat de prueba de n8n",
+        "AI Agent con mensaje de sistema",
+        "Google Gemini Chat Model: elegir y cambiar el modelo",
+        "Simple Memory para recordar la conversación",
+        "Cambiar Gemini por OpenAI"
+      ],
+      "probado": "auditado",
+      "orden": 5,
+      "ruta": "00-fundamentos/05-agente-ia",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/00-fundamentos/05-agente-ia",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/00-fundamentos/05-agente-ia/workflow.json",
+      "archivo": "workflows/05-agente-ia.json",
+      "nodos": 4,
+      "notas": 5,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "10-fuji-estado-de-la-red",
+      "titulo": "Estado de la red Fuji",
+      "resumen": "chainId, último bloque y precio del gas de Fuji, en números legibles.",
+      "categoria": "avalanche",
+      "nivel": "inicial",
+      "minutos": 10,
+      "tecnologias": [
+        "n8n",
+        "avalanche"
+      ],
+      "credenciales": [],
+      "aprendes": [
+        "HTTP Request con JSON-RPC",
+        "Leer la salida de otro nodo por su nombre",
+        "Convertir hexadecimal a número con BigInt",
+        "Pasar wei a nAVAX y la hora Unix a la hora de Bolivia"
+      ],
+      "probado": "ejecutado",
+      "orden": 10,
+      "ruta": "10-avalanche-fuji/10-fuji-estado-de-la-red",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/10-avalanche-fuji/10-fuji-estado-de-la-red",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/10-avalanche-fuji/10-fuji-estado-de-la-red/workflow.json",
+      "archivo": "workflows/10-fuji-estado-de-la-red.json",
+      "nodos": 5,
+      "notas": 3,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "11-fuji-saldo-wallet",
+      "titulo": "Saldo de una wallet en Fuji",
+      "resumen": "Pasale una dirección y te devuelve su saldo en AVAX, por API o con un formulario.",
+      "categoria": "avalanche",
+      "nivel": "inicial",
+      "minutos": 15,
+      "tecnologias": [
+        "n8n",
+        "avalanche"
+      ],
+      "credenciales": [],
+      "aprendes": [
+        "Webhook GET con parámetros en la URL",
+        "Respond to Webhook con el código HTTP calculado",
+        "Formulario de n8n con página final",
+        "Pasar de wei a AVAX con BigInt"
+      ],
+      "probado": "ejecutado",
+      "orden": 11,
+      "ruta": "10-avalanche-fuji/11-fuji-saldo-wallet",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/10-avalanche-fuji/11-fuji-saldo-wallet",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/10-avalanche-fuji/11-fuji-saldo-wallet/workflow.json",
+      "archivo": "workflows/11-fuji-saldo-wallet.json",
+      "nodos": 10,
+      "notas": 4,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "12-fuji-leer-transaccion",
+      "titulo": "Leer una transacción en Fuji",
+      "resumen": "El desafío del día: dado un hash, quién envió, a quién, cuánto, gas, estado, bloque, confirmaciones y enlace al explorador.",
+      "categoria": "avalanche",
+      "nivel": "inicial",
+      "minutos": 15,
+      "tecnologias": [
+        "n8n",
+        "avalanche"
+      ],
+      "credenciales": [],
+      "aprendes": [
+        "HTTP Request con JSON-RPC",
+        "La diferencia entre una transacción y su recibo",
+        "Convertir hexadecimal y wei con BigInt",
+        "Calcular el costo y las confirmaciones"
+      ],
+      "probado": "ejecutado",
+      "orden": 12,
+      "ruta": "10-avalanche-fuji/12-fuji-leer-transaccion",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/10-avalanche-fuji/12-fuji-leer-transaccion",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/10-avalanche-fuji/12-fuji-leer-transaccion/workflow.json",
+      "archivo": "workflows/12-fuji-leer-transaccion.json",
+      "nodos": 6,
+      "notas": 4,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "13-fuji-verificar-pago",
+      "titulo": "Verificar un pago en Fuji",
+      "resumen": "Valida estado, destino, monto y confirmaciones de un pago, y responde si está verificado.",
+      "categoria": "avalanche",
+      "nivel": "intermedio",
+      "minutos": 20,
+      "tecnologias": [
+        "n8n",
+        "avalanche",
+        "supabase"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Supabase API (opcional)",
+          "tipo_n8n": "supabaseApi",
+          "como": "Nada más para la rama desactivada que registra en pagos_fuji. En Supabase: Project Settings → API Keys, la URL del proyecto (Host) y la clave secreta (Secret Key)."
+        }
+      ],
+      "aprendes": [
+        "Una API que valida un pedido y responde 400 si falta algo",
+        "Reglas de verificación en orden, con el motivo de cada rechazo",
+        "Comparar montos en wei con BigInt",
+        "Que un HTTP Request siga aunque falle (On Error: Continue)"
+      ],
+      "probado": "ejecutado",
+      "orden": 13,
+      "ruta": "10-avalanche-fuji/13-fuji-verificar-pago",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/10-avalanche-fuji/13-fuji-verificar-pago",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/10-avalanche-fuji/13-fuji-verificar-pago/workflow.json",
+      "archivo": "workflows/13-fuji-verificar-pago.json",
+      "nodos": 13,
+      "notas": 5,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "14-fuji-monitor-wallet",
+      "titulo": "Monitor de una wallet en Fuji",
+      "resumen": "Revisa un saldo cada 5 minutos y arma un aviso cuando cambia.",
+      "categoria": "avalanche",
+      "nivel": "intermedio",
+      "minutos": 15,
+      "tecnologias": [
+        "n8n",
+        "avalanche"
+      ],
+      "credenciales": [],
+      "aprendes": [
+        "Schedule Trigger",
+        "Recordar datos entre ejecuciones con $getWorkflowStaticData",
+        "Decidir con IF y armar un mensaje con una expresión",
+        "Cómo conectar el aviso a Telegram o Gmail"
+      ],
+      "probado": "ejecutado",
+      "orden": 14,
+      "ruta": "10-avalanche-fuji/14-fuji-monitor-wallet",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/10-avalanche-fuji/14-fuji-monitor-wallet",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/10-avalanche-fuji/14-fuji-monitor-wallet/workflow.json",
+      "archivo": "workflows/14-fuji-monitor-wallet.json",
+      "nodos": 8,
+      "notas": 4,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "15-fuji-token-erc20",
+      "titulo": "Saldo de un token ERC-20 en Fuji",
+      "resumen": "Nombre, símbolo, decimales y saldo de un token ERC-20 con eth_call, con el USDC de prueba de Circle.",
+      "categoria": "avalanche",
+      "nivel": "intermedio",
+      "minutos": 20,
+      "tecnologias": [
+        "n8n",
+        "avalanche"
+      ],
+      "credenciales": [],
+      "aprendes": [
+        "eth_call para leer un contrato sin gastar gas",
+        "Armar la llamada con el selector y los parámetros de la ABI",
+        "Decodificar números y textos de la ABI",
+        "Un HTTP Request que hace un pedido por ítem, con Batching"
+      ],
+      "probado": "ejecutado",
+      "orden": 15,
+      "ruta": "10-avalanche-fuji/15-fuji-token-erc20",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/10-avalanche-fuji/15-fuji-token-erc20",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/10-avalanche-fuji/15-fuji-token-erc20/workflow.json",
+      "archivo": "workflows/15-fuji-token-erc20.json",
+      "nodos": 5,
+      "notas": 4,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "16-fuji-eventos-contrato",
+      "titulo": "Leer eventos de un contrato en Fuji",
+      "resumen": "Trae eventos con eth_getLogs y los decodifica: transferencias de tokens y los registros de tu propio contrato.",
+      "categoria": "avalanche",
+      "nivel": "avanzado",
+      "minutos": 25,
+      "tecnologias": [
+        "n8n",
+        "avalanche"
+      ],
+      "credenciales": [],
+      "aprendes": [
+        "eth_getLogs con filtro por contrato, topic0 y rango de bloques",
+        "Respetar el límite del RPC partiendo el rango en tramos",
+        "Qué son topic0, los parámetros indexed y data",
+        "Decodificar direcciones, montos y textos de la ABI"
+      ],
+      "probado": "ejecutado",
+      "orden": 16,
+      "ruta": "10-avalanche-fuji/16-fuji-eventos-contrato",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/10-avalanche-fuji/16-fuji-eventos-contrato",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/10-avalanche-fuji/16-fuji-eventos-contrato/workflow.json",
+      "archivo": "workflows/16-fuji-eventos-contrato.json",
+      "nodos": 6,
+      "notas": 4,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "20-clerk-webhook-a-supabase",
+      "titulo": "De Clerk a Supabase con un webhook",
+      "resumen": "Cada alta, cambio o baja de usuaria en Clerk llega firmada a n8n, que verifica la firma Svix y mantiene al día la tabla perfiles de Supabase.",
+      "categoria": "clerk",
+      "nivel": "intermedio",
+      "minutos": 20,
+      "tecnologias": [
+        "n8n",
+        "clerk",
+        "supabase"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Supabase API",
+          "tipo_n8n": "supabaseApi",
+          "como": "En Supabase, Project Settings → API Keys: la URL del proyecto va en Host y una clave secreta (sb_secret_...) en Secret Key."
+        }
+      ],
+      "aprendes": [
+        "Webhook con Raw Body para verificar una firma",
+        "Verificar la firma Svix con HMAC SHA-256 en el Code node",
+        "Responder 200 o 401 con Respond to Webhook",
+        "Switch por tipo de evento",
+        "Upsert en Supabase: actualizar y, si no existía, crear"
+      ],
+      "probado": "auditado",
+      "orden": 20,
+      "ruta": "20-clerk/20-clerk-webhook-a-supabase",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/20-clerk/20-clerk-webhook-a-supabase",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/20-clerk/20-clerk-webhook-a-supabase/workflow.json",
+      "archivo": "workflows/20-clerk-webhook-a-supabase.json",
+      "nodos": 11,
+      "notas": 5,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "21-clerk-api-protegida",
+      "titulo": "Una API protegida con Clerk",
+      "resumen": "Una API de n8n que verifica el token de sesión de Clerk (RS256) y devuelve el perfil desde Supabase; sin sesión válida, responde 401.",
+      "categoria": "clerk",
+      "nivel": "avanzado",
+      "minutos": 25,
+      "tecnologias": [
+        "n8n",
+        "clerk",
+        "supabase"
+      ],
+      "credenciales": [
+        {
+          "nombre": "JWT Auth con la clave pública de Clerk",
+          "tipo_n8n": "jwtAuth",
+          "como": "En Clerk, API keys → JWKS Public Key en formato PEM. En n8n: Key Type PEM Key, la clave en Public Key y algoritmo RS256."
+        },
+        {
+          "nombre": "Supabase API",
+          "tipo_n8n": "supabaseApi",
+          "como": "En Supabase, Project Settings → API Keys: la URL del proyecto va en Host y una clave secreta (sb_secret_...) en Secret Key."
+        }
+      ],
+      "aprendes": [
+        "Leer el encabezado Authorization: Bearer",
+        "Verificar un JWT RS256 con el nodo JWT y una clave PEM",
+        "Revisar exp, nbf y azp del token de sesión",
+        "CORS con Allowed Origins en el Webhook",
+        "Responder 200, 401 o 404 según el caso"
+      ],
+      "probado": "auditado",
+      "orden": 21,
+      "ruta": "20-clerk/21-clerk-api-protegida",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/20-clerk/21-clerk-api-protegida",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/20-clerk/21-clerk-api-protegida/workflow.json",
+      "archivo": "workflows/21-clerk-api-protegida.json",
+      "nodos": 10,
+      "notas": 4,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "22-clerk-invitaciones",
+      "titulo": "Invitaciones con Clerk",
+      "resumen": "Pegá una lista de correos en un formulario y n8n invita a cada persona con la Backend API de Clerk, con un resumen de lo que salió bien y lo que no.",
+      "categoria": "clerk",
+      "nivel": "intermedio",
+      "minutos": 15,
+      "tecnologias": [
+        "n8n",
+        "clerk"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Clerk Backend API",
+          "tipo_n8n": "httpHeaderAuth",
+          "como": "En Clerk, API keys: copiá la Secret key. En n8n, una credencial Header Auth con Name Authorization y Value Bearer sk_test_... (con un espacio después de Bearer)."
+        }
+      ],
+      "aprendes": [
+        "Limpiar y validar una lista de correos en el Code node",
+        "Split Out: un ítem por elemento de una lista",
+        "HTTP Request POST con credencial Header Auth",
+        "Seguir aunque la API responda un error (Never Error)",
+        "Página final de un formulario con un resumen"
+      ],
+      "probado": "auditado",
+      "orden": 22,
+      "ruta": "20-clerk/22-clerk-invitaciones",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/20-clerk/22-clerk-invitaciones",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/20-clerk/22-clerk-invitaciones/workflow.json",
+      "archivo": "workflows/22-clerk-invitaciones.json",
+      "nodos": 8,
+      "notas": 4,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "30-formulario-a-supabase",
+      "titulo": "Formulario a Supabase",
+      "resumen": "Lo que llega por un formulario queda guardado como fila en Supabase.",
+      "categoria": "supabase",
+      "nivel": "inicial",
+      "minutos": 15,
+      "tecnologias": [
+        "n8n",
+        "supabase"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Supabase API",
+          "tipo_n8n": "supabaseApi",
+          "como": "En Supabase, Project Settings → API Keys: la URL del proyecto va en Host y una clave secreta (sb_secret_...) en Secret Key."
+        }
+      ],
+      "aprendes": [
+        "Form Trigger con campos y página final",
+        "Crear filas en Supabase",
+        "Qué hace la clave secreta y por qué no se comparte"
+      ],
+      "probado": "auditado",
+      "orden": 30,
+      "ruta": "30-supabase/30-formulario-a-supabase",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/30-supabase/30-formulario-a-supabase",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/30-supabase/30-formulario-a-supabase/workflow.json",
+      "archivo": "workflows/30-formulario-a-supabase.json",
+      "nodos": 3,
+      "notas": 5,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "31-api-crud-supabase",
+      "titulo": "Una API sobre Supabase",
+      "resumen": "Listá y creá filas de Supabase desde tu propia API.",
+      "categoria": "supabase",
+      "nivel": "intermedio",
+      "minutos": 20,
+      "tecnologias": [
+        "n8n",
+        "supabase"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Supabase API",
+          "tipo_n8n": "supabaseApi",
+          "como": "En Supabase, Project Settings → API Keys: la URL del proyecto va en Host y una clave secreta (sb_secret_...) en Secret Key."
+        }
+      ],
+      "aprendes": [
+        "Un Webhook con GET y POST en la misma URL",
+        "Validar un pedido en el Code node",
+        "Responder con 200, 201 y 400",
+        "Get Many con límite y orden"
+      ],
+      "probado": "auditado",
+      "orden": 31,
+      "ruta": "30-supabase/31-api-crud-supabase",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/30-supabase/31-api-crud-supabase",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/30-supabase/31-api-crud-supabase/workflow.json",
+      "archivo": "workflows/31-api-crud-supabase.json",
+      "nodos": 9,
+      "notas": 4,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "32-cargar-documentos-rag",
+      "titulo": "Cargar documentos para RAG",
+      "resumen": "Subí un archivo, partilo en trozos y guardá sus embeddings en Supabase.",
+      "categoria": "supabase",
+      "nivel": "intermedio",
+      "minutos": 25,
+      "tecnologias": [
+        "n8n",
+        "ia",
+        "supabase"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Supabase API",
+          "tipo_n8n": "supabaseApi",
+          "como": "En Supabase, Project Settings → API Keys: la URL del proyecto va en Host y una clave secreta (sb_secret_...) en Secret Key."
+        },
+        {
+          "nombre": "Google Gemini(PaLM) Api",
+          "tipo_n8n": "googlePalmApi",
+          "como": "Una clave gratis de Google AI Studio (Get API key), en la credencial Google Gemini(PaLM) Api."
+        }
+      ],
+      "aprendes": [
+        "Subir archivos con un formulario",
+        "Partir texto en pedazos",
+        "Embeddings con Gemini",
+        "pgvector y el Supabase Vector Store"
+      ],
+      "probado": "auditado",
+      "orden": 32,
+      "ruta": "30-supabase/32-cargar-documentos-rag",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/30-supabase/32-cargar-documentos-rag",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/30-supabase/32-cargar-documentos-rag/workflow.json",
+      "archivo": "workflows/32-cargar-documentos-rag.json",
+      "nodos": 7,
+      "notas": 5,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "33-agente-con-memoria-y-rag",
+      "titulo": "Agente con memoria y tus documentos",
+      "resumen": "Un agente que recuerda la conversación y busca en tus documentos.",
+      "categoria": "supabase",
+      "nivel": "avanzado",
+      "minutos": 30,
+      "tecnologias": [
+        "n8n",
+        "ia",
+        "supabase"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Google Gemini(PaLM) Api",
+          "tipo_n8n": "googlePalmApi",
+          "como": "Una clave gratis de Google AI Studio (Get API key), en la credencial Google Gemini(PaLM) Api."
+        },
+        {
+          "nombre": "Postgres (Supabase)",
+          "tipo_n8n": "postgres",
+          "como": "En Supabase, Connect → Session pooler: host del pooler, puerto 5432, base postgres, usuario postgres.<id-del-proyecto> y la contraseña de la base."
+        },
+        {
+          "nombre": "Supabase API",
+          "tipo_n8n": "supabaseApi",
+          "como": "En Supabase, Project Settings → API Keys: la URL del proyecto va en Host y una clave secreta (sb_secret_...) en Secret Key."
+        }
+      ],
+      "aprendes": [
+        "AI Agent con herramientas",
+        "Memoria de chat en Postgres",
+        "Un Vector Store como herramienta (RAG)",
+        "Conectarse a Supabase por el pooler en modo sesión"
+      ],
+      "probado": "auditado",
+      "orden": 33,
+      "ruta": "30-supabase/33-agente-con-memoria-y-rag",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/30-supabase/33-agente-con-memoria-y-rag",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/30-supabase/33-agente-con-memoria-y-rag/workflow.json",
+      "archivo": "workflows/33-agente-con-memoria-y-rag.json",
+      "nodos": 6,
+      "notas": 4,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "34-supabase-webhook-ia",
+      "titulo": "La IA clasifica cada fila nueva",
+      "resumen": "Un Database Webhook avisa a n8n y la IA completa la fila.",
+      "categoria": "supabase",
+      "nivel": "intermedio",
+      "minutos": 20,
+      "tecnologias": [
+        "n8n",
+        "ia",
+        "supabase"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Supabase API",
+          "tipo_n8n": "supabaseApi",
+          "como": "En Supabase, Project Settings → API Keys: la URL del proyecto va en Host y una clave secreta (sb_secret_...) en Secret Key."
+        },
+        {
+          "nombre": "Google Gemini(PaLM) Api",
+          "tipo_n8n": "googlePalmApi",
+          "como": "Una clave gratis de Google AI Studio (Get API key), en la credencial Google Gemini(PaLM) Api."
+        },
+        {
+          "nombre": "Header Auth",
+          "tipo_n8n": "httpHeaderAuth",
+          "como": "Name x-webhook-secreto y un secreto largo en Value; el mismo encabezado va en el Database Webhook de Supabase."
+        }
+      ],
+      "aprendes": [
+        "Database Webhooks de Supabase",
+        "Proteger un webhook con Header Auth",
+        "Information Extractor con Gemini",
+        "Actualizar una fila con un filtro"
+      ],
+      "probado": "auditado",
+      "orden": 34,
+      "ruta": "30-supabase/34-supabase-webhook-ia",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/30-supabase/34-supabase-webhook-ia",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/30-supabase/34-supabase-webhook-ia/workflow.json",
+      "archivo": "workflows/34-supabase-webhook-ia.json",
+      "nodos": 9,
+      "notas": 5,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "40-agente-web3-fuji",
+      "titulo": "Agente de IA para Fuji",
+      "resumen": "Un chat con IA que lee Avalanche Fuji en vivo: saldos, transacciones y el último bloque, explicados en español.",
+      "categoria": "proyectos",
+      "nivel": "avanzado",
+      "minutos": 30,
+      "tecnologias": [
+        "n8n",
+        "ia",
+        "avalanche"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Google Gemini(PaLM) Api",
+          "tipo_n8n": "googlePalmApi",
+          "como": "Google AI Studio → Get API key: creá una clave gratis y pegala en API Key. Host queda como viene."
+        }
+      ],
+      "aprendes": [
+        "AI Agent con herramientas HTTP",
+        "$fromAI: el modelo completa la dirección o el hash",
+        "Lotes JSON-RPC contra Fuji",
+        "Code Tool con BigInt para pasar de wei a AVAX",
+        "Memoria por conversación"
+      ],
+      "probado": "auditado",
+      "orden": 40,
+      "ruta": "40-proyectos/40-agente-web3-fuji",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/40-proyectos/40-agente-web3-fuji",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/40-proyectos/40-agente-web3-fuji/workflow.json",
+      "archivo": "workflows/40-agente-web3-fuji.json",
+      "nodos": 8,
+      "notas": 5,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "41-pagos-fuji-con-login",
+      "titulo": "Pagos en Fuji con login",
+      "resumen": "Login con Clerk, la persona manda el hash de su pago, n8n lo verifica en Fuji y lo registra en Supabase a su nombre.",
+      "categoria": "proyectos",
+      "nivel": "avanzado",
+      "minutos": 40,
+      "tecnologias": [
+        "n8n",
+        "avalanche",
+        "clerk",
+        "supabase"
+      ],
+      "credenciales": [
+        {
+          "nombre": "Supabase API",
+          "tipo_n8n": "supabaseApi",
+          "como": "Supabase, Project Settings → API Keys: la URL del proyecto va en Host y la Secret key (sb_secret_...) o la service_role en Secret Key."
+        }
+      ],
+      "aprendes": [
+        "Verificar el token de Clerk (JWT RS256) con la clave PEM",
+        "Una API con códigos HTTP claros: 200, 400, 401 y 409",
+        "Lote JSON-RPC: transacción, recibo y último bloque",
+        "Reglas de pago con BigInt: estado, destino, monto y confirmaciones",
+        "Supabase sin pagos duplicados con On Error"
+      ],
+      "probado": "auditado",
+      "orden": 41,
+      "ruta": "40-proyectos/41-pagos-fuji-con-login",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/40-proyectos/41-pagos-fuji-con-login",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/40-proyectos/41-pagos-fuji-con-login/workflow.json",
+      "archivo": "workflows/41-pagos-fuji-con-login.json",
+      "nodos": 15,
+      "notas": 5,
+      "disponible": true,
+      "provisional": false
+    },
+    {
+      "id": "42-reporte-kpis",
+      "titulo": "Reporte de KPIs del evento",
+      "resumen": "Cuenta los proyectos por tecnología, trae el tráfico de los repos y verifica los hashes en Fuji: un informe listo para los aliados.",
+      "categoria": "proyectos",
+      "nivel": "intermedio",
+      "minutos": 20,
+      "tecnologias": [
+        "n8n",
+        "avalanche"
+      ],
+      "credenciales": [
+        {
+          "nombre": "GitHub API",
+          "tipo_n8n": "githubApi",
+          "como": "GitHub → Settings → Developer settings → Personal access tokens: un token fine-grained con acceso a los repos y permisos Administration e Issues en Read-only. Pegalo en Access Token."
+        }
+      ],
+      "aprendes": [
+        "HTTP Request con credencial y paginación",
+        "Leer formularios de issues de GitHub con JavaScript",
+        "La API de tráfico de GitHub: visitas y clones",
+        "Verificar hashes en Fuji por lotes",
+        "IF para saltear un paso y Schedule Trigger semanal"
+      ],
+      "probado": "auditado",
+      "orden": 42,
+      "ruta": "40-proyectos/42-reporte-kpis",
+      "github": "https://github.com/nodo-cero-bo/workflows/tree/main/40-proyectos/42-reporte-kpis",
+      "crudo": "https://raw.githubusercontent.com/nodo-cero-bo/workflows/main/40-proyectos/42-reporte-kpis/workflow.json",
+      "archivo": "workflows/42-reporte-kpis.json",
+      "nodos": 13,
+      "notas": 5,
+      "disponible": true,
+      "provisional": false
+    }
+  ]
+}

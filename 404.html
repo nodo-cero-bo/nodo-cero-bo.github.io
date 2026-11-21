@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada · Nodo Cero</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#191919">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<style>
+  @font-face { font-family: "Inter Tight"; font-weight: 400; font-display: swap; src: url("/assets/fuentes/InterTight-400.woff") format("woff"); }
+  @font-face { font-family: "Inter Tight"; font-weight: 500; font-display: swap; src: url("/assets/fuentes/InterTight-500.woff") format("woff"); }
+  @font-face { font-family: "Geist Mono"; font-weight: 500; font-display: swap; src: url("/assets/fuentes/GeistMono-500.woff") format("woff"); }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    min-height: 100svh; display: grid; place-items: center; padding: 32px 16px;
+    background: radial-gradient(ellipse 60% 50% at 70% 20%, rgba(255, 145, 172, 0.18), transparent 70%), #191919;
+    color: #FAFAFA; font-family: "Inter Tight", system-ui, sans-serif; text-align: center;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background-image: radial-gradient(circle, #464646 1.25px, transparent 1.75px); background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000, transparent); mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000, transparent);
+  }
+  main { max-width: 520px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+  img { width: 240px; height: auto; }
+  .capsula { font-family: "Geist Mono", monospace; font-weight: 500; font-size: 13px; letter-spacing: 0.04em; background: #5A0026; padding: 10px 18px; border-radius: 400px; margin: 0; }
+  h1 { margin: 0; font-weight: 500; font-size: clamp(36px, 8vw, 52px); line-height: 1.05; letter-spacing: -0.01em; }
+  p { margin: 0; color: rgba(250, 250, 250, 0.78); font-size: 18px; line-height: 1.5; }
+  a.boton { display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 12px; background: #FF91AC; color: #191919; font-weight: 500; font-size: 17px; text-decoration: none; }
+  a.boton:hover { background: #FFD0D9; }
+  a:focus-visible { outline: 3px solid #FF91AC; outline-offset: 3px; }
+</style>
+</head>
+<body>
+<main>
+  <a href="/" aria-label="Nodo Cero, ir al inicio"><img src="/assets/logos/nodo-cero_horizontal_fondo-oscuro.svg" alt="Nodo Cero, Hackathon n8n Bolivia" width="2039" height="744"></a>
+  <p class="capsula">ERROR 404</p>
+  <h1>Este nodo no está conectado</h1>
+  <p>La página que buscás no existe o cambió de lugar. Los workflows, las guías y todo lo de la hackathon siguen en el inicio.</p>
+  <a class="boton" href="/">Volver al inicio</a>
+</main>
+</body>
+</html>
